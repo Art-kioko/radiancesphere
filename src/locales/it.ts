@@ -1,397 +1,398 @@
 export const it = {
   nav: {
     home: "Home",
-    apartments: "Appartamenti",
-    amenities: "Servizi",
-    gallery: "Galleria",
+    about: "Chi Siamo",
+    services: "Servizi",
+    vision: "Visione",
+    caseStudies: "Casi Studio",
     contact: "Contatti",
-    bookNow: "Prenota Ora"
+    getStarted: "Inizia"
   },
   hero: {
-    subtitle: "ALLOGGI DI LUSSO SUL MARE",
-    title: "Vivi la Tranquillità del Mare",
-    description: "Scopri la nostra esclusiva collezione di appartamenti di lusso e camere d'albergo sul mare, che offrono comfort impareggiabile e viste mozzafiato sul mare.",
-    bookStay: "Prenota il tuo Soggiorno",
-    exploreApartments: "Esplora gli Appartamenti",
+    subtitle: "SOLUZIONI INTELLIGENTI PROGETTATE PER FAR CRESCERE LA TUA ATTIVITÀ SENZA SFORZO",
+    title: "Sperimenta la Crescita Intelligente con Marketing Basato sull'AI",
+    description: "Dalla gestione della reputazione all'automazione del flusso di lavoro AI e SEO locale — abbiamo tutto ciò di cui hai bisogno.",
+    getStarted: "Inizia con l'AI",
+    exploreServices: "Esplora i Servizi",
     scrollDown: "Scorri Giù"
   },
   footer: {
-    description: "Appartamenti di lusso sul mare e camere d'albergo con splendide viste sul mare, che offrono il perfetto connubio di comfort ed eleganza per la tua vacanza da sogno.",
+    description: "Radiance Sphere è un'agenzia di marketing digitale basata sull'AI che aiuta le aziende locali a crescere online aumentando la credibilità, coinvolgendo i clienti e automatizzando i compiti aziendali chiave.",
     quickLinks: "Link Rapidi",
     contact: "Contatti",
     newsletter: "Newsletter",
-    newsletterDesc: "Iscriviti alla nostra newsletter per offerte speciali e aggiornamenti.",
+    newsletterDesc: "Iscriviti alla nostra newsletter per insights di marketing AI e strategie di crescita.",
     yourEmail: "Il tuo indirizzo email",
     subscribe: "Iscriviti",
     allRights: "Tutti i diritti riservati."
   },
   bookingForm: {
-    title: "Prenota il tuo Soggiorno",
-    checkIn: "Data di Check-in",
-    checkOut: "Data di Check-out",
-    adults: "Adulti",
-    children: "Bambini",
-    adult: "Adulto",
-    child: "Bambino",
+    title: "Richiedi Consulenza",
+    checkIn: "Data Inizio",
+    checkOut: "Data Fine",
+    adults: "Aziende",
+    children: "Progetti",
+    adult: "Azienda",
+    child: "Progetto",
     selectDate: "Seleziona data",
     checkAvailability: "Verifica Disponibilità",
-    bookingConfirmed: "Prenotazione Confermata!"
+    bookingConfirmed: "Consulenza Confermata!"
   },
   testimonials: {
-    title: "Cosa Dicono i Nostri Ospiti",
-    description: "Scopri perché i nostri ospiti continuano a tornare a MareSereno per le loro fughe al mare."
+    title: "Cosa Dicono i Nostri Clienti",
+    description: "Scopri perché le aziende scelgono Radiance Sphere per la loro crescita digitale."
   },
   notFound: {
     title: "Pagina Non Trovata",
-    description: "Non siamo riusciti a trovare la pagina che stavi cercando. Forse hai preso una svolta sbagliata in paradiso?",
+    description: "Non siamo riusciti a trovare la pagina che cercavi. Forse hai preso una strada sbagliata nel paradiso digitale?",
     returnHome: "Torna alla Home"
   },
+  home: {
+    welcome: {
+      subtitle: "Benvenuti a Radiance Sphere",
+      title: "Trasformiamo le Aziende in Macchine da Ricavi 24/7 con l'AI",
+      description1: "Radiance Sphere è un'agenzia di marketing digitale basata sull'AI che aiuta le aziende locali a crescere online aumentando la credibilità, coinvolgendo i clienti e automatizzando i compiti aziendali chiave. Le nostre soluzioni intelligenti sono progettate per scalare la tua attività senza sforzo.",
+      description2: "Che tu stia cercando di migliorare la tua reputazione online, automatizzare i flussi di lavoro o dominare la ricerca locale, il nostro approccio basato sull'AI fornisce risultati misurabili. Ogni soluzione è personalizzata per le esigenze della tua attività e progettata per la massima crescita.",
+      learnMore: "Scopri di Più"
+    },
+    consultation: {
+      subtitle: "Sessione Strategica Gratuita",
+      title: "Ottieni il Tuo Piano di Crescita AI",
+      description: "Prenota una consulenza gratuita per scoprire come l'AI può trasformare le operazioni della tua attività e guidare la crescita. I nostri esperti creeranno una roadmap personalizzata per il tuo successo.",
+      benefits: ["Strategia AI personalizzata", "Analisi competitiva", "Opportunità di crescita", "Piano di implementazione personalizzato"]
+    },
+    featuredServices: {
+      subtitle: "Le Nostre Soluzioni",
+      title: "Servizi di Marketing Basati sull'AI",
+      description: "Scopri la nostra suite completa di soluzioni di marketing basate sull'AI progettate per automatizzare, ottimizzare e accelerare la crescita della tua attività.",
+      viewAll: "Vedi Tutti i Servizi"
+    },
+    benefits: {
+      subtitle: "Perché Scegliere Radiance Sphere",
+      title: "Sperimenta la Crescita Intelligente",
+      description: "Scopri i vantaggi del marketing basato sull'AI che lavora 24 ore su 24 per far crescere la tua attività.",
+      features: {
+        reputation: {
+          title: "Gestione Reputazione AI",
+          description: "Sfrutta l'AI per monitorare e rispondere alle recensioni, migliorare l'immagine del brand e aumentare la fiducia dei clienti."
+        },
+        automation: {
+          title: "Flussi di Lavoro AI Personalizzati",
+          description: "Semplifica i compiti e aumenta la produttività con sistemi AI personalizzati su misura per la tua attività."
+        },
+        seo: {
+          title: "Ottimizzazione SEO Locale",
+          description: "Domina la ricerca locale e fatti trovare su Google con inserzioni aziendali ottimizzate e strategie di recensioni."
+        },
+        analytics: {
+          title: "Analytics Basati sull'AI",
+          description: "Ottieni insights intelligenti e raccomandazioni basate sui dati per ottimizzare le tue performance di marketing."
+        },
+        support: {
+          title: "Monitoraggio AI 24/7",
+          description: "I nostri sistemi AI lavorano 24 ore su 24 per proteggere e far crescere la tua presenza online."
+        },
+        growth: {
+          title: "Soluzioni Scalabili",
+          description: "Cresci con fiducia usando soluzioni AI che si adattano al successo della tua attività."
+        }
+      }
+    },
+    cta: {
+      title: "Pronto a Trasformare la Tua Attività con l'AI?",
+      description: "Unisciti a centinaia di aziende che stanno già crescendo con le soluzioni di marketing basate sull'AI di Radiance Sphere.",
+      getStarted: "Inizia Oggi"
+    }
+  },
   apartments: {
-    title: "I Nostri Appartamenti e Camere",
-    subtitle: "Scopri la nostra selezione di alloggi premium, dalle accoglienti mansarde ai lussuosi attici.",
+    title: "I Nostri Servizi",
+    subtitle: "Scopri la nostra selezione di soluzioni premium, dai servizi di base alle implementazioni aziendali.",
     filters: {
-      guests: "Ospiti",
-      anyGuests: "Qualsiasi numero di ospiti",
-      onePlus: "1+ ospiti",
-      twoPlus: "2+ ospiti",
-      threePlus: "3+ ospiti",
-      fourPlus: "4+ ospiti",
-      location: "Posizione",
-      allLocations: "Tutte le posizioni",
-      priceRange: "Fascia di Prezzo",
-      showing: "Visualizzando",
+      guests: "Dimensione Azienda",
+      anyGuests: "Qualsiasi dimensione",
+      onePlus: "1+ dipendenti",
+      twoPlus: "2+ dipendenti",
+      threePlus: "3+ dipendenti",
+      fourPlus: "4+ dipendenti",
+      location: "Tipo di Servizio",
+      allLocations: "Tutti i servizi",
+      priceRange: "Range di Prezzo",
+      showing: "Mostrando",
       of: "di",
-      accommodations: "alloggi",
+      accommodations: "servizi",
       resetFilters: "Reimposta Filtri",
-      noMatch: "Nessun appartamento corrisponde ai tuoi filtri",
-      adjustFilters: "Prova a modificare i criteri di filtro per vedere più opzioni.",
-      viewDetails: "Visualizza Dettagli",
+      noMatch: "Nessun servizio corrisponde ai tuoi filtri",
+      adjustFilters: "Prova ad aggiustare i criteri di filtro per vedere più opzioni.",
+      viewDetails: "Vedi Dettagli",
       features: "caratteristiche",
       more: "altro"
     }
   },
   gallery: {
-    title: "Galleria Fotografica",
-    subtitle: "Esplora il nostro paradiso sul mare attraverso immagini suggestive.",
+    title: "Galleria Portfolio",
+    subtitle: "Esplora i nostri progetti di successo attraverso immagini accattivanti.",
     filters: {
       all: "Tutti",
-      exterior: "Esterno",
-      rooms: "Camere",
-      amenities: "Servizi"
+      exterior: "Risultati",
+      rooms: "Dashboard",
+      amenities: "Automazioni"
     }
   },
   booking: {
-    title: "Prenota il tuo Soggiorno",
-    subtitle: "Completa la tua prenotazione in pochi semplici passi.",
+    title: "Richiedi Consulenza",
+    subtitle: "Completa la tua richiesta in pochi semplici passaggi.",
     steps: {
-      chooseRoom: "Scegli Camera",
-      guestDetails: "Dettagli Ospite",
+      chooseRoom: "Scegli Servizio",
+      guestDetails: "Dettagli Azienda",
       confirmation: "Conferma"
     },
     dates: {
-      selectDates: "Seleziona Date e Ospiti",
-      checkIn: "Data di Check-in",
-      checkOut: "Data di Check-out",
-      adults: "Adulti",
-      children: "Bambini",
-      adult: "Adulto",
-      child: "Bambino",
+      selectDates: "Seleziona Date e Requisiti",
+      checkIn: "Data Inizio",
+      checkOut: "Data Fine",
+      adults: "Dipendenti",
+      children: "Progetti",
+      adult: "Dipendente",
+      child: "Progetto",
       selectDate: "Seleziona data"
     },
     accommodationSelect: {
-      title: "Seleziona il tuo Alloggio",
-      guests: "Ospiti",
+      title: "Seleziona il Tuo Servizio",
+      guests: "Dimensione",
       selected: "Selezionato",
       select: "Seleziona",
       continue: "Continua"
     },
     guestInfo: {
-      title: "Informazioni Ospite",
+      title: "Informazioni Azienda",
       firstName: "Nome",
       lastName: "Cognome",
       email: "Email",
       phone: "Telefono",
       address: "Indirizzo",
       city: "Città",
-      zipCode: "Codice Postale",
+      zipCode: "CAP",
       country: "Paese",
-      specialRequests: "Richieste Speciali",
-      specialRequestsPlaceholder: "Qualsiasi richiesta speciale o nota per il tuo soggiorno"
+      specialRequests: "Requisiti Speciali",
+      specialRequestsPlaceholder: "Eventuali richieste speciali o note per il tuo progetto"
     },
     payment: {
-      title: "Informazioni di Pagamento",
+      title: "Informazioni Pagamento",
       creditCard: "Carta di Credito",
-      payAtProperty: "Paga in Struttura",
+      payAtProperty: "Paga alla Consegna",
       nameOnCard: "Nome sulla Carta",
       cardNumber: "Numero Carta",
       cardNumberPlaceholder: "0000 0000 0000 0000",
-      expiryDate: "Data di Scadenza",
+      expiryDate: "Data Scadenza",
       expiryDatePlaceholder: "MM/AA",
       cvc: "CVC",
       cvcPlaceholder: "123",
-      payAtPropertyInfo: "Ti verrà richiesto di fornire una carta di credito valida all'arrivo per motivi di sicurezza, ma il pagamento sarà effettuato durante il tuo soggiorno nella struttura."
+      payAtPropertyInfo: "Sarà richiesto di fornire una carta di credito valida all'inizio del progetto per scopi di sicurezza, ma il pagamento sarà raccolto durante lo sviluppo del servizio."
     },
     summary: {
-      title: "Riepilogo Prenotazione",
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      guests: "Ospiti",
-      night: "notte",
-      nights: "notti",
-      cleaningFee: "Costo pulizie",
-      serviceFee: "Costo servizio",
+      title: "Riepilogo Consulenza",
+      checkIn: "Inizio",
+      checkOut: "Fine",
+      guests: "Dimensione",
+      night: "mese",
+      nights: "mesi",
+      cleaningFee: "Tassa setup",
+      serviceFee: "Tassa servizio",
       total: "Totale"
     },
     confirmation: {
-      title: "Rivedi Dettagli Prenotazione",
-      accommodationDetails: "Dettagli Alloggio",
-      guestDetails: "Dettagli Ospite",
+      title: "Rivedi Dettagli Consulenza",
+      accommodationDetails: "Dettagli Servizio",
+      guestDetails: "Dettagli Azienda",
       name: "Nome",
       email: "Email",
       phone: "Telefono",
-      address: "Indirizzo",
+      address: "Indirizzo", 
       city: "Città",
       country: "Paese",
-      specialRequests: "Richieste Speciali",
+      specialRequests: "Requisiti Speciali",
       paymentMethod: "Metodo di Pagamento",
       creditCard: "Carta di Credito",
-      priceSummary: "Riepilogo Prezzi",
+      priceSummary: "Riepilogo Prezzo",
       termsAgree: "Accetto i",
       termsLink: "Termini e Condizioni",
-      privacyLink: "Politica sulla Privacy",
-      cancellationInfo: "Comprendo che la mia prenotazione è soggetta alla politica di cancellazione della struttura.",
+      privacyLink: "Privacy Policy",
+      cancellationInfo: "Capisco che la mia consulenza è soggetta alla politica di cancellazione dell'agenzia.",
       back: "Indietro",
-      confirmBooking: "Conferma Prenotazione",
-      success: "Prenotazione Confermata!",
-      emailSent: "La tua prenotazione è stata confermata con successo. Una email di conferma è stata inviata a",
-      bookingReference: "Riferimento Prenotazione",
+      confirmBooking: "Conferma Consulenza",
+      success: "Consulenza Confermata!",
+      emailSent: "La tua richiesta è stata confermata con successo. Un'email di conferma è stata inviata a",
+      bookingReference: "Riferimento Consulenza",
       returnToHome: "Torna alla Homepage"
     }
   },
   contact: {
     title: "Contattaci",
-    subtitle: "Siamo qui per aiutarti a rendere il tuo soggiorno indimenticabile. Contattaci per qualsiasi domanda o richiesta speciale.",
+    subtitle: "Pronto a rivoluzionare la tua attività con l'AI? Discutiamo di come possiamo aiutarti a crescere più velocemente e in modo più intelligente.",
     getInTouch: "Mettiti in Contatto",
     address: "Indirizzo",
     phone: "Telefono",
     email: "Email",
-    receptionHours: "Orari Reception",
-    checkInTime: "Check-in: Dopo le 15:00",
-    checkOutTime: "Check-out: Prima delle 11:00",
+    businessHours: "Orari di Lavoro",
+    weekdays: "Lunedì - Venerdì: 9:00 - 18:00",
+    weekend: "Sabato: 10:00 - 16:00",
     sendMessage: "Inviaci un Messaggio",
     fullName: "Nome Completo",
     phoneNumber: "Numero di Telefono",
     subject: "Oggetto",
     message: "Messaggio",
     howCanWeHelp: "Come possiamo aiutarti?",
-    send: "Invia",
+    send: "Invia Messaggio",
     messageSent: "Messaggio Inviato!",
     thankYou: "Grazie per averci contattato. Risponderemo al tuo messaggio il prima possibile.",
     faq: "Domande Frequenti",
-    faqSubtitle: "Trova risposte rapide alle domande più comuni sui nostri alloggi e servizi.",
+    faqSubtitle: "Trova risposte rapide alle domande più comuni sui nostri servizi di marketing AI.",
     questions: {
       checkInOut: {
-        question: "Quali sono gli orari di check-in e check-out?",
-        answer: "Il check-in è dalle 15:00 in poi, e il check-out è fino alle 11:00. Il check-in anticipato o il check-out posticipato possono essere organizzati in base alla disponibilità."
+        question: "Quali sono i vostri tempi di implementazione?",
+        answer: "L'implementazione inizia entro 48 ore dalla conferma del progetto. I tempi di completamento variano da 1-4 settimane a seconda della complessità del servizio."
       },
       parking: {
-        question: "È disponibile il parcheggio presso la struttura?",
-        answer: "Sì, offriamo parcheggio gratuito per tutti gli ospiti. Il servizio di parcheggio con valletto è disponibile anche a un costo aggiuntivo."
+        question: "Offrite supporto continuo dopo l'implementazione?",
+        answer: "Sì, offriamo supporto continuo 24/7 e monitoraggio per tutti i nostri servizi AI. Il supporto tecnico è incluso in tutti i pacchetti."
       },
       pets: {
-        question: "Gli animali domestici sono ammessi negli appartamenti?",
-        answer: "Accogliamo gli animali domestici in appartamenti designati pet-friendly. Si prega di informarci in anticipo se si prevede di portare un animale domestico, poiché potrebbero essere applicati costi aggiuntivi."
+        question: "Lavorate con aziende di tutte le dimensioni?",
+        answer: "Lavoriamo con aziende di ogni dimensione, dalle start-up alle grandi aziende. I nostri servizi sono scalabili e personalizzabili in base alle esigenze specifiche."
       },
       breakfast: {
-        question: "La colazione è inclusa nella tariffa della camera?",
-        answer: "La colazione è inclusa in pacchetti camera selezionati. Puoi verificare l'inclusione durante il processo di prenotazione o aggiungerla alla tua prenotazione in qualsiasi momento."
+        question: "Quali risultati posso aspettarmi dai vostri servizi AI?",
+        answer: "I risultati tipici includono aumento del 40-60% nelle recensioni positive, riduzione del 50% nel tempo di gestione manuale e miglioramento del 30% nella visibilità locale."
       },
       transfers: {
-        question: "Offrite trasferimenti aeroportuali?",
-        answer: "Sì, offriamo trasferimenti aeroportuali a un costo aggiuntivo. Si prega di contattare la nostra concierge almeno 48 ore prima del tuo arrivo per organizzare il trasporto."
+        question: "Offrite training per il nostro team?",
+        answer: "Sì, includiamo training completo per il vostro team come parte del processo di implementazione. Offriamo anche sessioni di formazione continua."
       },
       amenities: {
-        question: "Quali servizi sono disponibili nella struttura?",
-        answer: "La nostra struttura dispone di piscine, una spa, ristoranti, un bar sulla spiaggia, un centro fitness e accesso diretto alla spiaggia. Tutti gli appartamenti includono Wi-Fi, aria condizionata e elettrodomestici moderni."
-      }
-    }
-  },
-  home: {
-    welcome: {
-      subtitle: "Benvenuti a MareSereno",
-      title: "Alloggi di Lusso sul Mare",
-      description1: "Situato sulla incontaminata costa mediterranea, MareSereno offre una squisita collezione di appartamenti di lusso e camere d'albergo. I nostri alloggi fronte mare combinano un design elegante con comfort moderni, creando l'ambientazione perfetta per una indimenticabile fuga al mare.",
-      description2: "Che tu stia cercando una fuga romantica, una vacanza in famiglia o un ritiro tranquillo, la nostra vasta gamma di alloggi si adatta a ogni preferenza ed esigenza. Ogni spazio è progettato con cura per fornire viste panoramiche sul mare e accesso diretto alla spiaggia.",
-      learnMore: "Scopri di Più"
-    },
-    booking: {
-      subtitle: "Prenota il tuo Soggiorno",
-      title: "Prenota la tua Vacanza Perfetta",
-      description: "Fai il primo passo verso la tua vacanza da sogno verificando la disponibilità e assicurandoti le date preferite. Il nostro semplice processo di prenotazione garantisce un'esperienza senza interruzioni dalla prenotazione all'arrivo.",
-      benefits: ["Conferma istantanea", "Miglior tariffa garantita", "Opzioni di cancellazione flessibili", "Pagamento sicuro"]
-    },
-    featuredApartments: {
-      subtitle: "I Nostri Alloggi",
-      title: "Appartamenti in Evidenza",
-      description: "Scopri le nostre opzioni di alloggio più popolari, ognuna che offre un perfetto equilibrio di comfort, stile e viste mozzafiato sul mare.",
-      viewAll: "Visualizza Tutti gli Appartamenti"
-    },
-    amenities: {
-      subtitle: "Servizi dell'Hotel",
-      title: "Vivi il Meglio",
-      description: "Goditi le nostre strutture e servizi premium progettati per rendere il tuo soggiorno eccezionale.",
-      features: {
-        beachfront: {
-          title: "Posizione Fronte Mare",
-          description: "Accesso diretto a spiagge incontaminate con acque cristalline."
-        },
-        pools: {
-          title: "Piscine",
-          description: "Rilassati accanto alle nostre piscine a sfioro con vista mozzafiato sul mare."
-        },
-        restaurant: {
-          title: "Ristorante Gourmet",
-          description: "Goditi squisita cucina locale e internazionale."
-        },
-        wifi: {
-          title: "Wi-Fi ad Alta Velocità",
-          description: "Rimani connesso con internet ad alta velocità gratuito."
-        },
-        bar: {
-          title: "Bar & Caffè sulla Spiaggia",
-          description: "Bevande rinfrescanti e snack serviti direttamente sulla spiaggia."
-        },
-        location: {
-          title: "Posizione Privilegiata",
-          description: "Vicino alle attrazioni locali, negozi e ristoranti."
-        }
-      }
-    },
-    cta: {
-      title: "Pronto per la tua Vacanza da Sogno?",
-      description: "Prenota il tuo soggiorno oggi e vivi il perfetto connubio di lusso, comfort e viste mozzafiato sul mare.",
-      bookNow: "Prenota Ora"
-    }
-  },
-  amenitiesPage: {
-    title: "I Nostri Servizi",
-    subtitle: "Scopri i servizi e le comodità di lusso che rendono il tuo soggiorno indimenticabile.",
-    description: "A MareSereno, ci dedichiamo a fornire un'esperienza di soggiorno completa e lussuosa. Dai nostri servizi sulla spiaggia alle strutture di benessere, ogni dettaglio è stato curato per garantire il massimo comfort e piacere.",
-    categories: {
-      wellness: {
-        title: "Benessere e Relax",
-        description: "Trattati con la nostra gamma di servizi benessere progettati per ringiovanire corpo e mente.",
-        items: [
-          {
-            title: "Spa di Lusso",
-            description: "La nostra spa offre una gamma completa di trattamenti, dalle terapie tradizionali ai trattamenti di bellezza più moderni."
-          },
-          {
-            title: "Centro Fitness",
-            description: "Mantieni la tua routine di fitness con la nostra palestra all'avanguardia con vista panoramica sul mare."
-          },
-          {
-            title: "Piscina Infinity",
-            description: "Immergiti nella nostra piscina a sfioro mentre ammiri l'orizzonte infinito del mare."
-          },
-          {
-            title: "Yoga sulla Spiaggia",
-            description: "Partecipa alle nostre sessioni di yoga mattutine sulla spiaggia per un risveglio rivitalizzante."
-          }
-        ]
-      },
-      dining: {
-        title: "Ristorazione",
-        description: "Scopri il meglio della cucina locale e internazionale nei nostri ristoranti e bar.",
-        items: [
-          {
-            title: "Ristorante Gourmet",
-            description: "Assapora piatti raffinati preparati dai nostri chef con ingredienti locali freschi."
-          },
-          {
-            title: "Bar sulla Spiaggia",
-            description: "Goditi cocktail rinfrescanti e snack leggeri con i piedi nella sabbia."
-          },
-          {
-            title: "Lounge Bar",
-            description: "Rilassati con una selezione di vini pregiati e liquori in un'atmosfera elegante."
-          },
-          {
-            title: "Servizio in Camera",
-            description: "Goditi pasti gourmet nella privacy del tuo appartamento, disponibile 24 ore su 24."
-          }
-        ]
-      },
-      services: {
-        title: "Servizi Extra",
-        description: "Approfitta dei nostri servizi aggiuntivi per un soggiorno senza problemi.",
-        items: [
-          {
-            title: "Concierge 24/7",
-            description: "Il nostro team di concierge è disponibile in qualsiasi momento per assisterti con qualsiasi richiesta."
-          },
-          {
-            title: "Trasferimenti Aeroportuali",
-            description: "Viaggia comodamente da e per l'aeroporto con il nostro servizio di trasferimento privato."
-          },
-          {
-            title: "Noleggio Auto",
-            description: "Esplora la zona con la nostra flotta di veicoli premium disponibili per il noleggio."
-          },
-          {
-            title: "Escursioni Guidate",
-            description: "Scopri le attrazioni locali con le nostre escursioni personalizzate guidate da esperti."
-          }
-        ]
-      },
-      entertainment: {
-        title: "Intrattenimento",
-        description: "Goditi una varietà di attività ricreative pensate per tutti i gusti.",
-        items: [
-          {
-            title: "Sport Acquatici",
-            description: "Prova una vasta gamma di sport acquatici, dal paddleboarding al jet skiing."
-          },
-          {
-            title: "Area Giochi per Bambini",
-            description: "I più piccoli possono divertirsi nella nostra area giochi sicura e supervisionata."
-          },
-          {
-            title: "Serate a Tema",
-            description: "Partecipa alle nostre serate a tema settimanali con musica dal vivo e intrattenimento."
-          },
-          {
-            title: "Biblioteca & Sala Giochi",
-            description: "Rilassati con un buon libro o goditi i giochi da tavolo nella nostra sala comune."
-          }
-        ]
+        question: "Quali tecnologie AI utilizzate?",
+        answer: "Utilizziamo tecnologie AI all'avanguardia inclusi machine learning, elaborazione del linguaggio naturale, automazione intelligente e analytics predittivi personalizzati per ogni business."
       }
     }
   },
   apartmentDescriptions: {
     "1": {
-      name: "Suite Vista Mare Deluxe",
-      description: "Suite lussuosa con vista panoramica sul mare, comfort moderni e balcone privato."
+      name: "Gestione Reputazione AI",
+      description: "Sfrutta l'AI per monitorare e rispondere alle recensioni, migliorare l'immagine del brand e aumentare la fiducia dei clienti."
     },
     "2": {
-      name: "Appartamento Premium per Famiglie",
-      description: "Appartamento spazioso ideale per famiglie, con cucina completa e splendide viste costiere."
+      name: "Automazione Flussi di Lavoro AI",
+      description: "Semplifica i compiti e aumenta la produttività con sistemi AI personalizzati su misura per la tua attività."
     },
     "3": {
-      name: "Studio Esecutivo sulla Spiaggia",
-      description: "Elegante studio con accesso diretto alla spiaggia, design moderno e finiture di pregio."
+      name: "SEO Locale e Google Business",
+      description: "Domina la ricerca locale e fatti trovare su Google con inserzioni aziendali ottimizzate e strategie di recensioni."
     },
     "4": {
-      name: "Suite Attico di Lusso",
-      description: "Esclusiva suite all'ultimo piano con ampia terrazza e vista panoramica sul mare."
+      name: "Suite Analytics AI Premium",
+      description: "Dashboard completa con insights intelligenti e raccomandazioni basate sui dati per ottimizzare le performance."
     },
     "5": {
-      name: "Camera Doppia Classica",
-      description: "Confortevole camera d'albergo con comfort moderni e vista parziale sul mare."
+      name: "Chatbot AI Personalizzato",
+      description: "Sistema di chat intelligente che gestisce le richieste dei clienti 24/7 con risposta naturale."
     },
     "6": {
-      name: "Appartamento Vista Giardino",
-      description: "Appartamento tranquillo circondato da rigogliosi giardini, a breve distanza dalla spiaggia."
+      name: "Automazione Social Media",
+      description: "Gestione automatizzata dei social media con contenuti generati dall'AI e programmazione intelligente."
+    }
+  },
+  amenitiesPage: {
+    title: "I Nostri Servizi",
+    subtitle: "Scopri i servizi e le soluzioni AI che rendono la tua crescita aziendale straordinaria.",
+    description: "In Radiance Sphere, siamo dedicati a fornire un'esperienza di crescita aziendale completa e innovativa. Dai nostri servizi di reputazione online alle automazioni AI, ogni dettaglio è stato curato per garantire massima efficienza e crescita.",
+    categories: {
+      wellness: {
+        title: "Gestione Reputazione",
+        description: "Migliora la tua presenza online con i nostri servizi di gestione reputazione basati sull'AI.",
+        items: [
+          {
+            title: "Monitoraggio Reviews AI",
+            description: "Il nostro sistema AI monitora tutte le piattaforme di recensioni 24/7 per la tua azienda."
+          },
+          {
+            title: "Risposta Automatica",
+            description: "Risposte intelligenti e personalizzate alle recensioni dei clienti con tono professionale."
+          },
+          {
+            title: "Analisi Sentiment",
+            description: "Analisi avanzata del sentiment per comprendere la percezione del tuo brand."
+          },
+          {
+            title: "Report Dashboard",
+            description: "Dashboard completa con metriche e insights per monitorare la tua reputazione online."
+          }
+        ]
+      },
+      dining: {
+        title: "Automazione AI",
+        description: "Scopri come l'automazione AI può trasformare i processi della tua azienda.",
+        items: [
+          {
+            title: "Flussi di Lavoro Personalizzati",
+            description: "Sistemi di automazione su misura progettati specificamente per le esigenze della tua azienda."
+          },
+          {
+            title: "Integrazione CRM",
+            description: "Integrazione seamless con i tuoi sistemi esistenti per massimizzare l'efficienza."
+          },
+          {
+            title: "Chatbot Intelligenti",
+            description: "Assistenti virtuali che gestiscono le richieste dei clienti con intelligenza naturale."
+          },
+          {
+            title: "Analytics Predittivi",
+            description: "Insights basati sui dati per prevedere trends e ottimizzare le performance aziendali."
+          }
+        ]
+      },
+      services: {
+        title: "SEO e Marketing",
+        description: "Servizi completi per dominare la ricerca locale e attrarre più clienti.",
+        items: [
+          {
+            title: "Ottimizzazione Google My Business",
+            description: "Ottimizzazione completa del tuo profilo Google Business per massima visibilità locale."
+          },
+          {
+            title: "Gestione Citazioni",
+            description: "Gestione e ottimizzazione delle citazioni online per migliorare l'autorità locale."
+          },
+          {
+            title: "Content Marketing AI",
+            description: "Creazione di contenuti ottimizzati SEO generati dall'AI per il tuo settore."
+          },
+          {
+            title: "Link Building Strategico",
+            description: "Strategie di link building mirate per aumentare l'autorità del tuo sito web."
+          }
+        ]
+      },
+      entertainment: {
+        title: "Supporto e Training",
+        description: "Servizi di supporto completo per garantire il successo della tua implementazione AI.",
+        items: [
+          {
+            title: "Training Team",
+            description: "Formazione completa per il tuo team sull'utilizzo delle nuove tecnologie AI."
+          },
+          {
+            title: "Supporto 24/7",
+            description: "Supporto tecnico continuo per garantire il funzionamento ottimale dei sistemi."
+          },
+          {
+            title: "Consultazioni Strategiche",
+            description: "Sessioni regolari con i nostri esperti per ottimizzare e espandere i tuoi sistemi AI."
+          },
+          {
+            title: "Aggiornamenti Continui",
+            description: "Aggiornamenti regolari e miglioramenti ai tuoi sistemi AI per rimanere all'avanguardia."
+          }
+        ]
+      }
     }
   }
 };

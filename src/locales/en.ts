@@ -1,26 +1,27 @@
 export const en = {
   nav: {
     home: "Home",
-    apartments: "Apartments",
-    amenities: "Amenities",
-    gallery: "Gallery",
+    about: "About Us",
+    services: "Services",
+    vision: "Vision",
+    caseStudies: "Case Studies",
     contact: "Contact",
-    bookNow: "Book Now"
+    getStarted: "Get Started"
   },
   hero: {
-    subtitle: "BEACHFRONT LUXURY ACCOMMODATION",
-    title: "Experience Seaside Tranquility",
-    description: "Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering unparalleled comfort and breathtaking sea views.",
-    bookStay: "Book Your Stay",
-    exploreApartments: "Explore Apartments",
+    subtitle: "SMART SOLUTIONS DESIGNED TO GROW YOUR BUSINESS EFFORTLESSLY",
+    title: "Experience Intelligent Growth with AI-Driven Marketing",
+    description: "From reputation management to AI workflow automation and local SEO — we've got you covered.",
+    getStarted: "Get Started with AI",
+    exploreServices: "Explore Services",
     scrollDown: "Scroll Down"
   },
   footer: {
-    description: "Luxurious beachfront apartments and hotel rooms with stunning sea views, offering the perfect blend of comfort and elegance for your dream vacation.",
+    description: "Radiance Sphere is an AI-powered digital marketing agency helping local businesses grow online by boosting credibility, engaging customers and automating key business tasks.",
     quickLinks: "Quick Links",
     contact: "Contact",
     newsletter: "Newsletter",
-    newsletterDesc: "Subscribe to our newsletter for special deals and updates.",
+    newsletterDesc: "Subscribe to our newsletter for AI marketing insights and growth strategies.",
     yourEmail: "Your email address",
     subscribe: "Subscribe",
     allRights: "All rights reserved."
@@ -48,59 +49,59 @@ export const en = {
   },
   home: {
     welcome: {
-      subtitle: "Welcome to MareSereno",
-      title: "Luxury Seaside Accommodations",
-      description1: "Nestled on the pristine Mediterranean coastline, MareSereno offers an exquisite collection of luxury apartments and hotel rooms. Our beachfront accommodations combine elegant design with modern comfort, creating the perfect setting for an unforgettable seaside getaway.",
-      description2: "Whether you're seeking a romantic escape, a family vacation, or a peaceful retreat, our diverse range of accommodations caters to every preference and need. Each space is thoughtfully designed to provide panoramic sea views and direct beach access.",
+      subtitle: "Welcome to Radiance Sphere",
+      title: "Turning Businesses into 24/7 Revenue Machines with AI",
+      description1: "Radiance Sphere is an AI-powered digital marketing agency helping local businesses grow online by boosting credibility, engaging customers and automating key business tasks. Our intelligent solutions are designed to scale your business effortlessly.",
+      description2: "Whether you're looking to enhance your online reputation, automate workflows, or dominate local search, our AI-driven approach delivers measurable results. Each solution is tailored to your business needs and designed for maximum growth.",
       learnMore: "Learn More"
     },
-    booking: {
-      subtitle: "Book Your Stay",
-      title: "Reserve Your Perfect Getaway",
-      description: "Take the first step towards your dream vacation by checking availability and securing your preferred dates. Our simple booking process ensures a seamless experience from reservation to arrival.",
-      benefits: ["Instant confirmation", "Best rate guarantee", "Flexible cancellation options", "Secure payment"]
+    consultation: {
+      subtitle: "Free Strategy Session",
+      title: "Get Your AI Growth Plan",
+      description: "Book a free consultation to discover how AI can transform your business operations and drive growth. Our experts will create a custom roadmap for your success.",
+      benefits: ["Personalized AI strategy", "Competitive analysis", "Growth opportunities", "Custom implementation plan"]
     },
-    featuredApartments: {
-      subtitle: "Our Accommodations",
-      title: "Featured Apartments",
-      description: "Discover our most popular accommodation options, each offering a perfect blend of comfort, style, and breathtaking sea views.",
-      viewAll: "View All Apartments"
+    featuredServices: {
+      subtitle: "Our Solutions",
+      title: "AI-Powered Marketing Services",
+      description: "Discover our comprehensive suite of AI-driven marketing solutions designed to automate, optimize, and accelerate your business growth.",
+      viewAll: "View All Services"
     },
-    amenities: {
-      subtitle: "Hotel Amenities",
-      title: "Experience The Best",
-      description: "Enjoy our premium facilities and services designed to make your stay exceptional.",
+    benefits: {
+      subtitle: "Why Choose Radiance Sphere",
+      title: "Experience Intelligent Growth",
+      description: "Discover the advantages of AI-powered marketing that works around the clock to grow your business.",
       features: {
-        beachfront: {
-          title: "Beachfront Location",
-          description: "Direct access to pristine beaches with crystal clear waters."
+        reputation: {
+          title: "AI Reputation Management",
+          description: "Harness AI to monitor and respond to reviews, enhance your brand image, and grow customer trust."
         },
-        pools: {
-          title: "Swimming Pools",
-          description: "Relax by our infinity pools with stunning sea views."
+        automation: {
+          title: "Custom AI Workflows",
+          description: "Streamline tasks and boost productivity with custom-built AI systems tailored to your business."
         },
-        restaurant: {
-          title: "Gourmet Restaurant",
-          description: "Enjoy exquisite local and international cuisine."
+        seo: {
+          title: "Local SEO Optimization",
+          description: "Dominate local search and get found on Google with optimized business listings and review strategies."
         },
-        wifi: {
-          title: "High-Speed Wi-Fi",
-          description: "Stay connected with complimentary high-speed internet."
+        analytics: {
+          title: "AI-Powered Analytics",
+          description: "Get intelligent insights and data-driven recommendations to optimize your marketing performance."
         },
-        bar: {
-          title: "Beach Bar & Café",
-          description: "Refreshing drinks and snacks served right on the beach."
+        support: {
+          title: "24/7 AI Monitoring",
+          description: "Our AI systems work around the clock to protect and grow your online presence."
         },
-        location: {
-          title: "Prime Location",
-          description: "Close to local attractions, shops, and restaurants."
+        growth: {
+          title: "Scalable Solutions",
+          description: "Grow with confidence using AI solutions that scale with your business success."
         }
       }
     },
     cta: {
-      title: "Ready for Your Dream Vacation?",
-      description: "Book your stay today and experience the perfect blend of luxury, comfort, and stunning sea views.",
-      bookNow: "Book Now"
+      title: "Ready to Transform Your Business with AI?",
+      description: "Join hundreds of businesses already growing with Radiance Sphere's AI-powered marketing solutions.",
+      getStarted: "Get Started Today"
     }
   },
   apartments: {
@@ -227,14 +228,14 @@ export const en = {
   },
   contact: {
     title: "Contact Us",
-    subtitle: "We're here to help make your stay unforgettable. Reach out with any questions or special requests.",
+    subtitle: "Ready to revolutionize your business with AI? Let's discuss how we can help you grow faster and smarter.",
     getInTouch: "Get In Touch",
     address: "Address",
     phone: "Phone",
     email: "Email",
-    receptionHours: "Reception Hours",
-    checkInTime: "Check-in: After 3:00 PM",
-    checkOutTime: "Check-out: Before 11:00 AM",
+    businessHours: "Business Hours",
+    weekdays: "Monday - Friday: 9:00 AM - 6:00 PM",
+    weekend: "Saturday: 10:00 AM - 4:00 PM",
     sendMessage: "Send Us a Message",
     fullName: "Full Name",
     phoneNumber: "Phone Number",

@@ -10,40 +10,40 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Sample apartments data
-const featuredApartments: ApartmentProps[] = [
+// Featured services data
+const featuredServices: ApartmentProps[] = [
   {
     id: "1",
-    name: "Deluxe Sea View Suite",
-    description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony.",
-    price: 180,
-    capacity: 2,
-    size: 45,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Balcony"]
+    name: "AI Reputation Management",
+    description: "Harness AI to monitor and respond to reviews, enhance your brand image, and grow customer trust.",
+    price: 1200,
+    capacity: 50,
+    size: 24,
+    image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=600&fit=crop",
+    location: "Online",
+    features: ["24/7 Monitoring", "Auto-Response", "Review Analysis", "Sentiment Tracking", "Report Dashboard", "Alert System"]
   },
   {
     id: "2",
-    name: "Premium Family Apartment",
-    description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views.",
-    price: 250,
-    capacity: 4,
-    size: 75,
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
-    location: "Second row",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Washing Machine"]
+    name: "Custom AI Workflow Automation",
+    description: "Streamline tasks and boost productivity with custom-built AI systems tailored to your business.",
+    price: 2500,
+    capacity: 100,
+    size: 168,
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop",
+    location: "Custom Setup",
+    features: ["Process Automation", "Custom AI Models", "Integration Support", "Training Included", "Ongoing Support", "Performance Analytics"]
   },
   {
     id: "3",
-    name: "Executive Beach Studio",
-    description: "Elegant studio with direct beach access, modern design, and premium finishes.",
-    price: 150,
-    capacity: 2,
-    size: 35,
-    image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchenette", "Bathroom", "Air Conditioning", "TV"]
+    name: "Local SEO & Google Business",
+    description: "Dominate local search and get found on Google with optimized business listings and review strategies.",
+    price: 800,
+    capacity: 30,
+    size: 24,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    location: "Local Markets",
+    features: ["Google My Business", "Local Keywords", "Citation Building", "Review Management", "Local Content", "Map Optimization"]
   }
 ];
 
@@ -59,33 +59,33 @@ export default function Index() {
   const features = [
     {
       icon: <Waves className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.beachfront.title,
-      description: t.home.amenities.features.beachfront.description
+      title: t.home.benefits.features.reputation.title,
+      description: t.home.benefits.features.reputation.description
     },
     {
       icon: <LifeBuoy className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.pools.title,
-      description: t.home.amenities.features.pools.description
+      title: t.home.benefits.features.automation.title,
+      description: t.home.benefits.features.automation.description
     },
     {
       icon: <Utensils className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.restaurant.title,
-      description: t.home.amenities.features.restaurant.description
+      title: t.home.benefits.features.seo.title,
+      description: t.home.benefits.features.seo.description
     },
     {
       icon: <Wifi className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.wifi.title,
-      description: t.home.amenities.features.wifi.description
+      title: t.home.benefits.features.analytics.title,
+      description: t.home.benefits.features.analytics.description
     },
     {
       icon: <Coffee className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.bar.title,
-      description: t.home.amenities.features.bar.description
+      title: t.home.benefits.features.support.title,
+      description: t.home.benefits.features.support.description
     },
     {
       icon: <MapPin className="h-8 w-8 text-primary" />,
-      title: t.home.amenities.features.location.title,
-      description: t.home.amenities.features.location.description
+      title: t.home.benefits.features.growth.title,
+      description: t.home.benefits.features.growth.description
     }
   ];
   
@@ -115,7 +115,7 @@ export default function Index() {
                   {t.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
-                  <Link to="/about">
+                  <Link to="/services">
                     {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -148,22 +148,22 @@ export default function Index() {
           </div>
         </section>
         
-        {/* Booking Form Section */}
+        {/* Consultation Form Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  {t.home.booking.subtitle}
+                  {t.home.consultation.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
-                  {t.home.booking.title}
+                  {t.home.consultation.title}
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  {t.home.booking.description}
+                  {t.home.consultation.description}
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {t.home.booking.benefits.map((item, index) => (
+                  {t.home.consultation.benefits.map((item, index) => (
                     <li key={index} className="flex items-center">
                       <div className="h-5 w-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3">
                         <ArrowRight className="h-3 w-3" />
@@ -185,33 +185,33 @@ export default function Index() {
           </div>
         </section>
         
-        {/* Featured Apartments */}
+        {/* Featured Services */}
         <section className="section">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                {t.home.featuredApartments.subtitle}
+                {t.home.featuredServices.subtitle}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                {t.home.featuredApartments.title}
+                {t.home.featuredServices.title}
               </h2>
               <p className="text-muted-foreground">
-                {t.home.featuredApartments.description}
+                {t.home.featuredServices.description}
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredApartments.map((apartment, index) => (
-                <div key={apartment.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                  <ApartmentCard apartment={apartment} />
+              {featuredServices.map((service, index) => (
+                <div key={service.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                  <ApartmentCard apartment={service} />
                 </div>
               ))}
             </div>
             
             <div className="text-center mt-12">
               <Button asChild className="btn-primary">
-                <Link to="/apartments">
-                  {t.home.featuredApartments.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to="/services">
+                  {t.home.featuredServices.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -221,18 +221,18 @@ export default function Index() {
         {/* Testimonials Section */}
         <TestimonialsSection />
         
-        {/* Features Section */}
+        {/* Benefits Section */}
         <section className="section bg-card">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                {t.home.amenities.subtitle}
+                {t.home.benefits.subtitle}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                {t.home.amenities.title}
+                {t.home.benefits.title}
               </h2>
               <p className="text-muted-foreground">
-                {t.home.amenities.description}
+                {t.home.benefits.description}
               </p>
             </div>
             
@@ -265,7 +265,7 @@ export default function Index() {
                 {t.home.cta.description}
               </p>
               <Button asChild size="lg" className="btn-primary">
-                <Link to="/booking">{t.home.cta.bookNow}</Link>
+                <Link to="/contact">{t.home.cta.getStarted}</Link>
               </Button>
             </div>
           </div>

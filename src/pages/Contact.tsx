@@ -92,9 +92,9 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.address}</h3>
                       <p className="text-muted-foreground">
-                        123 Seaside Boulevard<br />
-                        Costa Bella, 12345<br />
-                        Italy
+                        Digital Marketing Hub<br />
+                        Johannesburg, South Africa<br />
+                        Online Worldwide
                       </p>
                     </div>
                   </div>
@@ -105,8 +105,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">+39 123 4567 890</p>
-                      <p className="text-muted-foreground">+39 098 7654 321 (Reservations)</p>
+                      <p className="text-muted-foreground">0782882257</p>
+                      <p className="text-muted-foreground">WhatsApp Available</p>
                     </div>
                   </div>
                   
@@ -116,8 +116,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                      <p className="text-muted-foreground">info@maresereno.com</p>
-                      <p className="text-muted-foreground">reservations@maresereno.com</p>
+                      <p className="text-muted-foreground">radiancesphere3@gmail.com</p>
+                      <p className="text-muted-foreground">Contact for free consultation</p>
                     </div>
                   </div>
                   
@@ -126,11 +126,10 @@ export default function Contact() {
                       <Clock className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{t.contact.receptionHours}</h3>
+                      <h3 className="font-semibold mb-1">{t.contact.businessHours}</h3>
                       <p className="text-muted-foreground">
-                        Monday - Sunday: 24 hours<br />
-                        {t.contact.checkInTime}<br />
-                        {t.contact.checkOutTime}
+                        {t.contact.weekdays}<br />
+                        {t.contact.weekend}
                       </p>
                     </div>
                   </div>
