@@ -47,9 +47,12 @@ export default function HeroSection() {
           <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
             {t.hero.subtitle}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             {t.hero.title}
           </h1>
+          <h2 className="text-2xl md:text-3xl font-semibold text-white/90 mb-6">
+            AI-Powered Reputation Management • Workflow Automation • Local SEO
+          </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             {t.hero.description}
           </p>

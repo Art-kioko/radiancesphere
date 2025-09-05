@@ -200,12 +200,42 @@ export default function Index() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredServices.map((service, index) => (
-                <div key={service.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                  <ApartmentCard apartment={service} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* AI Reputation Management */}
+              <div className="glass-card p-8 rounded-xl animate-fade-in text-center">
+                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                  <Waves className="h-8 w-8 text-primary" />
                 </div>
-              ))}
+                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiReputation.title}</h3>
+                <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiReputation.description}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/services">{t.home.featuredServices.aiReputation.buttonText}</Link>
+                </Button>
+              </div>
+
+              {/* AI Workflow Automation */}
+              <div className="glass-card p-8 rounded-xl animate-fade-in text-center" style={{ animationDelay: '100ms' }}>
+                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                  <LifeBuoy className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiWorkflows.title}</h3>
+                <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiWorkflows.description}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/services">{t.home.featuredServices.aiWorkflows.buttonText}</Link>
+                </Button>
+              </div>
+
+              {/* Local SEO */}
+              <div className="glass-card p-8 rounded-xl animate-fade-in text-center" style={{ animationDelay: '200ms' }}>
+                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                  <MapPin className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.localSeo.title}</h3>
+                <p className="text-muted-foreground mb-6">{t.home.featuredServices.localSeo.description}</p>
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/services">{t.home.featuredServices.localSeo.buttonText}</Link>
+                </Button>
+              </div>
             </div>
             
             <div className="text-center mt-12">

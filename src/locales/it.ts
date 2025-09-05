@@ -62,10 +62,25 @@ export const it = {
       benefits: ["Strategia AI personalizzata", "Analisi competitiva", "Opportunità di crescita", "Piano di implementazione personalizzato"]
     },
     featuredServices: {
-      subtitle: "Le Nostre Soluzioni",
-      title: "Servizi di Marketing Basati sull'AI",
-      description: "Scopri la nostra suite completa di soluzioni di marketing basate sull'AI progettate per automatizzare, ottimizzare e accelerare la crescita della tua attività.",
-      viewAll: "Vedi Tutti i Servizi"
+      subtitle: "I Nostri Servizi Principali",
+      title: "Tre Pilastri della Crescita Aziendale",
+      description: "Domina la tua reputazione online, automatizza i tuoi processi e conquista la ricerca locale con i nostri servizi specializzati alimentati dall'AI.",
+      viewAll: "Visualizza Tutti i Servizi",
+      aiReputation: {
+        title: "Gestione Reputazione Alimentata da AI",
+        description: "Monitora, gestisci e migliora la tua reputazione online con gestione intelligente delle recensioni e analisi del sentiment.",
+        buttonText: "Scopri la Gestione Reputazione"
+      },
+      aiWorkflows: {
+        title: "Automazione Workflow AI", 
+        description: "Semplifica le operazioni aziendali con sistemi AI personalizzati che gestiscono compiti ripetitivi e aumentano la produttività.",
+        buttonText: "Scopri le Soluzioni Workflow"
+      },
+      localSeo: {
+        title: "SEO Locale e Google Business",
+        description: "Domina i risultati di ricerca locale e ottimizza il tuo Profilo Google Business per attrarre più clienti.",
+        buttonText: "Esplora i Servizi SEO"
+      }
     },
     benefits: {
       subtitle: "Perché Scegliere Radiance Sphere",

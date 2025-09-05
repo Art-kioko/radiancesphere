@@ -10,8 +10,8 @@ export const en = {
   },
   hero: {
     subtitle: "SMART SOLUTIONS DESIGNED TO GROW YOUR BUSINESS EFFORTLESSLY",
-    title: "Experience Intelligent Growth with AI-Driven Marketing",
-    description: "From reputation management to AI workflow automation and local SEO — we've got you covered.",
+    title: "Build a Strong Reputation That Drives Business Growth",
+    description: "Transform your online presence with AI-powered reputation management, automated workflows, and strategic local SEO.",
     getStarted: "Get Started with AI",
     exploreServices: "Explore Services",
     scrollDown: "Scroll Down"
@@ -49,59 +49,79 @@ export const en = {
   },
   home: {
     welcome: {
-      subtitle: "Welcome to Radiance Sphere",
-      title: "Turning Businesses into 24/7 Revenue Machines with AI",
-      description1: "Radiance Sphere is an AI-powered digital marketing agency helping local businesses grow online by boosting credibility, engaging customers and automating key business tasks. Our intelligent solutions are designed to scale your business effortlessly.",
-      description2: "Whether you're looking to enhance your online reputation, automate workflows, or dominate local search, our AI-driven approach delivers measurable results. Each solution is tailored to your business needs and designed for maximum growth.",
-      learnMore: "Learn More"
+      subtitle: "About Radiance Sphere",
+      title: "Your Reputation is Your Revenue Engine",
+      description1: "At Radiance Sphere, we specialize in three core areas: AI-powered reputation management that monitors and enhances your online presence, intelligent workflows that automate your business processes, and strategic local SEO that gets you found on Google.",
+      description2: "Every service we offer is designed to strengthen your business reputation and convert that trust into consistent revenue growth.",
+      learnMore: "Learn More About Us"
     },
     consultation: {
-      subtitle: "Free Strategy Session",
-      title: "Get Your AI Growth Plan",
-      description: "Book a free consultation to discover how AI can transform your business operations and drive growth. Our experts will create a custom roadmap for your success.",
-      benefits: ["Personalized AI strategy", "Competitive analysis", "Growth opportunities", "Custom implementation plan"]
+      subtitle: "Get Started Today",
+      title: "Ready to Build Your Reputation?",
+      description: "Book a free consultation and discover how our AI-powered reputation management, workflow automation, and local SEO can transform your business.",
+      benefits: [
+        "Free reputation audit and assessment",
+        "Custom AI workflow recommendations", 
+        "Local SEO strategy consultation",
+        "No obligation - completely free"
+      ]
     },
     featuredServices: {
-      subtitle: "Our Solutions",
-      title: "AI-Powered Marketing Services",
-      description: "Discover our comprehensive suite of AI-driven marketing solutions designed to automate, optimize, and accelerate your business growth.",
-      viewAll: "View All Services"
+      subtitle: "Our Core Services",
+      title: "Three Pillars of Business Growth",
+      description: "Master your online reputation, automate your workflows, and dominate local search with our specialized AI-powered services.",
+      viewAll: "View All Services",
+      aiReputation: {
+        title: "AI-Powered Reputation Management",
+        description: "Monitor, manage, and enhance your online reputation with intelligent review management and sentiment analysis.",
+        buttonText: "Learn About Reputation Management"
+      },
+      aiWorkflows: {
+        title: "AI Workflow Automation", 
+        description: "Streamline your business operations with custom AI systems that handle repetitive tasks and boost productivity.",
+        buttonText: "Discover Workflow Solutions"
+      },
+      localSeo: {
+        title: "Local SEO & Google Business",
+        description: "Dominate local search results and optimize your Google Business Profile to attract more customers.",
+        buttonText: "Explore SEO Services"
+      }
     },
     benefits: {
       subtitle: "Why Choose Radiance Sphere",
-      title: "Experience Intelligent Growth",
-      description: "Discover the advantages of AI-powered marketing that works around the clock to grow your business.",
+      title: "Reputation-Focused Growth That Works",
+      description: "Our three core services work together to build, protect, and leverage your business reputation for maximum growth.",
       features: {
         reputation: {
-          title: "AI Reputation Management",
-          description: "Harness AI to monitor and respond to reviews, enhance your brand image, and grow customer trust."
+          title: "24/7 Reputation Monitoring",
+          description: "AI-powered systems monitor your online presence and automatically respond to reviews to maintain your reputation."
         },
         automation: {
-          title: "Custom AI Workflows",
-          description: "Streamline tasks and boost productivity with custom-built AI systems tailored to your business."
+          title: "Smart Business Workflows", 
+          description: "Custom AI solutions automate your key business processes, saving time and reducing human error."
         },
         seo: {
-          title: "Local SEO Optimization",
-          description: "Dominate local search and get found on Google with optimized business listings and review strategies."
+          title: "Local Search Dominance",
+          description: "Strategic Google Business Profile optimization and local SEO that gets you found by nearby customers."
         },
         analytics: {
-          title: "AI-Powered Analytics",
-          description: "Get intelligent insights and data-driven recommendations to optimize your marketing performance."
+          title: "Reputation Analytics",
+          description: "Track your online reputation score, review trends, and customer sentiment with detailed reporting."
         },
         support: {
-          title: "24/7 AI Monitoring",
-          description: "Our AI systems work around the clock to protect and grow your online presence."
+          title: "Dedicated Specialists",
+          description: "Expert support team focused on reputation management, workflow optimization, and local SEO success."
         },
         growth: {
-          title: "Scalable Solutions",
-          description: "Grow with confidence using AI solutions that scale with your business success."
+          title: "Revenue-Driven Results",
+          description: "Every strategy is designed to convert your strong reputation into measurable business growth and revenue."
         }
       }
     },
     cta: {
-      title: "Ready to Transform Your Business with AI?",
-      description: "Join hundreds of businesses already growing with Radiance Sphere's AI-powered marketing solutions.",
-      getStarted: "Get Started Today"
+      title: "Ready to Build Your Reputation Empire?",
+      description: "Join businesses that have transformed their reputation into a revenue-generating machine with our AI-powered reputation management, workflow automation, and local SEO services.",
+      getStarted: "Start Building Your Reputation"
     }
   },
   apartments: {
