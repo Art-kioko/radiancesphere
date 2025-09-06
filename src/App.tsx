@@ -10,6 +10,10 @@ import BookingPage from "./pages/BookingPage";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Amenities from "./pages/Amenities";
+import Services from "./pages/Services";
+import ReputationManagement from "./pages/ReputationManagement";
+import AIWorkflows from "./pages/AIWorkflows";
+import LocalSEO from "./pages/LocalSEO";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
@@ -30,6 +34,10 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/amenities" element={<Amenities />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/reputation-management" element={<ReputationManagement />} />
+            <Route path="/ai-workflows" element={<AIWorkflows />} />
+            <Route path="/local-seo" element={<LocalSEO />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
