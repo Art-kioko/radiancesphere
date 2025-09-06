@@ -5,6 +5,7 @@ import { MapPin, Search, TrendingUp, Users, Star, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
 
 const LocalSEO = () => {
   const { t } = useLanguage();
@@ -12,6 +13,11 @@ const LocalSEO = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      
+      <main className="flex-1 pt-20">
+        <div className="container pt-8">
+          <BackButton to="/services" label="Back to Services" />
+        </div>
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
@@ -336,6 +342,8 @@ const LocalSEO = () => {
         </div>
       </section>
 
+      </main>
+      
       <Footer />
     </div>
   );

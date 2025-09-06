@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
 import { MapPin, Phone, Mail, Clock, Send, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,6 +57,10 @@ export default function Contact() {
       <Navbar />
       
       <main className="flex-1 pt-20">
+        <div className="container pt-8">
+          <BackButton to="/" />
+        </div>
+        
         {/* Header Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
@@ -92,8 +97,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.address}</h3>
                       <p className="text-muted-foreground">
-                        Digital Marketing Hub<br />
-                        Johannesburg, South Africa<br />
+                        Radiance Sphere<br />
+                        Nairobi, Kenya<br />
                         Online Worldwide
                       </p>
                     </div>

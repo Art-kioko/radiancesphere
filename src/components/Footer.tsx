@@ -17,18 +17,18 @@ export default function Footer() {
               {t.footer.description}
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
+            <a href="https://www.facebook.com/profile.php?id=61562047542540" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Facebook size={20} />
+              <span className="sr-only">Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/_radiancesphere/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram size={20} />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href="https://x.com/RadianceSphere" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Twitter size={20} />
+              <span className="sr-only">Twitter</span>
+            </a>
             </div>
           </div>
           
@@ -37,10 +37,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { name: t.nav.home, path: "/" },
-                { name: t.nav.about, path: "/about" },
                 { name: t.nav.services, path: "/services" },
-                { name: t.nav.vision, path: "/vision" },
-                { name: t.nav.caseStudies, path: "/case-studies" },
                 { name: t.nav.contact, path: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
@@ -61,8 +58,8 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-primary" />
                 <span className="text-muted-foreground">
-                  Digital Marketing Hub<br />
-                  Johannesburg, South Africa<br />
+                  Radiance Sphere<br />
+                  Nairobi, Kenya<br />
                   Online Worldwide
                 </span>
               </li>
