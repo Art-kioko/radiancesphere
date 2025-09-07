@@ -34,11 +34,11 @@ const AIWorkflows = () => {
             and executes complex tasks while you focus on growth and strategy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Automate Your Business
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Automate Your Business</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              See Automation Examples
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/services">See Automation Examples</a>
             </Button>
           </div>
         </div>
@@ -230,7 +230,7 @@ const AIWorkflows = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Automation is Critical in 2024</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Automation is Critical in Today's Era</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               The competitive landscape demands efficiency. Businesses that don't automate 
               get left behind by those that do.
@@ -298,11 +298,11 @@ const AIWorkflows = () => {
             Start your automation journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Get Your Free Automation Assessment
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Get Your Free Automation Assessment</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Book a Strategy Call
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/contact">Book a Strategy Call</a>
             </Button>
           </div>
         </div>

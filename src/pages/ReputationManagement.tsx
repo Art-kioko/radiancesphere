@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3 } from "lucide-react";
+import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
+import reputationImage from "@/assets/reputation-reviews.png";
 
 const ReputationManagement = () => {
   const { t } = useLanguage();
@@ -34,11 +35,11 @@ const ReputationManagement = () => {
             building unshakeable trust and credibility for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Start Building Your Reputation
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Start Building Your Reputation</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              View Success Stories
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/services">View Our Services</a>
             </Button>
           </div>
         </div>
@@ -98,6 +99,51 @@ const ReputationManagement = () => {
               Advanced artificial intelligence that works around the clock to protect, enhance, 
               and grow your online reputation across all platforms.
             </p>
+          </div>
+
+          {/* Review Fetch Process */}
+          <div className="mb-16 p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">How Our Review Fetch Works</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Search className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">1. Comprehensive Monitoring</h4>
+                      <p className="text-muted-foreground text-sm">Our AI continuously scans 50+ review platforms including Google, Facebook, Yelp, TripAdvisor, and industry-specific sites.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">2. Real-Time Collection</h4>
+                      <p className="text-muted-foreground text-sm">Reviews are fetched in real-time using advanced APIs and web scraping, ensuring you never miss a mention of your business.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">3. Intelligent Analysis</h4>
+                      <p className="text-muted-foreground text-sm">Each review is analyzed for sentiment, keywords, and urgency level, then categorized for appropriate response strategies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/1b2f1422-a692-4c56-8639-1d04cfccdba8.png" 
+                  alt="Happy customer with positive review notifications" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -160,7 +206,7 @@ const ReputationManagement = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why It's Essential in 2024</h2>
+            <h2 className="text-3xl font-bold mb-4">Why It's Essential in the Modern-Day Era</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Modern consumers make decisions faster than ever. Your reputation needs to work 
               as hard as you do to capture and convert potential customers.
@@ -228,11 +274,11 @@ const ReputationManagement = () => {
             Start your transformation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Get Your Free Reputation Audit
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Get Your Free Reputation Audit</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Schedule a Consultation
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/contact">Schedule a Consultation</a>
             </Button>
           </div>
         </div>

@@ -34,11 +34,11 @@ const LocalSEO = () => {
             that puts your business at the top of local search results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Dominate Local Search
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Dominate Local Search</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Analyze My Local Presence
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/contact">Analyze My Local Presence</a>
             </Button>
           </div>
         </div>
@@ -332,11 +332,11 @@ const LocalSEO = () => {
             the obvious choice in your market.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Get Your Free Local SEO Audit
+            <Button asChild size="lg" className="text-lg px-8">
+              <a href="/contact">Get Your Free Local SEO Audit</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Schedule Local SEO Strategy Call
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/contact">Schedule Local SEO Strategy Call</a>
             </Button>
           </div>
         </div>

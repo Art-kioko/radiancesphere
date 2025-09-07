@@ -21,21 +21,32 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function BookingForm() {
   const { t } = useLanguage();
-  const [startDate, setStartDate] = useState<Date>();
-  const [endDate, setEndDate] = useState<Date>();
-  const [adults, setAdults] = useState("2");
-  const [children, setChildren] = useState("0");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send the booking data to a server
-    console.log("Booking submitted:", { startDate, endDate, adults, children });
+    console.log("Consultation request submitted:", { 
+      firstName, lastName, email, phone, company, service, message 
+    });
     setSubmitted(true);
     
     // Reset form after 3 seconds
     setTimeout(() => {
       setSubmitted(false);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      setCompany("");
+      setService("");
+      setMessage("");
     }, 3000);
   };
 
@@ -44,113 +55,111 @@ export default function BookingForm() {
       onSubmit={handleSubmit} 
       className="glass-card p-6 space-y-6 animate-fade-in [animation-delay:200ms]"
     >
-      <h3 className="text-2xl font-bold text-center mb-6">{t.bookingForm.title}</h3>
+      <h3 className="text-2xl font-bold text-center mb-6">Get Your Free Consultation</h3>
       
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Check-in Date */}
           <div className="space-y-2">
-            <label htmlFor="check-in" className="block text-sm font-medium">
-              {t.bookingForm.checkIn}
+            <label htmlFor="firstName" className="block text-sm font-medium">
+              First Name
             </label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  id="check-in"
-                  variant="outline"
-                  className={cn(
-                    "w-full justify-start text-left font-normal",
-                    !startDate && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {startDate ? format(startDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={startDate}
-                  onSelect={setStartDate}
-                  initialFocus
-                  disabled={(date) => date < new Date()}
-                  className="pointer-events-auto"
-                />
-              </PopoverContent>
-            </Popover>
+            <input
+              type="text"
+              id="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
           </div>
           
-          {/* Check-out Date */}
           <div className="space-y-2">
-            <label htmlFor="check-out" className="block text-sm font-medium">
-              {t.bookingForm.checkOut}
+            <label htmlFor="lastName" className="block text-sm font-medium">
+              Last Name
             </label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  id="check-out"
-                  variant="outline"
-                  className={cn(
-                    "w-full justify-start text-left font-normal",
-                    !endDate && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {endDate ? format(endDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={endDate}
-                  onSelect={setEndDate}
-                  initialFocus
-                  disabled={(date) => date < (startDate || new Date())}
-                  className="pointer-events-auto"
-                />
-              </PopoverContent>
-            </Popover>
+            <input
+              type="text"
+              id="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Adults */}
           <div className="space-y-2">
-            <label htmlFor="adults" className="block text-sm font-medium">
-              {t.bookingForm.adults}
+            <label htmlFor="email" className="block text-sm font-medium">
+              Email
             </label>
-            <Select value={adults} onValueChange={setAdults}>
-              <SelectTrigger id="adults" className="w-full">
-                <SelectValue placeholder="Select" />
-              </SelectTrigger>
-              <SelectContent>
-                {[1, 2, 3, 4, 5, 6].map((num) => (
-                  <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.bookingForm.adult : t.bookingForm.adults}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
           </div>
           
-          {/* Children */}
           <div className="space-y-2">
-            <label htmlFor="children" className="block text-sm font-medium">
-              {t.bookingForm.children}
+            <label htmlFor="phone" className="block text-sm font-medium">
+              Phone
             </label>
-            <Select value={children} onValueChange={setChildren}>
-              <SelectTrigger id="children" className="w-full">
-                <SelectValue placeholder="Select" />
-              </SelectTrigger>
-              <SelectContent>
-                {[0, 1, 2, 3, 4].map((num) => (
-                  <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.bookingForm.child : t.bookingForm.children}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
           </div>
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="company" className="block text-sm font-medium">
+            Company (Optional)
+          </label>
+          <input
+            type="text"
+            id="company"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="service" className="block text-sm font-medium">
+            Service Interest
+          </label>
+          <Select value={service} onValueChange={setService}>
+            <SelectTrigger>
+              <SelectValue placeholder="Select a service" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="reputation">AI Reputation Management</SelectItem>
+              <SelectItem value="automation">AI Workflow Automation</SelectItem>
+              <SelectItem value="seo">Local SEO & Google Business</SelectItem>
+              <SelectItem value="general">General Consultation</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="message" className="block text-sm font-medium">
+            Tell us about your business needs
+          </label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            rows={3}
+            className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+            placeholder="Describe your business challenges and goals..."
+          />
         </div>
       </div>
       
@@ -158,12 +167,12 @@ export default function BookingForm() {
         {submitted ? (
           <>
             <Check className="mr-2 h-4 w-4" />
-            {t.bookingForm.bookingConfirmed}
+            Request Sent! We'll Contact You Soon
           </>
         ) : (
           <>
             <Users className="mr-2 h-4 w-4" />
-            {t.bookingForm.checkAvailability}
+            Request Free Consultation
           </>
         )}
       </Button>
