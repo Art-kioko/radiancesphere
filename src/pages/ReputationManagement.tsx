@@ -148,7 +148,20 @@ const ReputationManagement = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Search className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Review Fetch</h3>
+                    <p className="text-muted-foreground">
+                      Automatically collects reviews from 50+ platforms using advanced APIs and web scraping, 
+                      ensuring comprehensive coverage of your online presence.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <Star className="w-6 h-6 text-primary" />
@@ -158,6 +171,19 @@ const ReputationManagement = () => {
                     <p className="text-muted-foreground">
                       AI monitors all review platforms 24/7, instantly alerting you to new reviews 
                       and sentiment changes across Google, Facebook, Yelp, and more.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Sentiment Analysis</h3>
+                    <p className="text-muted-foreground">
+                      Advanced AI analyzes the emotional tone and context of reviews to identify 
+                      critical issues and positive trends affecting your reputation.
                     </p>
                   </div>
                 </div>
