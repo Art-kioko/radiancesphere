@@ -101,7 +101,7 @@ const ReputationManagement = () => {
             </p>
           </div>
 
-          {/* Review Fetch Process */}
+          {/* How Our Review Fetch Works */}
           <div className="mb-16 p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
