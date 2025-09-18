@@ -22,36 +22,39 @@ const ReputationManagement = () => {
         </div>
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <Badge className="mb-6" variant="secondary">
-                <Shield className="w-4 h-4 mr-2" />
-                AI-Powered Solution
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                AI-Powered Reputation Management
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-3xl lg:max-w-none">
-                Transform your online reputation with intelligent AI that monitors, analyzes, and responds to reviews 24/7, 
-                building unshakeable trust and credibility for your business.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button asChild size="lg" className="text-lg px-8">
-                  <a href="/contact">Start Building Your Reputation</a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8">
-                  <a href="/services">View Our Services</a>
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Online reviews and ratings visualization with 4.5 star rating" 
-                className="w-full rounded-xl shadow-lg"
-              />
+      <section className="relative h-screen overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
+        />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        
+        {/* Content */}
+        <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
+          <div className="max-w-6xl animate-fade-in">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20" variant="secondary">
+              <Shield className="w-4 h-4 mr-2" />
+              AI-Powered Solution
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              AI-Powered Reputation Management
+            </h1>
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+              Transform your online reputation with intelligent AI that monitors, analyzes, and responds to reviews 24/7, 
+              building unshakeable trust and credibility for your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" variant="heroSolid" className="text-lg px-8 min-w-[250px] rounded-full">
+                <a href="/contact">Start Building Your Reputation</a>
+              </Button>
+              <Button asChild size="lg" variant="hero" className="text-lg px-8 min-w-[200px] rounded-full">
+                <a href="/services">View Our Services</a>
+              </Button>
             </div>
           </div>
         </div>
