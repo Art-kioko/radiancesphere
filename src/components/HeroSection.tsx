@@ -57,11 +57,11 @@ export default function HeroSection() {
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-full">
                 <div
-                  className="h-full w-full bg-cover bg-center opacity-40"
+                  className="h-full w-full bg-cover bg-center opacity-55"
                   style={{
                     backgroundImage: `url('${image}')`,
                     backgroundPosition: `center ${50 + scrollY * 0.05}%`,
-                    filter: "brightness(0.6) contrast(0.8)"
+                    filter: "brightness(0.75) contrast(0.9)"
                   }}
                 />
               </CarouselItem>
