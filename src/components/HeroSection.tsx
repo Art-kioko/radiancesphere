@@ -59,7 +59,7 @@ export default function HeroSection() {
                 <div
                   className="h-full w-full bg-cover bg-center opacity-55"
                   style={{
-                    backgroundImage: `url('${image}')`,
+                    backgroundImage: `url(${image})`,
                     backgroundPosition: `center ${50 + scrollY * 0.05}%`,
                     filter: "brightness(0.75) contrast(0.9)"
                   }}
