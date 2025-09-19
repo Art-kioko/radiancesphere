@@ -5,10 +5,20 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import customerService1 from "@/assets/customer-service-1.png";
+import customerService2 from "@/assets/customer-service-2.png";
 
 export default function HeroSection() {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
+  
+  const heroImages = [
+    customerService1,
+    customerService2,
+    "https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?q=80&w=1920&auto=format&fit=crop"
+  ];
   
   useEffect(() => {
     const handleScroll = () => {
@@ -25,18 +35,43 @@ export default function HeroSection() {
   
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Background image with parallax */}
+      {/* Background carousel with parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?q=80&w=1920&auto=format&fit=crop')",
-          transform: `translateY(${backgroundY}px)`,
-          backgroundPosition: `center ${50 + scrollY * 0.05}%`
-        }}
-      />
+        className="absolute inset-0"
+        style={{ transform: `translateY(${backgroundY}px)` }}
+      >
+        <Carousel
+          className="h-full w-full"
+          plugins={[
+            Autoplay({
+              delay: 4000,
+              stopOnInteraction: false,
+            }),
+          ]}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="h-full">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <div
+                  className="h-full w-full bg-cover bg-center opacity-40"
+                  style={{
+                    backgroundImage: `url('${image}')`,
+                    backgroundPosition: `center ${50 + scrollY * 0.05}%`,
+                    filter: "brightness(0.6) contrast(0.8)"
+                  }}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
       
       {/* Content */}
       <div
