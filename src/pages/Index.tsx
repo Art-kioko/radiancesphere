@@ -11,6 +11,7 @@ import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "luc
 import { useLanguage } from "@/contexts/LanguageContext";
 import customerService5 from "@/assets/customer-service-5.png";
 import customerService6 from "@/assets/customer-service-6.png";
+import customerService7 from "@/assets/customer-service-7.png";
 
 // Featured services data
 const featuredServices: ApartmentProps[] = [
@@ -126,8 +127,8 @@ export default function Index() {
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
-                    alt="Seaside view" 
+                    src={customerService7}
+                    alt="AI Chat Technology" 
                     className="w-full h-full object-cover"
                   />
                 </div>
