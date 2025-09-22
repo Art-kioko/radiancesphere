@@ -118,7 +118,7 @@ export default function Index() {
                   {t.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
-                  <Link to="/services">
+                  <Link to="/about">
                     {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -175,6 +175,13 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-8">
+                  <Button asChild variant="outline" className="w-full">
+                    <a href="https://calendar.app.google/6J717QLS7QUzPvXaA" target="_blank" rel="noopener noreferrer">
+                      Schedule via Google Calendar
+                    </a>
+                  </Button>
+                </div>
               </div>
               
               <BookingForm />
