@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import customerService5 from "@/assets/customer-service-5.png";
+import customerService6 from "@/assets/customer-service-6.png";
 
 // Featured services data
 const featuredServices: ApartmentProps[] = [
@@ -131,15 +133,15 @@ export default function Index() {
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop"
-                    alt="Luxury apartment interior" 
+                    src={customerService5}
+                    alt="AI Customer Service" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop"
-                    alt="Pool view" 
+                    src={customerService6}
+                    alt="Review Management" 
                     className="w-full h-full object-cover"
                   />
                 </div>
