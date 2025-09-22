@@ -9,6 +9,8 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 import customerService1 from "@/assets/customer-service-1.png";
 import customerService2 from "@/assets/customer-service-2.png";
+import customerService3 from "@/assets/customer-service-3.png";
+import customerService4 from "@/assets/customer-service-4.png";
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -17,6 +19,8 @@ export default function HeroSection() {
   const heroImages = [
     customerService1,
     customerService2,
+    customerService3,
+    customerService4,
     "https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?q=80&w=1920&auto=format&fit=crop"
   ];
   
@@ -57,11 +61,11 @@ export default function HeroSection() {
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-full">
                 <div
-                  className="h-full w-full bg-cover bg-center opacity-55"
+                  className="h-full w-full bg-cover bg-center opacity-40"
                   style={{
                     backgroundImage: `url(${image})`,
                     backgroundPosition: `center ${50 + scrollY * 0.05}%`,
-                    filter: "brightness(0.75) contrast(0.9)"
+                    filter: "brightness(0.6) contrast(0.8)"
                   }}
                 />
               </CarouselItem>
