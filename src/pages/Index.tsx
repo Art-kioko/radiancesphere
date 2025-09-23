@@ -176,17 +176,12 @@ export default function Index() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <div className="w-full">
-                    <h4 className="text-lg font-semibold mb-4 text-center">Schedule via Google Calendar</h4>
-                    {/* Google Calendar Appointment Scheduling begin */}
-                    <iframe 
-                      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3i9ORFE8EggtFQZFL_-vCWTrYQEgNFHdg8bN7yt02pyYx-ABoAFPRBAJbVFR74dC3tYsIS5xuk?gv=true" 
-                      style={{ border: 0 }} 
-                      width="100%" 
-                      height="600" 
-                      frameBorder="0"
-                    />
-                    {/* end Google Calendar Appointment Scheduling */}
+                  <div className="text-center">
+                    <Button asChild size="lg" className="btn-primary">
+                      <a href="https://calendar.app.google/6J717QLS7QUzPvXaA" target="_blank" rel="noopener noreferrer">
+                        Schedule via Google Calendar
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>
