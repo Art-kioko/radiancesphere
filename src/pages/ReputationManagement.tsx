@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
@@ -53,7 +54,7 @@ const ReputationManagement = () => {
                 <a href="/contact">Start Building Your Reputation</a>
               </Button>
               <Button asChild size="lg" variant="hero" className="text-lg px-8 min-w-[200px] rounded-full">
-                <a href="/services">View Our Services</a>
+                <a href="#pricing">Pricing</a>
               </Button>
             </div>
           </div>
@@ -266,6 +267,99 @@ const ReputationManagement = () => {
                 amplifies all other growth efforts.
               </p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 px-4 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Reputation Management Pricing</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Choose the perfect plan for your business needs. All plans include our core AI-powered reputation management features.
+            </p>
+          </div>
+
+          <div className="bg-background rounded-lg shadow-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[200px] font-semibold">Feature/Tier</TableHead>
+                  <TableHead className="text-center font-semibold">Basic (Starter)</TableHead>
+                  <TableHead className="text-center font-semibold">Growth (Standard)</TableHead>
+                  <TableHead className="text-center font-semibold">Premium (Full-Service)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">Setup Fee (One-time)</TableCell>
+                  <TableCell className="text-center">KES 3,500</TableCell>
+                  <TableCell className="text-center">KES 7,000</TableCell>
+                  <TableCell className="text-center">KES 10,000 - 15,000 (Custom Quote)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Monthly Fee</TableCell>
+                  <TableCell className="text-center">KES 7,500</TableCell>
+                  <TableCell className="text-center">KES 19,500</TableCell>
+                  <TableCell className="text-center">KES 25,000 - 40,000+ (Custom Quote)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Review Platforms</TableCell>
+                  <TableCell className="text-center">1 Google Business Profile</TableCell>
+                  <TableCell className="text-center">Up to 3 (Google Business Profile, Facebook)</TableCell>
+                  <TableCell className="text-center">Unlimited relevant platforms</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Sentiment Analysis</TableCell>
+                  <TableCell className="text-center">N/A</TableCell>
+                  <TableCell className="text-center">Yes (AI-powered)</TableCell>
+                  <TableCell className="text-center">Yes (AI-powered, highly refined)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Positive Responses</TableCell>
+                  <TableCell className="text-center">AI-drafted & auto-posted (generic brand voice)</TableCell>
+                  <TableCell className="text-center">AI-drafted & auto-posted (custom brand voice)</TableCell>
+                  <TableCell className="text-center">AI-drafted, reviewed & customized before posting</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Negative Feedback Handling</TableCell>
+                  <TableCell className="text-center">WhatsApp/Email alerts to owner</TableCell>
+                  <TableCell className="text-center">Recorded to database<br/>WhatsApp/Email alerts to owner</TableCell>
+                  <TableCell className="text-center">Recorded to database<br/>Priority WhatsApp/Email alerts to owner<br/>Dedicated escalation support</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Feedback Solicitation</TableCell>
+                  <TableCell className="text-center">N/A</TableCell>
+                  <TableCell className="text-center">Conditional Logic</TableCell>
+                  <TableCell className="text-center">Conditional Logic<br/>CRM Integration (option)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Human Oversight</TableCell>
+                  <TableCell className="text-center">Limited (for setup & alerts)</TableCell>
+                  <TableCell className="text-center">Periodic check-ins & critical issue review</TableCell>
+                  <TableCell className="text-center">Dedicated Account Manager, proactive monitoring & intervention</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Reporting</TableCell>
+                  <TableCell className="text-center">Reviews Summary Report</TableCell>
+                  <TableCell className="text-center">Detailed Monthly Review Reports</TableCell>
+                  <TableCell className="text-center">Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Support</TableCell>
+                  <TableCell className="text-center">Email Support</TableCell>
+                  <TableCell className="text-center">Email & WhatsApp Support</TableCell>
+                  <TableCell className="text-center">Priority Email, WhatsApp & Phone Support</TableCell>
+                </TableRow>
+                <TableRow className="bg-muted/50">
+                  <TableCell className="font-medium">Key Benefit</TableCell>
+                  <TableCell className="text-center font-medium">Saves time, consistent replies, critical alerts</TableCell>
+                  <TableCell className="text-center font-medium">Protects online reputation, improves customer satisfaction</TableCell>
+                  <TableCell className="text-center font-medium">Elite brand protection, data-driven insights, maximum growth</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>
