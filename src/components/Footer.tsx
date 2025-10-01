@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="animate-fade-in [animation-delay:100ms]">
             <Link to="/" className="inline-block mb-4">
-              <img src={logo} alt="Radiance Sphere" className="h-16 w-auto" />
+              <img src={logo} alt="Radiance Sphere" className="h-24 w-auto" />
             </Link>
             <p className="text-muted-foreground mb-4">
               {t.footer.description}

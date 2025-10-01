@@ -361,7 +361,7 @@ const ReputationManagement = () => {
                 </TableRow>
                 
                 <TableRow>
-                  <TableCell colSpan={4} className="p-0">
+                  <TableCell colSpan={4} className="p-0 border-b-0">
                     <Collapsible open={showAllFeatures} onOpenChange={setShowAllFeatures}>
                       <CollapsibleTrigger asChild>
                         <div className="w-full text-center py-4 cursor-pointer hover:bg-muted/50">
@@ -371,44 +371,44 @@ const ReputationManagement = () => {
                           </Button>
                         </div>
                       </CollapsibleTrigger>
-                  
-                      <CollapsibleContent asChild>
-                        <>
-                          <TableRow>
-                            <TableCell className="font-medium">Negative Feedback Handling</TableCell>
-                            <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
-                            <TableCell className="text-center">Database + Alerts</TableCell>
-                            <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell className="font-medium">Feedback Solicitation</TableCell>
-                            <TableCell className="text-center">N/A</TableCell>
-                            <TableCell className="text-center">Conditional Logic</TableCell>
-                            <TableCell className="text-center">Conditional + CRM Integration</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell className="font-medium">Human Oversight</TableCell>
-                            <TableCell className="text-center">Limited</TableCell>
-                            <TableCell className="text-center">Periodic check-ins</TableCell>
-                            <TableCell className="text-center">Dedicated Account Manager</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell className="font-medium">Reporting</TableCell>
-                            <TableCell className="text-center">Summary Report</TableCell>
-                            <TableCell className="text-center">Monthly Reports</TableCell>
-                            <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell className="font-medium">Support</TableCell>
-                            <TableCell className="text-center">Email</TableCell>
-                            <TableCell className="text-center">Email & WhatsApp</TableCell>
-                            <TableCell className="text-center">Priority Multi-channel</TableCell>
-                          </TableRow>
-                        </>
-                      </CollapsibleContent>
                     </Collapsible>
                   </TableCell>
                 </TableRow>
+                
+                {showAllFeatures && (
+                  <>
+                    <TableRow>
+                      <TableCell className="font-medium">Negative Feedback Handling</TableCell>
+                      <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
+                      <TableCell className="text-center">Database + Alerts</TableCell>
+                      <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Feedback Solicitation</TableCell>
+                      <TableCell className="text-center">N/A</TableCell>
+                      <TableCell className="text-center">Conditional Logic</TableCell>
+                      <TableCell className="text-center">Conditional + CRM Integration</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Human Oversight</TableCell>
+                      <TableCell className="text-center">Limited</TableCell>
+                      <TableCell className="text-center">Periodic check-ins</TableCell>
+                      <TableCell className="text-center">Dedicated Account Manager</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Reporting</TableCell>
+                      <TableCell className="text-center">Summary Report</TableCell>
+                      <TableCell className="text-center">Monthly Reports</TableCell>
+                      <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium">Support</TableCell>
+                      <TableCell className="text-center">Email</TableCell>
+                      <TableCell className="text-center">Email & WhatsApp</TableCell>
+                      <TableCell className="text-center">Priority Multi-channel</TableCell>
+                    </TableRow>
+                  </>
+                )}
                 
                 <TableRow className="bg-muted/50">
                   <TableCell className="font-medium">Key Benefit</TableCell>

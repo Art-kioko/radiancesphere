@@ -36,7 +36,7 @@ export default function Navbar() {
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Radiance Sphere" className="h-12 w-auto" />
+            <img src={logo} alt="Radiance Sphere" className="h-20 w-auto" />
           </Link>
           <LanguageSelector />
         </div>
