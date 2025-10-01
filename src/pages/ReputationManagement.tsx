@@ -1,17 +1,31 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
+import ScrollToTop from "@/components/ScrollToTop";
 import reputationImage from "@/assets/reputation-reviews.png";
 import heroImage from "@/assets/online-reviews-hero.webp";
 
 const ReputationManagement = () => {
   const { t } = useLanguage();
+  const [isAnnual, setIsAnnual] = useState(false);
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+
+  const calculatePrice = (monthlyPrice: string) => {
+    const numPrice = parseInt(monthlyPrice.replace(/[^0-9]/g, ''));
+    if (isAnnual) {
+      const annualPrice = Math.round(numPrice * 12 * 0.8); // 20% discount
+      return `KES ${annualPrice.toLocaleString()}`;
+    }
+    return monthlyPrice;
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -279,6 +293,29 @@ const ReputationManagement = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Choose the perfect plan for your business needs. All plans include our core AI-powered reputation management features.
             </p>
+            
+            {/* Pricing Toggle */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <span className={`text-sm font-medium ${!isAnnual ? 'text-primary' : 'text-muted-foreground'}`}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                  isAnnual ? 'bg-primary' : 'bg-muted'
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-background transition-transform ${
+                    isAnnual ? 'translate-x-6' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`text-sm font-medium ${isAnnual ? 'text-primary' : 'text-muted-foreground'}`}>
+                Annual
+                {isAnnual && <Badge className="ml-2" variant="secondary">Save 20%</Badge>}
+              </span>
+            </div>
           </div>
 
           <div className="bg-background rounded-lg shadow-lg overflow-hidden">
@@ -296,67 +333,86 @@ const ReputationManagement = () => {
                   <TableCell className="font-medium">Setup Fee (One-time)</TableCell>
                   <TableCell className="text-center">KES 3,500</TableCell>
                   <TableCell className="text-center">KES 7,000</TableCell>
-                  <TableCell className="text-center">KES 10,000 - 15,000 (Custom Quote)</TableCell>
+                  <TableCell className="text-center">KES 10,000 - 15,000</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Monthly Fee</TableCell>
-                  <TableCell className="text-center">KES 7,500</TableCell>
-                  <TableCell className="text-center">KES 19,500</TableCell>
-                  <TableCell className="text-center">KES 25,000 - 40,000+ (Custom Quote)</TableCell>
+                  <TableCell className="font-medium">{isAnnual ? 'Annual Fee' : 'Monthly Fee'}</TableCell>
+                  <TableCell className="text-center">{calculatePrice('KES 7,500')}</TableCell>
+                  <TableCell className="text-center">{calculatePrice('KES 19,500')}</TableCell>
+                  <TableCell className="text-center">{isAnnual ? 'KES 240,000 - 384,000+' : 'KES 25,000 - 40,000+'}</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Review Platforms</TableCell>
                   <TableCell className="text-center">1 Google Business Profile</TableCell>
-                  <TableCell className="text-center">Up to 3 (Google Business Profile, Facebook)</TableCell>
-                  <TableCell className="text-center">Unlimited relevant platforms</TableCell>
+                  <TableCell className="text-center">Up to 3 platforms</TableCell>
+                  <TableCell className="text-center">Unlimited platforms</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Sentiment Analysis</TableCell>
                   <TableCell className="text-center">N/A</TableCell>
                   <TableCell className="text-center">Yes (AI-powered)</TableCell>
-                  <TableCell className="text-center">Yes (AI-powered, highly refined)</TableCell>
+                  <TableCell className="text-center">Yes (Advanced AI)</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Positive Responses</TableCell>
-                  <TableCell className="text-center">AI-drafted & auto-posted (generic brand voice)</TableCell>
-                  <TableCell className="text-center">AI-drafted & auto-posted (custom brand voice)</TableCell>
-                  <TableCell className="text-center">AI-drafted, reviewed & customized before posting</TableCell>
+                  <TableCell className="font-medium">Response Generation</TableCell>
+                  <TableCell className="text-center">AI auto-posted</TableCell>
+                  <TableCell className="text-center">AI custom voice</TableCell>
+                  <TableCell className="text-center">AI + human review</TableCell>
                 </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Negative Feedback Handling</TableCell>
-                  <TableCell className="text-center">WhatsApp/Email alerts to owner</TableCell>
-                  <TableCell className="text-center">Recorded to database<br/>WhatsApp/Email alerts to owner</TableCell>
-                  <TableCell className="text-center">Recorded to database<br/>Priority WhatsApp/Email alerts to owner<br/>Dedicated escalation support</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Feedback Solicitation</TableCell>
-                  <TableCell className="text-center">N/A</TableCell>
-                  <TableCell className="text-center">Conditional Logic</TableCell>
-                  <TableCell className="text-center">Conditional Logic<br/>CRM Integration (option)</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Human Oversight</TableCell>
-                  <TableCell className="text-center">Limited (for setup & alerts)</TableCell>
-                  <TableCell className="text-center">Periodic check-ins & critical issue review</TableCell>
-                  <TableCell className="text-center">Dedicated Account Manager, proactive monitoring & intervention</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Reporting</TableCell>
-                  <TableCell className="text-center">Reviews Summary Report</TableCell>
-                  <TableCell className="text-center">Detailed Monthly Review Reports</TableCell>
-                  <TableCell className="text-center">Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Support</TableCell>
-                  <TableCell className="text-center">Email Support</TableCell>
-                  <TableCell className="text-center">Email & WhatsApp Support</TableCell>
-                  <TableCell className="text-center">Priority Email, WhatsApp & Phone Support</TableCell>
-                </TableRow>
+                
+                <Collapsible open={showAllFeatures} onOpenChange={setShowAllFeatures}>
+                  <CollapsibleTrigger asChild>
+                    <TableRow className="cursor-pointer hover:bg-muted/50">
+                      <TableCell colSpan={4} className="text-center py-4">
+                        <Button variant="ghost" className="w-full">
+                          <span className="mr-2">{showAllFeatures ? 'Hide' : 'Show'} all features</span>
+                          <ChevronDown className={`h-4 w-4 transition-transform ${showAllFeatures ? 'rotate-180' : ''}`} />
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  </CollapsibleTrigger>
+                  
+                  <CollapsibleContent asChild>
+                    <>
+                      <TableRow>
+                        <TableCell className="font-medium">Negative Feedback Handling</TableCell>
+                        <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
+                        <TableCell className="text-center">Database + Alerts</TableCell>
+                        <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="font-medium">Feedback Solicitation</TableCell>
+                        <TableCell className="text-center">N/A</TableCell>
+                        <TableCell className="text-center">Conditional Logic</TableCell>
+                        <TableCell className="text-center">Conditional + CRM Integration</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="font-medium">Human Oversight</TableCell>
+                        <TableCell className="text-center">Limited</TableCell>
+                        <TableCell className="text-center">Periodic check-ins</TableCell>
+                        <TableCell className="text-center">Dedicated Account Manager</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="font-medium">Reporting</TableCell>
+                        <TableCell className="text-center">Summary Report</TableCell>
+                        <TableCell className="text-center">Monthly Reports</TableCell>
+                        <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="font-medium">Support</TableCell>
+                        <TableCell className="text-center">Email</TableCell>
+                        <TableCell className="text-center">Email & WhatsApp</TableCell>
+                        <TableCell className="text-center">Priority Multi-channel</TableCell>
+                      </TableRow>
+                    </>
+                  </CollapsibleContent>
+                </Collapsible>
+                
                 <TableRow className="bg-muted/50">
                   <TableCell className="font-medium">Key Benefit</TableCell>
-                  <TableCell className="text-center font-medium">Saves time, consistent replies, critical alerts</TableCell>
-                  <TableCell className="text-center font-medium">Protects online reputation, improves customer satisfaction</TableCell>
-                  <TableCell className="text-center font-medium">Elite brand protection, data-driven insights, maximum growth</TableCell>
+                  <TableCell className="text-center font-medium">Time-saving automation</TableCell>
+                  <TableCell className="text-center font-medium">Reputation protection</TableCell>
+                  <TableCell className="text-center font-medium">Elite brand management</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -386,6 +442,7 @@ const ReputationManagement = () => {
       </main>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
