@@ -21,8 +21,8 @@ const ReputationManagement = () => {
   const calculatePrice = (monthlyPrice: string) => {
     const numPrice = parseInt(monthlyPrice.replace(/[^0-9]/g, ''));
     if (isAnnual) {
-      const annualPrice = Math.round(numPrice * 12 * 0.8); // 20% discount
-      return `KES ${annualPrice.toLocaleString()}`;
+      const discountedMonthly = Math.round(numPrice * 0.8); // 20% discount
+      return `KES ${discountedMonthly.toLocaleString()}/mo`;
     }
     return monthlyPrice;
   };
@@ -360,53 +360,55 @@ const ReputationManagement = () => {
                   <TableCell className="text-center">AI + human review</TableCell>
                 </TableRow>
                 
-                <Collapsible open={showAllFeatures} onOpenChange={setShowAllFeatures}>
-                  <CollapsibleTrigger asChild>
-                    <TableRow className="cursor-pointer hover:bg-muted/50">
-                      <TableCell colSpan={4} className="text-center py-4">
-                        <Button variant="ghost" className="w-full">
-                          <span className="mr-2">{showAllFeatures ? 'Hide' : 'Show'} all features</span>
-                          <ChevronDown className={`h-4 w-4 transition-transform ${showAllFeatures ? 'rotate-180' : ''}`} />
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  </CollapsibleTrigger>
+                <TableRow>
+                  <TableCell colSpan={4} className="p-0">
+                    <Collapsible open={showAllFeatures} onOpenChange={setShowAllFeatures}>
+                      <CollapsibleTrigger asChild>
+                        <div className="w-full text-center py-4 cursor-pointer hover:bg-muted/50">
+                          <Button variant="ghost" className="w-full">
+                            <span className="mr-2">{showAllFeatures ? 'Hide' : 'Show'} all features</span>
+                            <ChevronDown className={`h-4 w-4 transition-transform ${showAllFeatures ? 'rotate-180' : ''}`} />
+                          </Button>
+                        </div>
+                      </CollapsibleTrigger>
                   
-                  <CollapsibleContent asChild>
-                    <>
-                      <TableRow>
-                        <TableCell className="font-medium">Negative Feedback Handling</TableCell>
-                        <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
-                        <TableCell className="text-center">Database + Alerts</TableCell>
-                        <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="font-medium">Feedback Solicitation</TableCell>
-                        <TableCell className="text-center">N/A</TableCell>
-                        <TableCell className="text-center">Conditional Logic</TableCell>
-                        <TableCell className="text-center">Conditional + CRM Integration</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="font-medium">Human Oversight</TableCell>
-                        <TableCell className="text-center">Limited</TableCell>
-                        <TableCell className="text-center">Periodic check-ins</TableCell>
-                        <TableCell className="text-center">Dedicated Account Manager</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="font-medium">Reporting</TableCell>
-                        <TableCell className="text-center">Summary Report</TableCell>
-                        <TableCell className="text-center">Monthly Reports</TableCell>
-                        <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="font-medium">Support</TableCell>
-                        <TableCell className="text-center">Email</TableCell>
-                        <TableCell className="text-center">Email & WhatsApp</TableCell>
-                        <TableCell className="text-center">Priority Multi-channel</TableCell>
-                      </TableRow>
-                    </>
-                  </CollapsibleContent>
-                </Collapsible>
+                      <CollapsibleContent asChild>
+                        <>
+                          <TableRow>
+                            <TableCell className="font-medium">Negative Feedback Handling</TableCell>
+                            <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
+                            <TableCell className="text-center">Database + Alerts</TableCell>
+                            <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">Feedback Solicitation</TableCell>
+                            <TableCell className="text-center">N/A</TableCell>
+                            <TableCell className="text-center">Conditional Logic</TableCell>
+                            <TableCell className="text-center">Conditional + CRM Integration</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">Human Oversight</TableCell>
+                            <TableCell className="text-center">Limited</TableCell>
+                            <TableCell className="text-center">Periodic check-ins</TableCell>
+                            <TableCell className="text-center">Dedicated Account Manager</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">Reporting</TableCell>
+                            <TableCell className="text-center">Summary Report</TableCell>
+                            <TableCell className="text-center">Monthly Reports</TableCell>
+                            <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
+                          </TableRow>
+                          <TableRow>
+                            <TableCell className="font-medium">Support</TableCell>
+                            <TableCell className="text-center">Email</TableCell>
+                            <TableCell className="text-center">Email & WhatsApp</TableCell>
+                            <TableCell className="text-center">Priority Multi-channel</TableCell>
+                          </TableRow>
+                        </>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </TableCell>
+                </TableRow>
                 
                 <TableRow className="bg-muted/50">
                   <TableCell className="font-medium">Key Benefit</TableCell>
