@@ -1,15 +1,7 @@
 
 import { useState } from "react";
-import { Check, CalendarIcon, Users } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
+import { Check, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -18,6 +10,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { consultationSchema } from "@/lib/validations";
 
 export default function BookingForm() {
   const { t } = useLanguage();
@@ -30,24 +25,65 @@ export default function BookingForm() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Consultation request submitted:", { 
-      firstName, lastName, email, phone, company, service, message 
-    });
-    setSubmitted(true);
     
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setCompany("");
-      setService("");
-      setMessage("");
-    }, 3000);
+    try {
+      const formData = {
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        company,
+        service,
+        message,
+      };
+
+      // Validate form data
+      const validatedData = consultationSchema.parse(formData);
+
+      // Save to database
+      const { error: dbError } = await supabase
+        .from("consultation_requests")
+        .insert([validatedData as any]);
+
+      if (dbError) throw dbError;
+
+      // Send email notification
+      await supabase.functions.invoke("send-form-notification", {
+        body: {
+          type: "consultation",
+          data: validatedData,
+        },
+      });
+
+      setSubmitted(true);
+      toast({
+        title: "Request Sent!",
+        description: "We'll contact you soon to schedule your free consultation.",
+      });
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+        setCompany("");
+        setService("");
+        setMessage("");
+      }, 3000);
+    } catch (error: any) {
+      console.error("Error submitting consultation request:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit request. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

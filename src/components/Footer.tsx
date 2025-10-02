@@ -3,10 +3,66 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/radiance-logo.png";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { newsletterSchema } from "@/lib/validations";
+import { useState } from "react";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { toast } = useToast();
   const currentYear = new Date().getFullYear();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubscribing(true);
+
+    try {
+      // Validate email
+      const validatedData = newsletterSchema.parse({ email: newsletterEmail });
+
+      // Save to database
+      const { error: dbError } = await supabase
+        .from("newsletter_subscribers")
+        .insert([validatedData as any]);
+
+      if (dbError) {
+        if (dbError.code === "23505") {
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already subscribed to our newsletter.",
+          });
+        } else {
+          throw dbError;
+        }
+      } else {
+        // Send email notification
+        await supabase.functions.invoke("send-form-notification", {
+          body: {
+            type: "newsletter",
+            data: validatedData,
+          },
+        });
+
+        toast({
+          title: "Successfully Subscribed!",
+          description: "Thank you for subscribing to our newsletter.",
+        });
+        setNewsletterEmail("");
+      }
+    } catch (error: any) {
+      console.error("Error subscribing to newsletter:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
   
   return (
     <footer className="bg-card text-card-foreground pt-16 pb-8 border-t">
@@ -82,18 +138,22 @@ export default function Footer() {
             <p className="text-muted-foreground mb-4">
               {t.footer.newsletterDesc}
             </p>
-            <form className="flex flex-col space-y-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col space-y-2">
               <input 
                 type="email" 
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder={t.footer.yourEmail} 
                 className="rounded-md px-4 py-2 bg-muted text-foreground"
                 required 
+                disabled={isSubscribing}
               />
               <button 
                 type="submit" 
                 className="btn-primary mt-2"
+                disabled={isSubscribing}
               >
-                {t.footer.subscribe}
+                {isSubscribing ? "Subscribing..." : t.footer.subscribe}
               </button>
             </form>
           </div>
