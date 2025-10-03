@@ -16,6 +16,7 @@ import AIWorkflows from "./pages/AIWorkflows";
 import LocalSEO from "./pages/LocalSEO";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTopOnNavigation />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
