@@ -33,6 +33,8 @@ export default function LanguageSelector() {
     setLanguage(value);
   };
 
+  const selectedLanguage = languages.find(lang => lang.code === language);
+
   if (!mounted) {
     return null;
   }
@@ -41,10 +43,10 @@ export default function LanguageSelector() {
     <div className="flex items-center">
       <Select value={language} onValueChange={handleLanguageChange}>
         <SelectTrigger 
-          className="w-[70px] h-10 border-none bg-transparent focus:ring-0" 
+          className="w-[50px] h-10 border-none bg-transparent focus:ring-0" 
           aria-label="Select Language"
         >
-          <SelectValue placeholder="Select language" />
+          <span className="text-xl">{selectedLanguage?.flag}</span>
         </SelectTrigger>
         <SelectContent align="start" className="w-[160px]">
           {languages.map((language) => (
