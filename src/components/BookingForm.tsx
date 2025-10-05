@@ -104,8 +104,9 @@ export default function BookingForm() {
               id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background min-h-[48px]"
               required
+              autoComplete="given-name"
             />
           </div>
           
@@ -118,8 +119,9 @@ export default function BookingForm() {
               id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background min-h-[48px]"
               required
+              autoComplete="family-name"
             />
           </div>
         </div>
@@ -134,8 +136,9 @@ export default function BookingForm() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background min-h-[48px]"
               required
+              autoComplete="email"
             />
           </div>
           
@@ -148,8 +151,9 @@ export default function BookingForm() {
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background min-h-[48px]"
               required
+              autoComplete="tel"
             />
           </div>
         </div>
@@ -163,7 +167,8 @@ export default function BookingForm() {
             id="company"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
-            className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background min-h-[48px]"
+            autoComplete="organization"
           />
         </div>
         
@@ -192,8 +197,8 @@ export default function BookingForm() {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            rows={3}
-            className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+            rows={4}
+            className="w-full px-4 py-3 text-base border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none bg-background min-h-[120px]"
             placeholder="Describe your business challenges and goals..."
           />
         </div>

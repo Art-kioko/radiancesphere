@@ -144,9 +144,10 @@ export default function Footer() {
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder={t.footer.yourEmail} 
-                className="rounded-md px-4 py-2 bg-muted text-foreground"
+                className="rounded-md px-4 py-3 text-base bg-muted text-foreground min-h-[48px] focus:outline-none focus:ring-2 focus:ring-primary"
                 required 
                 disabled={isSubscribing}
+                autoComplete="email"
               />
               <button 
                 type="submit" 

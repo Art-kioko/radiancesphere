@@ -96,10 +96,10 @@ export default function HeroSection() {
             {t.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
+            <Button asChild size="lg" variant="heroSolid" className="w-full sm:w-auto min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[48px]">
               <Link to="/contact">{t.hero.getStarted}</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
+            <Button asChild variant="hero" size="lg" className="w-full sm:w-auto min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[48px]">
               <Link to="/services">{t.hero.exploreServices}</Link>
             </Button>
           </div>
@@ -110,7 +110,8 @@ export default function HeroSection() {
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <a 
           href="#welcome" 
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
+          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity min-h-[48px] p-2"
+          aria-label="Scroll down to content"
         >
           <span className="text-sm mb-2">{t.hero.scrollDown}</span>
           <ChevronDown className="h-6 w-6" />
