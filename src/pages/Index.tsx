@@ -175,15 +175,6 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8">
-                  <div className="text-center">
-                    <Button asChild size="lg" className="btn-primary">
-                      <a href="https://calendar.app.google/6J717QLS7QUzPvXaA" target="_blank" rel="noopener noreferrer">
-                        Schedule via Google Calendar
-                      </a>
-                    </Button>
-                  </div>
-                </div>
               </div>
               
               <BookingForm />
@@ -260,8 +251,6 @@ export default function Index() {
           </div>
         </section>
         
-        {/* Testimonials Section */}
-        <TestimonialsSection />
         
         {/* Benefits Section */}
         <section className="section bg-card">

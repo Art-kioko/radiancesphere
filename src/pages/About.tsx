@@ -67,22 +67,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                  <div className="flex justify-center mb-4">
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
-                  <p className="text-muted-foreground">{stat.text}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Our Story Section */}
         <section className="py-16 px-4 bg-muted/30">

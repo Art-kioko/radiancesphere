@@ -89,9 +89,6 @@ export default function HeroSection() {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
             {t.hero.title}
           </h1>
-          <h2 className="text-lg md:text-2xl lg:text-3xl font-semibold text-white/90 mb-4 md:mb-6">
-            AI-Powered Reputation Management • Workflow Automation • Local SEO
-          </h2>
           <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
             {t.hero.description}
           </p>
