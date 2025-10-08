@@ -7,21 +7,20 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import customerService1 from "@/assets/customer-service-1.png";
-import customerService2 from "@/assets/customer-service-2.png";
-import customerService3 from "@/assets/customer-service-3.png";
-import customerService4 from "@/assets/customer-service-4.png";
+import onlineReputation1 from "@/assets/online-reputation-1.png";
+import onlineReputation2 from "@/assets/online-reputation-2.jpeg";
+import onlineReputation3 from "@/assets/online-reputation-3.webp";
+import onlineReputation4 from "@/assets/online-reputation-4.jpg";
 
 export default function HeroSection() {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   
   const heroImages = [
-    customerService1,
-    customerService2,
-    customerService3,
-    customerService4,
-    "https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?q=80&w=1920&auto=format&fit=crop"
+    onlineReputation1,
+    onlineReputation2,
+    onlineReputation3,
+    onlineReputation4
   ];
   
   useEffect(() => {
@@ -61,11 +60,12 @@ export default function HeroSection() {
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-full">
                 <div
-                  className="h-full w-full bg-cover bg-center opacity-40"
+                  className="h-full w-full bg-cover bg-center opacity-50"
                   style={{
                     backgroundImage: `url(${image})`,
                     backgroundPosition: `center ${50 + scrollY * 0.05}%`,
-                    filter: "brightness(0.6) contrast(0.8)"
+                    backgroundSize: "cover",
+                    filter: "brightness(0.7) contrast(1.1)"
                   }}
                 />
               </CarouselItem>
@@ -75,7 +75,7 @@ export default function HeroSection() {
       </div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
       
       {/* Content */}
       <div
