@@ -58,14 +58,13 @@ export default function HeroSection() {
         >
           <CarouselContent className="h-full">
             {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="h-full">
-                <div
-                  className="h-full w-full bg-cover bg-center opacity-50"
+              <CarouselItem key={index} className="h-screen w-full">
+                <img 
+                  src={image}
+                  alt={`Reputation management ${index + 1}`}
+                  className="h-full w-full object-cover"
                   style={{
-                    backgroundImage: `url(${image})`,
-                    backgroundPosition: `center ${50 + scrollY * 0.05}%`,
-                    backgroundSize: "cover",
-                    filter: "brightness(0.7) contrast(1.1)"
+                    filter: "brightness(0.75) contrast(1.05)"
                   }}
                 />
               </CarouselItem>
@@ -75,11 +74,11 @@ export default function HeroSection() {
       </div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/50 pointer-events-none z-10" />
       
       {/* Content */}
       <div
-        className="relative h-full flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-0"
+        className="relative h-full flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-0 z-20"
         style={{ transform: `translateY(${contentY}px)` }}
       >
         <div className="max-w-3xl animate-fade-in">
