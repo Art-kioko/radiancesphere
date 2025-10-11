@@ -339,7 +339,11 @@ const ReputationManagement = () => {
                   <TableCell className="font-medium">{isAnnual ? 'Annual Fee' : 'Monthly Fee'}</TableCell>
                   <TableCell className="text-center">{calculatePrice('KES 7,500')}</TableCell>
                   <TableCell className="text-center">{calculatePrice('KES 19,500')}</TableCell>
-                  <TableCell className="text-center">{isAnnual ? 'KES 240,000 - 384,000+' : 'KES 25,000 - 40,000+'}</TableCell>
+                  <TableCell className="text-center">
+                    <Button asChild variant="outline" size="sm">
+                      <a href="/contact?tier=premium&service=reputation">Get Quote</a>
+                    </Button>
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Review Platforms</TableCell>
@@ -416,6 +420,27 @@ const ReputationManagement = () => {
                   <TableCell className="text-center font-medium">Reputation protection</TableCell>
                   <TableCell className="text-center font-medium">Elite brand management</TableCell>
                 </TableRow>
+                
+                {showAllFeatures && (
+                  <TableRow className="border-t-2">
+                    <TableCell className="font-medium">Get Started</TableCell>
+                    <TableCell className="text-center">
+                      <Button asChild size="sm" className="w-full max-w-[150px]">
+                        <a href="/contact?tier=basic&service=reputation">Get Started</a>
+                      </Button>
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <Button asChild size="sm" className="w-full max-w-[150px]">
+                        <a href="/contact?tier=growth&service=reputation">Get Started</a>
+                      </Button>
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <Button asChild size="sm" variant="outline" className="w-full max-w-[150px]">
+                        <a href="/contact?tier=premium&service=reputation">Request Quote</a>
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                )}
               </TableBody>
             </Table>
           </div>

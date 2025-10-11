@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -14,6 +15,7 @@ import { contactSchema } from "@/lib/validations";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,7 +29,34 @@ export default function Contact() {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Pre-fill form based on URL parameters
+    const tier = searchParams.get('tier');
+    const service = searchParams.get('service');
+    
+    if (tier && service) {
+      const tierLabels: Record<string, string> = {
+        'basic': 'Basic (Starter)',
+        'growth': 'Growth (Standard)',
+        'premium': 'Premium (Full-Service)'
+      };
+      
+      const serviceLabels: Record<string, string> = {
+        'reputation': 'AI Reputation Management',
+        'automation': 'AI Workflow Automation',
+        'seo': 'Local SEO Services'
+      };
+      
+      const tierName = tierLabels[tier] || tier;
+      const serviceName = serviceLabels[service] || service;
+      
+      setFormData(prev => ({
+        ...prev,
+        subject: `${serviceName} - ${tierName} Purchase Inquiry`,
+        message: `I am interested in purchasing the ${tierName} plan for ${serviceName}. Please provide me with:\n\n1. Next steps to get started\n2. Payment options\n3. Implementation timeline\n4. Any additional details about the service\n\nThank you!`
+      }));
+    }
+  }, [searchParams]);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
