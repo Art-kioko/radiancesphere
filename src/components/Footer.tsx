@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/radiance-logo.png";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { newsletterSchema } from "@/lib/validations";
 import { useState } from "react";
@@ -23,11 +22,13 @@ export default function Footer() {
       // Validate email
       const validatedData = newsletterSchema.parse({ email: newsletterEmail });
 
+      // Initialize backend client lazily
+      const { supabase } = await import("@/integrations/supabase/client");
+
       // Save to database
       const { error: dbError } = await supabase
         .from("newsletter_subscribers")
         .insert([validatedData as any]);
-
       if (dbError) {
         if (dbError.code === "23505") {
           toast({

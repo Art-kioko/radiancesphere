@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { contactSchema } from "@/lib/validations";
 
@@ -71,6 +70,9 @@ export default function Contact() {
     try {
       // Validate form data
       const validatedData = contactSchema.parse(formData);
+
+      // Initialize backend client lazily
+      const { supabase } = await import("@/integrations/supabase/client");
 
       // Save to database
       const { error: dbError } = await supabase
