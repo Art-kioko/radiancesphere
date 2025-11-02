@@ -12,6 +12,7 @@ import {
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import { consultationSchema } from "@/lib/validations";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function BookingForm() {
   const { t } = useLanguage();
@@ -42,9 +43,6 @@ export default function BookingForm() {
 
       // Validate form data
       const validatedData = consultationSchema.parse(formData);
-
-      // Initialize backend client lazily
-      const { supabase } = await import("@/integrations/supabase/client");
 
       // Save to database
       const { error: dbError } = await supabase

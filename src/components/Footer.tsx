@@ -6,6 +6,7 @@ import logo from "@/assets/radiance-logo.png";
 import { useToast } from "@/hooks/use-toast";
 import { newsletterSchema } from "@/lib/validations";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -21,9 +22,6 @@ export default function Footer() {
     try {
       // Validate email
       const validatedData = newsletterSchema.parse({ email: newsletterEmail });
-
-      // Initialize backend client lazily
-      const { supabase } = await import("@/integrations/supabase/client");
 
       // Save to database
       const { error: dbError } = await supabase

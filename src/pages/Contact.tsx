@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 import { contactSchema } from "@/lib/validations";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -70,9 +71,6 @@ export default function Contact() {
     try {
       // Validate form data
       const validatedData = contactSchema.parse(formData);
-
-      // Initialize backend client lazily
-      const { supabase } = await import("@/integrations/supabase/client");
 
       // Save to database
       const { error: dbError } = await supabase
