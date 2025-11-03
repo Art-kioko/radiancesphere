@@ -75,16 +75,13 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <p className="text-muted-foreground mb-6 text-lg">
-                  Founded by a team of AI enthusiasts and digital marketing experts, we recognized a critical gap in the market: 
-                  businesses were struggling to maintain their online reputation while managing increasingly complex operational workflows.
+                  Radiance Sphere was founded with a simple vision—to help businesses simplify their digital operations and build stronger online reputations through the power of AI.
                 </p>
                 <p className="text-muted-foreground mb-6 text-lg">
-                  Traditional solutions were fragmented, manual, and time-consuming. We knew there had to be a better way—one that 
-                  leveraged the power of artificial intelligence to work smarter, not harder.
+                  After observing how many businesses struggled to manage their online presence while juggling daily operations, it became clear that traditional solutions were fragmented, manual, and time-consuming. We knew there had to be a better way—one that leveraged the power of artificial intelligence to work smarter, not harder.
                 </p>
                 <p className="text-muted-foreground text-lg">
-                  Today, we've helped over 500 businesses transform their digital presence, automate their operations, and 
-                  achieve unprecedented growth through our integrated AI-powered solutions.
+                  Radiance Sphere is built on a commitment to innovation, transparency, and real results—empowering businesses to thrive in a digital-first world.
                 </p>
               </div>
               <div className="relative">
