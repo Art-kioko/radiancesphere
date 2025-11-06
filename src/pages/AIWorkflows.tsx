@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Zap, Cog, Clock, Workflow, BarChart, Rocket } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -10,8 +11,68 @@ import BackButton from "@/components/BackButton";
 const AIWorkflows = () => {
   const { t } = useLanguage();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of business processes can be automated with AI workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI workflows can automate virtually any repetitive business process including lead management and nurturing, customer service inquiries, inventory and order management, financial processes like invoicing and expense tracking, data entry, email sequences, appointment scheduling, and social media management. Our custom solutions adapt to your specific business needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to implement AI workflow automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementation timelines vary based on complexity. Simple workflows like automated email responses can be deployed in 1-2 weeks. More complex multi-step processes involving multiple systems typically take 4-6 weeks. We work in phases, delivering quick wins first while building comprehensive automation over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will AI automation integrate with my existing business tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our AI workflows integrate seamlessly with popular business platforms including CRM systems (Salesforce, HubSpot), email marketing tools (MailChimp, SendGrid), accounting software (QuickBooks, Xero), e-commerce platforms (Shopify, WooCommerce), and many others. We create unified workflows across all your systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much time can I save with AI workflow automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our clients save an average of 85% of time spent on manual tasks. For a typical small business, this translates to 20-30 hours per week in recovered productivity. This time can be redirected to strategic growth activities, customer relationships, and innovation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if my business processes change?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our AI workflows are designed to be adaptive and flexible. The AI continuously learns and improves based on outcomes. We also provide ongoing support to modify and update workflows as your business evolves. Process changes can typically be implemented quickly without starting from scratch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AI workflow automation suitable for small businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Small businesses often benefit the most from automation because they have limited resources. Automation allows small teams to compete with larger companies by handling 10x more volume without hiring additional staff. We offer scalable solutions that grow with your business and deliver ROI from day one."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">

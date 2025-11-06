@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Helmet } from "react-helmet";
 import reputationImage from "@/assets/reputation-reviews.png";
 import heroImage from "@/assets/online-reviews-hero.webp";
 
@@ -17,6 +18,61 @@ const ReputationManagement = () => {
   const { t } = useLanguage();
   const [isAnnual, setIsAnnual] = useState(false);
   const [showAllFeatures, setShowAllFeatures] = useState(false);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does AI-powered reputation management work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our AI-powered reputation management system automatically monitors 50+ review platforms 24/7, analyzes sentiment in real-time, and generates personalized responses that match your brand voice. It uses advanced natural language processing to understand review context and identify critical issues affecting your reputation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can you respond to negative reviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our AI system detects new reviews within minutes and can generate appropriate responses immediately. You'll receive instant alerts for negative reviews, allowing for crisis management before reputation damage spreads. Response time is typically under 15 minutes for critical issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which review platforms do you monitor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We monitor all major review platforms including Google Business Profile, Facebook, Yelp, TripAdvisor, Trustpilot, and 45+ other platforms. Our system automatically fetches reviews using advanced APIs and web scraping technology to ensure comprehensive coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the AI responses be customized to match my brand voice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. Our AI learns your brand voice, tone, and messaging style to craft responses that sound authentically like your business. You can review and approve responses before they're posted, and the AI continuously improves based on your feedback."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of ROI can I expect from reputation management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our clients typically see a 98% improvement in their online reputation within 90 days. This translates to 70% more lead conversions, 15-20% pricing power increase, and 40% better customer retention. Strong reputation directly impacts revenue and customer lifetime value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical knowledge to use your reputation management system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No technical knowledge required. Our platform is designed for business owners with comprehensive dashboards that are easy to understand. We handle all the technical setup, platform integrations, and AI configuration. You simply monitor results and approve responses."
+        }
+      }
+    ]
+  };
 
   const calculatePrice = (monthlyPrice: string) => {
     const numPrice = parseInt(monthlyPrice.replace(/[^0-9]/g, ''));
@@ -29,6 +85,11 @@ const ReputationManagement = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">

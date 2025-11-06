@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Search, TrendingUp, Users, Star, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -10,8 +11,68 @@ import BackButton from "@/components/BackButton";
 const LocalSEO = () => {
   const { t } = useLanguage();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to see results from local SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Initial improvements in local search visibility typically appear within 4-6 weeks. Significant ranking improvements and increased traffic usually manifest within 3 months. Full optimization and market dominance is achieved in 6-12 months. Our clients see an average 350% increase in local search visibility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between regular SEO and local SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local SEO focuses specifically on appearing in location-based searches and Google Maps results. It emphasizes Google Business Profile optimization, local citations, location-specific keywords, and proximity to searchers. Regular SEO targets broader, non-location-specific searches. Local SEO is essential for businesses serving specific geographic areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a physical location for local SEO to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Service area businesses (plumbers, electricians, consultants) can benefit from local SEO even without a storefront. Google allows you to define service areas and hide your address while still appearing in local searches. The key is optimizing for the locations where you provide services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How important are Google reviews for local SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google reviews are critical for local SEO success. They directly influence local search rankings and click-through rates. Reviews provide social proof, improve conversion rates, and signal trust to Google's algorithm. Businesses with more positive reviews consistently outrank competitors. We implement systematic review generation strategies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can local SEO help my business appear in voice search results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, local SEO is essential for voice search visibility. Voice searches are predominantly local (e.g., 'near me' queries). We optimize for conversational keywords, question-based queries, and featured snippet positions that voice assistants pull from. Strong local SEO signals increase your chances of being the spoken result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included in your local SEO package?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our complete local SEO package includes Google Business Profile optimization, local keyword research and targeting, citation building across 50+ directories, NAP consistency audits, location-specific content creation, review management strategy, local link building, competitor analysis, and monthly performance reporting with ongoing optimization."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">
