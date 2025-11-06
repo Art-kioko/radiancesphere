@@ -28,7 +28,7 @@ const AIWorkflows = () => {
         "name": "How long does it take to implement AI workflow automation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Implementation timelines vary based on complexity. Simple workflows like automated email responses can be deployed in 1-2 weeks. More complex multi-step processes involving multiple systems typically take 4-6 weeks. We work in phases, delivering quick wins first while building comprehensive automation over time."
+          "text": "Implementation timelines vary based on complexity. Simple workflows like automated email responses can be deployed in 1-4 days. More complex multi-step processes involving multiple systems typically take 4-6 weeks. We work in phases, delivering quick wins first while building comprehensive automation over time."
         }
       },
       {

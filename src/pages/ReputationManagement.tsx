@@ -28,7 +28,7 @@ const ReputationManagement = () => {
         "name": "How does AI-powered reputation management work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our AI-powered reputation management system automatically monitors 50+ review platforms 24/7, analyzes sentiment in real-time, and generates personalized responses that match your brand voice. It uses advanced natural language processing to understand review context and identify critical issues affecting your reputation."
+          "text": "Our AI-powered reputation management system automatically monitors  review platforms 24/7, analyzes sentiment in real-time, and generates personalized responses that match your brand voice. It uses advanced natural language processing to understand review context and identify critical issues affecting your reputation."
         }
       },
       {
