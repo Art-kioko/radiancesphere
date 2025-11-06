@@ -63,8 +63,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={cn("fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
-        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-card shadow-xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn("fixed inset-0 z-50 bg-background/95 backdrop-blur-md md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
+        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="flex justify-end mb-8">
@@ -72,16 +72,16 @@ export default function Navbar() {
                   <X className="h-6 w-6" />
                 </Button>
               </div>
-              <ul className="space-y-6">
+              <ul className="space-y-8">
                 {navLinks.map(link => <li key={link.name}>
-                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary block py-2" onClick={() => setMobileMenuOpen(false)}>
                       {link.name}
                     </Link>
                   </li>)}
               </ul>
             </div>
             
-            <Button asChild className="w-full btn-primary mt-6">
+            <Button asChild className="w-full btn-primary mt-6 min-h-[48px]">
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 {t.nav.getStarted}
               </Link>
