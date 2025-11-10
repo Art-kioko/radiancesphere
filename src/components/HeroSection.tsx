@@ -3,95 +3,57 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import onlineReputation1 from "@/assets/online-reputation-1.png";
-import onlineReputation2 from "@/assets/online-reputation-2.jpeg";
-import onlineReputation3 from "@/assets/online-reputation-3.webp";
-import onlineReputation4 from "@/assets/online-reputation-4.jpg";
+
+// Declare the dotlottie-wc custom element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'dotlottie-wc': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+        src: string;
+        autoplay?: boolean;
+        loop?: boolean;
+        style?: React.CSSProperties;
+      }, HTMLElement>;
+    }
+  }
+}
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
-  
-  const heroImages = [
-    onlineReputation1,
-    onlineReputation2,
-    onlineReputation3,
-    onlineReputation4
-  ];
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  // Calculate parallax effect
-  const backgroundY = scrollY * 0.5;
-  const contentY = scrollY * 0.2;
   
   return (
-    <section className="relative h-screen overflow-hidden">
-      {/* Background carousel with parallax */}
-      <div
-        className="absolute inset-0"
-        style={{ transform: `translateY(${backgroundY}px)` }}
-      >
-        <Carousel
-          className="h-full w-full"
-          plugins={[
-            Autoplay({
-              delay: 4000,
-              stopOnInteraction: false,
-            }),
-          ]}
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-        >
-          <CarouselContent className="h-full">
-            {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="h-screen w-full">
-                <img 
-                  src={image}
-                  alt={`Reputation management ${index + 1}`}
-                  className="h-full w-full object-cover"
-                  style={{
-                    filter: "brightness(0.75) contrast(1.05)"
-                  }}
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/50 pointer-events-none z-10" />
-      
-      {/* Content */}
-      <div
-        className="relative h-full flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-0 z-20"
-        style={{ transform: `translateY(${contentY}px)` }}
-      >
-        <div className="max-w-3xl animate-fade-in">
-          <span className="inline-block text-white/90 text-sm md:text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
+    <section className="relative h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+      {/* Content Container - Flex layout for animation and text */}
+      <div className="relative h-full flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 lg:px-16 pt-24 md:pt-0 z-20 max-w-7xl mx-auto gap-8">
+        
+        {/* Lottie Animation - Left Side */}
+        <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in">
+          <dotlottie-wc 
+            src="https://lottie.host/5515c80d-3441-471c-9be0-c5ee83d7546a/BN7kpzrvc3.lottie" 
+            autoplay 
+            loop
+            style={{
+              width: '100%',
+              maxWidth: '500px',
+              height: 'auto',
+              aspectRatio: '1 / 1'
+            }}
+          />
+        </div>
+
+        {/* Hero Content - Right Side */}
+        <div className="flex-1 w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
+          <span className="inline-block text-foreground/80 text-sm md:text-lg mb-4 tracking-wide border-b border-border pb-2">
             {t.hero.subtitle}
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 md:mb-4">
             {t.hero.title}
           </h1>
-          <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-foreground/80 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0">
             {t.hero.description}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
             <Button asChild size="lg" variant="heroSolid" className="w-full sm:w-auto min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[48px]">
               <Link to="/contact">{t.hero.getStarted}</Link>
             </Button>
@@ -103,7 +65,7 @@ export default function HeroSection() {
       </div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-foreground animate-bounce z-30">
         <a 
           href="#welcome" 
           className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity min-h-[48px] p-2"
@@ -115,9 +77,9 @@ export default function HeroSection() {
       </div>
       
       {/* Animated wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden z-20">
         <svg 
-          className="absolute bottom-0 w-full h-24 fill-white dark:fill-background"
+          className="absolute bottom-0 w-full h-24 fill-background"
           preserveAspectRatio="none"
           viewBox="0 0 1440 74"
           xmlns="http://www.w3.org/2000/svg"
