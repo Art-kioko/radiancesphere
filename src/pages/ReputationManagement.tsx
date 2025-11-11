@@ -386,46 +386,67 @@ const ReputationManagement = () => {
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                 {/* Blue gradient header */}
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
-                  <div className="text-5xl font-bold mb-1">
-                    ${isAnnual ? '6' : '7.5'}
+                  <div className="mb-2">
+                    <div className="text-sm opacity-90">Setup Fee</div>
+                    <div className="text-2xl font-bold">KES 7,500</div>
                   </div>
-                  <div className="border-t-2 border-white/50 pt-2 mt-2">
-                    <span className="text-lg font-medium">month</span>
+                  <div className="border-t-2 border-white/50 pt-3 mt-3">
+                    <div className="text-5xl font-bold mb-1">
+                      KES 15,000
+                    </div>
+                    <span className="text-lg font-medium">per month</span>
                   </div>
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Basic</h3>
-                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Basic (Starter)</h3>
+                  <p className="text-sm text-muted-foreground mb-6">Perfect for small businesses</p>
+                  
+                  {/* Preview Features */}
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>1 Google Business Profile</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>AI-drafted & auto-posted responses</span>
+                    </div>
+                  </div>
                   
                   <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
-                      <span>View Features</span>
+                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
+                      <span>View All Features</span>
                       <ChevronDown className="h-4 w-4" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-3 mb-6">
                       <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>1 Google Business Profile</span>
+                        <CheckCircle className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">Sentiment Analysis: N/A</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI auto-posted responses</span>
+                        <span>WhatsApp/Email alerts to owner</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">Feedback Solicitation: N/A</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>WhatsApp/Email alerts</span>
+                        <span>Limited human oversight (setup & alerts)</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Summary Reports</span>
+                        <span>Reviews Summary Reports</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span>Email Support</span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-xs">Setup: KES 3,500</span>
+                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>Saves time, consistent responses</span>
                       </div>
                     </CollapsibleContent>
                   </Collapsible>
@@ -440,58 +461,70 @@ const ReputationManagement = () => {
             {/* Premium Tier - Elevated */}
             <div className="relative md:-mt-4 md:mb-4">
               <Card className="h-full flex flex-col shadow-2xl hover:shadow-3xl transition-shadow border-2 border-primary/20">
+                <Badge className="absolute top-4 right-4 bg-primary z-10">Most Popular</Badge>
                 {/* Blue gradient header - larger */}
                 <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-t-lg text-center">
-                  <div className="text-6xl font-bold mb-1">
-                    ${isAnnual ? '15.6' : '19.5'}
+                  <div className="mb-2">
+                    <div className="text-sm opacity-90">Setup Fee</div>
+                    <div className="text-2xl font-bold">KES 17,500</div>
                   </div>
-                  <div className="border-t-2 border-white/50 pt-2 mt-2">
-                    <span className="text-xl font-medium">month</span>
+                  <div className="border-t-2 border-white/50 pt-3 mt-3">
+                    <div className="text-6xl font-bold mb-1">
+                      KES 28,000
+                    </div>
+                    <span className="text-xl font-medium">per month</span>
                   </div>
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-500 mb-2">Premium</h3>
-                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  <h3 className="text-2xl font-bold text-blue-500 mb-2">Growth (Standard)</h3>
+                  <p className="text-sm text-muted-foreground mb-6">For growing businesses</p>
                   
-                  <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Most Popular</Badge>
+                  {/* Preview Features */}
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Up to 3 Platforms (GBP, FB, Yelp/TripAdvisor)</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Yes (AI-powered) Sentiment Analysis</span>
+                    </div>
+                  </div>
                   
                   <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
-                      <span>View Features</span>
+                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
+                      <span>View All Features</span>
                       <ChevronDown className="h-4 w-4" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-3 mb-6">
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Up to 3 platforms</span>
+                        <span>AI-drafted & auto-posted (custom brand voice)</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI-powered sentiment analysis</span>
+                        <span>Recorded to database + WhatsApp/Email alerts</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI custom voice responses</span>
+                        <span>Conditional Logic for feedback</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Database + Alerts</span>
+                        <span>Periodic check-ins & critical issue review</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Conditional feedback logic</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Monthly Reports</span>
+                        <span>Detailed Monthly Review Reports</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span>Email & WhatsApp Support</span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-xs">Setup: KES 7,000</span>
+                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>Protects online reputation, improves customer satisfaction</span>
                       </div>
                     </CollapsibleContent>
                   </Collapsible>
@@ -508,54 +541,67 @@ const ReputationManagement = () => {
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                 {/* Blue gradient header */}
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
-                  <div className="text-5xl font-bold mb-1">
-                    Custom
+                  <div className="mb-2">
+                    <div className="text-sm opacity-90">Setup Fee</div>
+                    <div className="text-xl font-bold">KES 35,000 - 50,000+</div>
                   </div>
-                  <div className="border-t-2 border-white/50 pt-2 mt-2">
-                    <span className="text-lg font-medium">pricing</span>
+                  <div className="border-t-2 border-white/50 pt-3 mt-3">
+                    <div className="text-4xl font-bold mb-1">
+                      KES 35,000 - 70,000+
+                    </div>
+                    <span className="text-lg font-medium">per month</span>
                   </div>
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Pro</h3>
-                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Premium (Full-Service)</h3>
+                  <p className="text-sm text-muted-foreground mb-6">Enterprise solutions</p>
+                  
+                  {/* Preview Features */}
+                  <div className="space-y-3 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Unlimited relevant platforms</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span>Yes (AI-powered, highly refined)</span>
+                    </div>
+                  </div>
                   
                   <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
+                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
                       <span>View Features</span>
                       <ChevronDown className="h-4 w-4" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-3 mb-6">
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Unlimited platforms</span>
+                        <span>AI-drafted, human-reviewed & customized before posting</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Advanced AI sentiment analysis</span>
+                        <span>Priority WhatsApp/Email alerts + Dedicated human escalation</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI + human review</span>
+                        <span>Conditional Logic + CRM integration option</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Priority alerts + Dedicated support</span>
+                        <span>Dedicated Account Manager, proactive monitoring & intervention</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>CRM Integration</span>
+                        <span>Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Dedicated Account Manager</span>
+                        <span>Priority Email, WhatsApp & Phone Support</span>
                       </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Advanced Analytics + Strategy Calls</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-xs">Setup: KES 10,000 - 15,000</span>
+                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>Elite brand protection, data-driven insights, maximum growth</span>
                       </div>
                     </CollapsibleContent>
                   </Collapsible>
