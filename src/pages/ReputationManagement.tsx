@@ -379,131 +379,193 @@ const ReputationManagement = () => {
             </div>
           </div>
 
-          <div className="bg-background rounded-lg shadow-lg overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[200px] font-semibold">Feature/Tier</TableHead>
-                  <TableHead className="text-center font-semibold">Basic (Starter)</TableHead>
-                  <TableHead className="text-center font-semibold">Growth (Standard)</TableHead>
-                  <TableHead className="text-center font-semibold">Premium (Full-Service)</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">Setup Fee (One-time)</TableCell>
-                  <TableCell className="text-center">KES 3,500</TableCell>
-                  <TableCell className="text-center">KES 7,000</TableCell>
-                  <TableCell className="text-center">KES 10,000 - 15,000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">{isAnnual ? 'Annual Fee' : 'Monthly Fee'}</TableCell>
-                  <TableCell className="text-center">{calculatePrice('KES 7,500')}</TableCell>
-                  <TableCell className="text-center">{calculatePrice('KES 19,500')}</TableCell>
-                  <TableCell className="text-center">
-                    <Button asChild variant="outline" size="sm">
-                      <a href="/contact?tier=premium&service=reputation">Get Quote</a>
-                    </Button>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Review Platforms</TableCell>
-                  <TableCell className="text-center">1 Google Business Profile</TableCell>
-                  <TableCell className="text-center">Up to 3 platforms</TableCell>
-                  <TableCell className="text-center">Unlimited platforms</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Sentiment Analysis</TableCell>
-                  <TableCell className="text-center">N/A</TableCell>
-                  <TableCell className="text-center">Yes (AI-powered)</TableCell>
-                  <TableCell className="text-center">Yes (Advanced AI)</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Response Generation</TableCell>
-                  <TableCell className="text-center">AI auto-posted</TableCell>
-                  <TableCell className="text-center">AI custom voice</TableCell>
-                  <TableCell className="text-center">AI + human review</TableCell>
-                </TableRow>
-                
-                <TableRow>
-                  <TableCell colSpan={4} className="p-0 border-b-0">
-                    <Collapsible open={showAllFeatures} onOpenChange={setShowAllFeatures}>
-                      <CollapsibleTrigger asChild>
-                        <div className="w-full text-center py-4 cursor-pointer hover:bg-muted/50">
-                          <Button variant="ghost" className="w-full">
-                            <span className="mr-2">{showAllFeatures ? 'Hide' : 'Show'} all features</span>
-                            <ChevronDown className={`h-4 w-4 transition-transform ${showAllFeatures ? 'rotate-180' : ''}`} />
-                          </Button>
-                        </div>
-                      </CollapsibleTrigger>
-                    </Collapsible>
-                  </TableCell>
-                </TableRow>
-                
-                {showAllFeatures && (
-                  <>
-                    <TableRow>
-                      <TableCell className="font-medium">Negative Feedback Handling</TableCell>
-                      <TableCell className="text-center">WhatsApp/Email alerts</TableCell>
-                      <TableCell className="text-center">Database + Alerts</TableCell>
-                      <TableCell className="text-center">Priority alerts + Dedicated support</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Feedback Solicitation</TableCell>
-                      <TableCell className="text-center">N/A</TableCell>
-                      <TableCell className="text-center">Conditional Logic</TableCell>
-                      <TableCell className="text-center">Conditional + CRM Integration</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Human Oversight</TableCell>
-                      <TableCell className="text-center">Limited</TableCell>
-                      <TableCell className="text-center">Periodic check-ins</TableCell>
-                      <TableCell className="text-center">Dedicated Account Manager</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Reporting</TableCell>
-                      <TableCell className="text-center">Summary Report</TableCell>
-                      <TableCell className="text-center">Monthly Reports</TableCell>
-                      <TableCell className="text-center">Advanced Analytics + Strategy Calls</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Support</TableCell>
-                      <TableCell className="text-center">Email</TableCell>
-                      <TableCell className="text-center">Email & WhatsApp</TableCell>
-                      <TableCell className="text-center">Priority Multi-channel</TableCell>
-                    </TableRow>
-                  </>
-                )}
-                
-                <TableRow className="bg-muted/50">
-                  <TableCell className="font-medium">Key Benefit</TableCell>
-                  <TableCell className="text-center font-medium">Time-saving automation</TableCell>
-                  <TableCell className="text-center font-medium">Reputation protection</TableCell>
-                  <TableCell className="text-center font-medium">Elite brand management</TableCell>
-                </TableRow>
-                
-                {showAllFeatures && (
-                  <TableRow className="border-t-2">
-                    <TableCell className="font-medium">Get Started</TableCell>
-                    <TableCell className="text-center">
-                      <Button asChild size="sm" className="w-full max-w-[150px]">
-                        <a href="/contact?tier=basic&service=reputation">Get Started</a>
-                      </Button>
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <Button asChild size="sm" className="w-full max-w-[150px]">
-                        <a href="/contact?tier=growth&service=reputation">Get Started</a>
-                      </Button>
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <Button asChild size="sm" variant="outline" className="w-full max-w-[150px]">
-                        <a href="/contact?tier=premium&service=reputation">Request Quote</a>
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12 relative">
+            {/* Basic Tier */}
+            <div className="relative">
+              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                {/* Blue gradient header */}
+                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
+                  <div className="text-5xl font-bold mb-1">
+                    ${isAnnual ? '6' : '7.5'}
+                  </div>
+                  <div className="border-t-2 border-white/50 pt-2 mt-2">
+                    <span className="text-lg font-medium">month</span>
+                  </div>
+                </div>
+                {/* White content area */}
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
+                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Basic</h3>
+                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  
+                  <Collapsible>
+                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
+                      <span>View Features</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-3 mb-6">
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>1 Google Business Profile</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>AI auto-posted responses</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>WhatsApp/Email alerts</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Summary Reports</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Email Support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-xs">Setup: KES 3,500</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                  
+                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full">
+                    <a href="/contact?tier=basic&service=reputation">Get Started</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Premium Tier - Elevated */}
+            <div className="relative md:-mt-4 md:mb-4">
+              <Card className="h-full flex flex-col shadow-2xl hover:shadow-3xl transition-shadow border-2 border-primary/20">
+                {/* Blue gradient header - larger */}
+                <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-t-lg text-center">
+                  <div className="text-6xl font-bold mb-1">
+                    ${isAnnual ? '15.6' : '19.5'}
+                  </div>
+                  <div className="border-t-2 border-white/50 pt-2 mt-2">
+                    <span className="text-xl font-medium">month</span>
+                  </div>
+                </div>
+                {/* White content area */}
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
+                  <h3 className="text-2xl font-bold text-blue-500 mb-2">Premium</h3>
+                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  
+                  <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Most Popular</Badge>
+                  
+                  <Collapsible>
+                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
+                      <span>View Features</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-3 mb-6">
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Up to 3 platforms</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>AI-powered sentiment analysis</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>AI custom voice responses</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Database + Alerts</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Conditional feedback logic</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Monthly Reports</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Email & WhatsApp Support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-xs">Setup: KES 7,000</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                  
+                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full">
+                    <a href="/contact?tier=growth&service=reputation">Get Started</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Pro Tier */}
+            <div className="relative">
+              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                {/* Blue gradient header */}
+                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
+                  <div className="text-5xl font-bold mb-1">
+                    Custom
+                  </div>
+                  <div className="border-t-2 border-white/50 pt-2 mt-2">
+                    <span className="text-lg font-medium">pricing</span>
+                  </div>
+                </div>
+                {/* White content area */}
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
+                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Pro</h3>
+                  <p className="text-sm text-muted-foreground mb-6">membership</p>
+                  
+                  <Collapsible>
+                    <CollapsibleTrigger className="flex items-center justify-between w-full mb-4 text-sm font-medium text-primary">
+                      <span>View Features</span>
+                      <ChevronDown className="h-4 w-4" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-3 mb-6">
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Unlimited platforms</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Advanced AI sentiment analysis</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>AI + human review</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Priority alerts + Dedicated support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>CRM Integration</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Dedicated Account Manager</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Advanced Analytics + Strategy Calls</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-xs">Setup: KES 10,000 - 15,000</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
+                  
+                  <Button asChild variant="outline" className="w-full border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-full">
+                    <a href="/contact?tier=premium&service=reputation">Get Quote</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
