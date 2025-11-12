@@ -382,51 +382,140 @@ const ReputationManagement = () => {
           {/* Pricing Grid with Feature Table */}
           <div className="grid lg:grid-cols-[400px_1fr] gap-8 items-start">
             {/* Feature Comparison Table */}
-            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-6">Feature Comparison</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Platforms Monitored</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Response Management</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Sentiment Analysis</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Alerts & Notifications</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Feedback Solicitation</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Human Oversight</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 pb-3 border-b">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Reporting</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">Support Channels</p>
-                  </div>
-                </div>
+            <Collapsible defaultOpen className="bg-white dark:bg-card rounded-lg shadow-lg p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold">Feature Comparison</h3>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" size="sm">
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </CollapsibleTrigger>
               </div>
-            </div>
+              
+              <div className="space-y-3">
+                {/* Feature Headers Row */}
+                <div className="flex items-center gap-2 pb-2 border-b-2 border-border">
+                  <div className="flex-1 font-semibold text-xs">Feature/Tier</div>
+                  <div className="w-16 text-center font-semibold text-xs">Basic</div>
+                  <div className="w-16 text-center font-semibold text-xs">Standard</div>
+                  <div className="w-16 text-center font-semibold text-xs">Pro</div>
+                </div>
+
+                <CollapsibleContent className="space-y-3">
+                  {/* Review Platforms */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Review Platforms</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Sentiment Analysis */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Sentiment Analysis</div>
+                    <div className="w-16 flex justify-center">
+                      <span className="text-muted-foreground text-sm">-</span>
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Positive Responses */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Positive Responses</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Negative Feedback Handling */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Negative Feedback Handling</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Feedback Solicitation */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Feedback Solicitation</div>
+                    <div className="w-16 flex justify-center">
+                      <span className="text-muted-foreground text-sm">-</span>
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Human Oversight */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Human Oversight</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Reporting */}
+                  <div className="flex items-center gap-2 py-2 border-b">
+                    <div className="flex-1 text-sm font-medium">Reporting</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+
+                  {/* Support */}
+                  <div className="flex items-center gap-2 py-2">
+                    <div className="flex-1 text-sm font-medium">Support</div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                    <div className="w-16 flex justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </div>
+            </Collapsible>
 
             {/* Pricing Cards */}
             <div className="grid md:grid-cols-3 gap-6">
@@ -434,7 +523,7 @@ const ReputationManagement = () => {
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                 {/* Tier Label */}
                 <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Basic Tier</h3>
+                  <h3 className="text-lg font-bold text-foreground">Basic (Starter)</h3>
                 </div>
                 {/* Blue gradient header */}
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 text-center">
@@ -451,43 +540,51 @@ const ReputationManagement = () => {
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-6">Perfect for small businesses</p>
+                  <p className="text-sm text-muted-foreground mb-4">Perfect for small businesses</p>
                   
-                  {/* Feature Checklist */}
-                  <div className="space-y-3 mb-6 flex-1">
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Platforms</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                  {/* Preview Features */}
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>1 Google Business Profile</span>
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Response Mgmt</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Sentiment</span>
-                      <span className="text-muted-foreground">-</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Alerts</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Feedback</span>
-                      <span className="text-muted-foreground">-</span>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Oversight</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Reports</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Support</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>AI-drafted & auto-posted responses</span>
                     </div>
                   </div>
+
+                  {/* Collapsible All Features */}
+                  <Collapsible>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="w-full mb-4">
+                        <span className="text-sm">See all features</span>
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-2 mb-4">
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>WhatsApp/Email alerts to owner</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Limited human oversight (setup & alerts)</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Reviews Summary Reports</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Email Support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
+                        <span className="text-primary">✓</span>
+                        <span>Saves time, consistent replies, faster response</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                   
                   <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
                     <a href="/contact?tier=basic&service=reputation">Get Started</a>
@@ -496,11 +593,11 @@ const ReputationManagement = () => {
               </Card>
 
               {/* Standard Tier */}
-              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow border-2 border-primary/20">
+              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow border-2 border-primary/20 md:-mt-4 md:mb-4">
                 <Badge className="absolute top-2 right-2 bg-primary z-10">Most Popular</Badge>
                 {/* Tier Label */}
                 <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Standard Tier</h3>
+                  <h3 className="text-lg font-bold text-foreground">Growth (Standard)</h3>
                 </div>
                 {/* Blue gradient header */}
                 <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 text-center">
@@ -509,7 +606,7 @@ const ReputationManagement = () => {
                     <div className="text-2xl font-bold">KES 7,500</div>
                   </div>
                   <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-5xl font-bold mb-1">
+                    <div className="text-6xl font-bold mb-1">
                       KES 20,500
                     </div>
                     <span className="text-lg font-medium">per month</span>
@@ -517,43 +614,59 @@ const ReputationManagement = () => {
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-6">For growing businesses</p>
+                  <p className="text-sm text-muted-foreground mb-4">For growing businesses</p>
                   
-                  {/* Feature Checklist */}
-                  <div className="space-y-3 mb-6 flex-1">
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Platforms</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                  {/* Preview Features */}
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Up to 3 Platforms (GBP, FB, Yelp/TripAdvisor)</span>
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Response Mgmt</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Sentiment</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Alerts</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Feedback</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Oversight</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Reports</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Support</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Yes (AI-powered) Sentiment Analysis</span>
                     </div>
                   </div>
+
+                  {/* Collapsible All Features */}
+                  <Collapsible>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="w-full mb-4">
+                        <span className="text-sm">See all features</span>
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-2 mb-4">
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>AI-drafted & auto-posted (custom brand voice)</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Recorded to database + WhatsApp/Email alerts</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Conditional Logic for feedback solicitation</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Periodic check-ins & critical issue review</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Detailed Monthly Review Reports</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Email & WhatsApp Support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
+                        <span className="text-primary">✓</span>
+                        <span>Protects online reputation, improves customer satisfaction</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                   
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full mt-auto">
                     <a href="/contact?tier=standard&service=reputation">Get Started</a>
@@ -565,13 +678,13 @@ const ReputationManagement = () => {
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                 {/* Tier Label */}
                 <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Pro Tier</h3>
+                  <h3 className="text-lg font-bold text-foreground">Premium (Full-Service)</h3>
                 </div>
                 {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 text-center">
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-6 text-center">
                   <div className="mb-2">
                     <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-lg font-bold">Custom</div>
+                    <div className="text-lg font-bold">Custom Quote</div>
                   </div>
                   <div className="border-t-2 border-white/50 pt-3 mt-3">
                     <div className="text-3xl font-bold mb-1">
@@ -582,43 +695,59 @@ const ReputationManagement = () => {
                 </div>
                 {/* White content area */}
                 <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-6">Enterprise solutions</p>
+                  <p className="text-sm text-muted-foreground mb-4">Enterprise solutions</p>
                   
-                  {/* Feature Checklist */}
-                  <div className="space-y-3 mb-6 flex-1">
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Platforms</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                  {/* Preview Features */}
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Unlimited relevant platforms</span>
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Response Mgmt</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Sentiment</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Alerts</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Feedback</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Oversight</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Reports</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span>Support</span>
-                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    <div className="flex items-start gap-2 text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Yes (AI-powered, highly refined)</span>
                     </div>
                   </div>
+
+                  {/* Collapsible All Features */}
+                  <Collapsible>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="w-full mb-4">
+                        <span className="text-sm">See all features</span>
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="space-y-2 mb-4">
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>AI-drafted, human-reviewed & customized before posting</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Priority alerts + dedicated human escalation</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Conditional Logic + CRM integration option</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Dedicated Account Manager, proactive monitoring</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs">
+                        <span className="text-muted-foreground">•</span>
+                        <span>Priority Email, WhatsApp & Phone Support</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
+                        <span className="text-primary">✓</span>
+                        <span>Elite brand protection, data-driven insights, maximum growth</span>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                   
                   <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
                     <a href="/contact?tier=pro&service=reputation">Get Quote</a>
