@@ -379,235 +379,249 @@ const ReputationManagement = () => {
             </div>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12 relative">
-            {/* Basic Tier */}
-            <div className="relative">
+          {/* Pricing Grid with Feature Table */}
+          <div className="grid lg:grid-cols-[400px_1fr] gap-8 items-start">
+            {/* Feature Comparison Table */}
+            <div className="bg-white dark:bg-card rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-bold mb-6">Feature Comparison</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Platforms Monitored</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Response Management</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Sentiment Analysis</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Alerts & Notifications</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Feedback Solicitation</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Human Oversight</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 pb-3 border-b">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Reporting</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">Support Channels</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Basic Tier */}
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                {/* Tier Label */}
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
+                  <h3 className="text-lg font-bold text-foreground">Basic Tier</h3>
+                </div>
                 {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
+                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 text-center">
+                  <div className="mb-2">
+                    <div className="text-sm opacity-90">Setup Fee</div>
+                    <div className="text-2xl font-bold">KES 3,500</div>
+                  </div>
+                  <div className="border-t-2 border-white/50 pt-3 mt-3">
+                    <div className="text-5xl font-bold mb-1">
+                      KES 9,500
+                    </div>
+                    <span className="text-lg font-medium">per month</span>
+                  </div>
+                </div>
+                {/* White content area */}
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
+                  <p className="text-sm text-muted-foreground mb-6">Perfect for small businesses</p>
+                  
+                  {/* Feature Checklist */}
+                  <div className="space-y-3 mb-6 flex-1">
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Platforms</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Response Mgmt</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Sentiment</span>
+                      <span className="text-muted-foreground">-</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Alerts</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Feedback</span>
+                      <span className="text-muted-foreground">-</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Oversight</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Reports</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Support</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                  </div>
+                  
+                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
+                    <a href="/contact?tier=basic&service=reputation">Get Started</a>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Standard Tier */}
+              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow border-2 border-primary/20">
+                <Badge className="absolute top-2 right-2 bg-primary z-10">Most Popular</Badge>
+                {/* Tier Label */}
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
+                  <h3 className="text-lg font-bold text-foreground">Standard Tier</h3>
+                </div>
+                {/* Blue gradient header */}
+                <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 text-center">
                   <div className="mb-2">
                     <div className="text-sm opacity-90">Setup Fee</div>
                     <div className="text-2xl font-bold">KES 7,500</div>
                   </div>
                   <div className="border-t-2 border-white/50 pt-3 mt-3">
                     <div className="text-5xl font-bold mb-1">
-                      KES 15,000
+                      KES 20,500
                     </div>
                     <span className="text-lg font-medium">per month</span>
                   </div>
                 </div>
                 {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Basic (Starter)</h3>
-                  <p className="text-sm text-muted-foreground mb-6">Perfect for small businesses</p>
-                  
-                  {/* Preview Features */}
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>1 Google Business Profile</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>AI-drafted & auto-posted responses</span>
-                    </div>
-                  </div>
-                  
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
-                      <span>View All Features</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-3 mb-6">
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">Sentiment Analysis: N/A</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>WhatsApp/Email alerts to owner</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">Feedback Solicitation: N/A</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Limited human oversight (setup & alerts)</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Reviews Summary Reports</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Email Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <span>Saves time, consistent responses</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                  
-                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full">
-                    <a href="/contact?tier=basic&service=reputation">Get Started</a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Premium Tier - Elevated */}
-            <div className="relative md:-mt-4 md:mb-4">
-              <Card className="h-full flex flex-col shadow-2xl hover:shadow-3xl transition-shadow border-2 border-primary/20">
-                <Badge className="absolute top-4 right-4 bg-primary z-10">Most Popular</Badge>
-                {/* Blue gradient header - larger */}
-                <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-t-lg text-center">
-                  <div className="mb-2">
-                    <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-2xl font-bold">KES 17,500</div>
-                  </div>
-                  <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-6xl font-bold mb-1">
-                      KES 28,000
-                    </div>
-                    <span className="text-xl font-medium">per month</span>
-                  </div>
-                </div>
-                {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-500 mb-2">Growth (Standard)</h3>
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
                   <p className="text-sm text-muted-foreground mb-6">For growing businesses</p>
                   
-                  {/* Preview Features */}
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Up to 3 Platforms (GBP, FB, Yelp/TripAdvisor)</span>
+                  {/* Feature Checklist */}
+                  <div className="space-y-3 mb-6 flex-1">
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Platforms</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
                     </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Yes (AI-powered) Sentiment Analysis</span>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Response Mgmt</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Sentiment</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Alerts</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Feedback</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Oversight</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Reports</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Support</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
                     </div>
                   </div>
                   
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
-                      <span>View All Features</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-3 mb-6">
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI-drafted & auto-posted (custom brand voice)</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Recorded to database + WhatsApp/Email alerts</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Conditional Logic for feedback</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Periodic check-ins & critical issue review</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Detailed Monthly Review Reports</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Email & WhatsApp Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <span>Protects online reputation, improves customer satisfaction</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                  
-                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full">
-                    <a href="/contact?tier=growth&service=reputation">Get Started</a>
+                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full mt-auto">
+                    <a href="/contact?tier=standard&service=reputation">Get Started</a>
                   </Button>
                 </CardContent>
               </Card>
-            </div>
 
-            {/* Pro Tier */}
-            <div className="relative">
+              {/* Pro Tier */}
               <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+                {/* Tier Label */}
+                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
+                  <h3 className="text-lg font-bold text-foreground">Pro Tier</h3>
+                </div>
                 {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 rounded-t-lg text-center">
+                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 text-center">
                   <div className="mb-2">
                     <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-xl font-bold">KES 35,000 - 50,000+</div>
+                    <div className="text-lg font-bold">Custom</div>
                   </div>
                   <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-4xl font-bold mb-1">
-                      KES 35,000 - 70,000+
+                    <div className="text-3xl font-bold mb-1">
+                      Custom Pricing
                     </div>
-                    <span className="text-lg font-medium">per month</span>
+                    <span className="text-sm font-medium">Contact for quote</span>
                   </div>
                 </div>
                 {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Premium (Full-Service)</h3>
+                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
                   <p className="text-sm text-muted-foreground mb-6">Enterprise solutions</p>
                   
-                  {/* Preview Features */}
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Unlimited relevant platforms</span>
+                  {/* Feature Checklist */}
+                  <div className="space-y-3 mb-6 flex-1">
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Platforms</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
                     </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Yes (AI-powered, highly refined)</span>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Response Mgmt</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Sentiment</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Alerts</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Feedback</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Oversight</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Reports</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <span>Support</span>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
                     </div>
                   </div>
                   
-                  <Collapsible>
-                    <CollapsibleTrigger className="flex items-center justify-center gap-2 w-full mb-4 text-sm font-medium text-primary hover:underline">
-                      <span>View Features</span>
-                      <ChevronDown className="h-4 w-4" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-3 mb-6">
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>AI-drafted, human-reviewed & customized before posting</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Priority WhatsApp/Email alerts + Dedicated human escalation</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Conditional Logic + CRM integration option</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Dedicated Account Manager, proactive monitoring & intervention</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Priority Email, WhatsApp & Phone Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-sm font-semibold text-primary">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                        <span>Elite brand protection, data-driven insights, maximum growth</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                  
-                  <Button asChild variant="outline" className="w-full border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-full">
-                    <a href="/contact?tier=premium&service=reputation">Get Quote</a>
+                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
+                    <a href="/contact?tier=pro&service=reputation">Get Quote</a>
                   </Button>
                 </CardContent>
               </Card>
