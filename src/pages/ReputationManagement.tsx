@@ -2,9 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search, ChevronDown } from "lucide-react";
+import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,7 +15,73 @@ import heroImage from "@/assets/online-reviews-hero.webp";
 const ReputationManagement = () => {
   const { t } = useLanguage();
   const [isAnnual, setIsAnnual] = useState(false);
-  const [showAllFeatures, setShowAllFeatures] = useState(false);
+
+  const pricingTiers = [
+    {
+      name: "Basic (Starter)",
+      setupFee: 3500,
+      monthlyPrice: 9500,
+      description: "Perfect for small businesses",
+      gradient: "from-blue-400 to-blue-600",
+      features: [
+        "1 Google Business Profile",
+        "AI-drafted & auto-posted responses",
+        "WhatsApp/Email alerts to owner",
+        "Limited human oversight (setup & alerts)",
+        "Reviews Summary Reports",
+        "Basic Analytics Dashboard"
+      ],
+      cta: "Get Started"
+    },
+    {
+      name: "Standard (Growth)",
+      setupFee: 7500,
+      monthlyPrice: 20500,
+      description: "For growing businesses",
+      gradient: "from-purple-400 to-purple-600",
+      popular: true,
+      features: [
+        "Up to 3 Google Business Profiles",
+        "AI-drafted & auto-posted responses",
+        "Auto-review request",
+        "WhatsApp/Email alerts",
+        "Moderate human oversight (draft reviews)",
+        "Sentiment Analysis & Insights",
+        "Advanced Analytics Dashboard",
+        "Monthly Performance Reports"
+      ],
+      cta: "Get Started"
+    },
+    {
+      name: "Pro (Premium)",
+      setupFee: null,
+      monthlyPrice: null,
+      description: "For established businesses",
+      gradient: "from-amber-400 to-amber-600",
+      features: [
+        "Unlimited Google Business Profiles",
+        "AI-drafted & auto-posted responses",
+        "Auto-review request",
+        "WhatsApp/Email/SMS alerts",
+        "Full human oversight (draft & edit reviews)",
+        "Advanced Sentiment Analysis",
+        "Competitive Analysis",
+        "Custom Analytics Dashboards",
+        "Weekly Performance Reports",
+        "Priority Support"
+      ],
+      cta: "Request Quote"
+    }
+  ];
+
+  const calculatePrice = (price: number | null) => {
+    if (price === null) return null;
+    if (isAnnual) {
+      const discountedPrice = Math.round(price * 0.8); // 20% discount
+      return discountedPrice.toLocaleString();
+    }
+    return price.toLocaleString();
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -74,15 +138,6 @@ const ReputationManagement = () => {
     ]
   };
 
-  const calculatePrice = (monthlyPrice: string) => {
-    const numPrice = parseInt(monthlyPrice.replace(/[^0-9]/g, ''));
-    if (isAnnual) {
-      const discountedMonthly = Math.round(numPrice * 0.8); // 20% discount
-      return `KES ${discountedMonthly.toLocaleString()}/mo`;
-    }
-    return monthlyPrice;
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -99,7 +154,6 @@ const ReputationManagement = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -107,10 +161,8 @@ const ReputationManagement = () => {
           }}
         />
         
-        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         
-        {/* Content */}
         <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
           <div className="max-w-6xl animate-fade-in">
             <Badge className="mb-6 bg-white/10 text-white border-white/20" variant="secondary">
@@ -170,11 +222,11 @@ const ReputationManagement = () => {
             
             <Card className="text-center p-6">
               <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageSquare className="w-8 h-8 text-destructive" />
+                <Clock className="w-8 h-8 text-destructive" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Missed Opportunities</h3>
+              <h3 className="text-xl font-semibold mb-2">Time Consuming</h3>
               <p className="text-muted-foreground">
-                Unanswered reviews and poor online presence mean missing out on potential customers.
+                Manually monitoring and responding to reviews across platforms takes hours daily.
               </p>
             </Card>
           </div>
@@ -185,100 +237,70 @@ const ReputationManagement = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our AI Reputation Solution</h2>
+            <h2 className="text-3xl font-bold mb-4">AI-Powered Solution</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Advanced artificial intelligence that works around the clock to protect, enhance, 
-              and grow your online reputation across all platforms.
+              Our intelligent AI system works 24/7 to protect and enhance your online reputation automatically.
             </p>
           </div>
-
-          <div className="mb-16 p-8 bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Search className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Review Fetch</h3>
-                      <p className="text-muted-foreground">
-                        Automatically collects reviews from 50+ platforms using advanced APIs and web scraping, 
-                        ensuring comprehensive coverage of your online presence.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Star className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Smart Review Monitoring</h3>
-                      <p className="text-muted-foreground">
-                        AI monitors all review platforms 24/7, instantly alerting you to new reviews 
-                        and sentiment changes across Google, Facebook, Yelp, and more.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Sentiment Analysis</h3>
-                      <p className="text-muted-foreground">
-                        Advanced AI analyzes the emotional tone and context of reviews to identify 
-                        critical issues and positive trends affecting your reputation.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Intelligent Response Generation</h3>
-                      <p className="text-muted-foreground">
-                        AI crafts personalized, professional responses that match your brand voice, 
-                        turning negative experiences into opportunities for improvement.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Reputation Analytics</h3>
-                      <p className="text-muted-foreground">
-                        Comprehensive dashboards track reputation trends, sentiment analysis, 
-                        and competitive benchmarking to guide strategic decisions.
-                      </p>
-                    </div>
-                  </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src={reputationImage} 
+                alt="AI-powered reputation management dashboard showing review monitoring and sentiment analysis"
+                className="rounded-lg shadow-2xl"
+              />
+            </div>
+            
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Search className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">24/7 Monitoring</h3>
+                  <p className="text-muted-foreground">
+                    AI automatically tracks reviews across 45+ platforms, catching every mention of your business in real-time.
+                  </p>
                 </div>
               </div>
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/1b2f1422-a692-4c56-8639-1d04cfccdba8.png" 
-                  alt="Happy customer with positive review notifications" 
-                  className="w-full rounded-xl shadow-lg"
-                />
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <BarChart3 className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Sentiment Analysis</h3>
+                  <p className="text-muted-foreground">
+                    Advanced AI analyzes review sentiment and identifies critical issues before they escalate.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MessageSquare className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Smart Responses</h3>
+                  <p className="text-muted-foreground">
+                    AI generates personalized responses matching your brand voice, ready for approval or auto-posting.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Star className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Review Generation</h3>
+                  <p className="text-muted-foreground">
+                    Automated campaigns request reviews from satisfied customers, building positive momentum.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 text-center">
-            <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10 text-primary" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">Reputation Score</h3>
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
-            <p className="text-muted-foreground">Average client improvement in online reputation within 90 days</p>
           </div>
         </div>
       </section>
@@ -287,59 +309,34 @@ const ReputationManagement = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why It's Essential in the Modern-Day Era</h2>
+            <h2 className="text-3xl font-bold mb-4">Transform Your Business Reputation</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Modern consumers make decisions faster than ever. Your reputation needs to work 
-              as hard as you do to capture and convert potential customers.
+              See measurable results in revenue, customer trust, and operational efficiency.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Instant Crisis Management</h3>
+              <div className="text-4xl font-bold text-primary mb-2">98%</div>
+              <h3 className="text-xl font-semibold mb-2">Reputation Improvement</h3>
               <p className="text-muted-foreground">
-                AI detects reputation threats within minutes, not days, allowing for immediate 
-                response before damage spreads across social networks.
+                Average rating increase within 90 days of implementation.
               </p>
             </Card>
-
+            
             <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Competitive Advantage</h3>
+              <div className="text-4xl font-bold text-primary mb-2">70%</div>
+              <h3 className="text-xl font-semibold mb-2">More Conversions</h3>
               <p className="text-muted-foreground">
-                Businesses with strong online reputations charge 15-20% more than competitors 
-                and convert 70% more leads into customers.
+                Higher conversion rates from improved online reputation and trust.
               </p>
             </Card>
-
+            
             <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Customer Lifetime Value</h3>
+              <div className="text-4xl font-bold text-primary mb-2">15-20%</div>
+              <h3 className="text-xl font-semibold mb-2">Pricing Power</h3>
               <p className="text-muted-foreground">
-                Positive reputation management increases customer retention by 40% and generates 
-                more word-of-mouth referrals.
-              </p>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Local Search Dominance</h3>
-              <p className="text-muted-foreground">
-                Strong reputation signals boost local SEO rankings, making your business more 
-                visible when customers search for your services.
-              </p>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Employee Morale</h3>
-              <p className="text-muted-foreground">
-                A positive company reputation attracts better talent and keeps employees 
-                proud to represent your brand.
-              </p>
-            </Card>
-
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-3">Investment Protection</h3>
-              <p className="text-muted-foreground">
-                Protect your marketing investments by ensuring positive brand perception 
-                amplifies all other growth efforts.
+                Ability to charge premium prices with stronger reputation.
               </p>
             </Card>
           </div>
@@ -348,436 +345,133 @@ const ReputationManagement = () => {
 
       {/* Pricing Section */}
       <section id="pricing" className="py-16 px-4 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Reputation Management Pricing</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Choose the perfect plan for your business needs. All plans include our core AI-powered reputation management features.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparent Pricing</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+              Choose the plan that fits your business needs. All plans include AI-powered review management.
             </p>
             
-            {/* Pricing Toggle */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <span className={`text-sm font-medium ${!isAnnual ? 'text-primary' : 'text-muted-foreground'}`}>
+            {/* Monthly/Annual Toggle */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className={`text-sm font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
                 Monthly
               </span>
               <button
                 onClick={() => setIsAnnual(!isAnnual)}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  isAnnual ? 'bg-primary' : 'bg-muted'
+                  isAnnual ? 'bg-primary' : 'bg-muted-foreground/30'
                 }`}
+                role="switch"
+                aria-checked={isAnnual}
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-background transition-transform ${
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
                     isAnnual ? 'translate-x-6' : 'translate-x-1'
                   }`}
                 />
               </button>
-              <span className={`text-sm font-medium ${isAnnual ? 'text-primary' : 'text-muted-foreground'}`}>
-                Annual
-                {isAnnual && <Badge className="ml-2" variant="secondary">Save 20%</Badge>}
+              <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
+                Annual <Badge variant="secondary" className="ml-1 text-xs">Save 20%</Badge>
               </span>
             </div>
           </div>
 
-          {/* Pricing Grid with Feature Table */}
-          <div className="grid lg:grid-cols-[400px_1fr] gap-8 items-start">
-            {/* Feature Comparison Table */}
-            <Collapsible defaultOpen className="bg-white dark:bg-card rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold">Feature Comparison</h3>
-                <CollapsibleTrigger asChild>
-                  <Button variant="ghost" size="sm">
-                    <ChevronDown className="h-4 w-4" />
-                  </Button>
-                </CollapsibleTrigger>
-              </div>
-              
-              <div className="space-y-3">
-                {/* Feature Headers Row */}
-                <div className="flex items-center gap-2 pb-2 border-b-2 border-border">
-                  <div className="flex-1 font-semibold text-xs">Feature/Tier</div>
-                  <div className="w-16 text-center font-semibold text-xs">Basic</div>
-                  <div className="w-16 text-center font-semibold text-xs">Standard</div>
-                  <div className="w-16 text-center font-semibold text-xs">Pro</div>
-                </div>
-
-                <CollapsibleContent className="space-y-3">
-                  {/* Review Platforms */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Review Platforms</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Sentiment Analysis */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Sentiment Analysis</div>
-                    <div className="w-16 flex justify-center">
-                      <span className="text-muted-foreground text-sm">-</span>
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Positive Responses */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Positive Responses</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Negative Feedback Handling */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Negative Feedback Handling</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Feedback Solicitation */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Feedback Solicitation</div>
-                    <div className="w-16 flex justify-center">
-                      <span className="text-muted-foreground text-sm">-</span>
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Human Oversight */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Human Oversight</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Reporting */}
-                  <div className="flex items-center gap-2 py-2 border-b">
-                    <div className="flex-1 text-sm font-medium">Reporting</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-
-                  {/* Support */}
-                  <div className="flex items-center gap-2 py-2">
-                    <div className="flex-1 text-sm font-medium">Support</div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div className="w-16 flex justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </div>
-                </CollapsibleContent>
-              </div>
-            </Collapsible>
-
-            {/* Pricing Cards */}
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Basic Tier */}
-              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {pricingTiers.map((tier, index) => (
+              <Card key={index} className={`flex flex-col shadow-lg hover:shadow-xl transition-all ${tier.popular ? 'ring-2 ring-primary md:scale-105' : ''}`}>
                 {/* Tier Label */}
-                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Basic (Starter)</h3>
+                {tier.popular && (
+                  <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-semibold rounded-t-lg">
+                    Most Popular
+                  </div>
+                )}
+                <div className="bg-gradient-to-br from-muted to-muted/50 px-6 py-4 text-center">
+                  <h3 className="text-xl font-bold">{tier.name}</h3>
                 </div>
-                {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-400 to-blue-600 text-white p-6 text-center">
-                  <div className="mb-2">
-                    <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-2xl font-bold">KES 3,500</div>
-                  </div>
-                  <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-5xl font-bold mb-1">
-                      KES 9,500
+                
+                {/* Gradient Header with Pricing */}
+                <div className={`bg-gradient-to-br ${tier.gradient} text-white p-6 md:p-8 text-center`}>
+                  {tier.setupFee !== null && (
+                    <div className="mb-4">
+                      <div className="text-sm opacity-90">Setup Fee</div>
+                      <div className="text-2xl font-bold">
+                        KES {calculatePrice(tier.setupFee) || tier.setupFee.toLocaleString()}
+                      </div>
                     </div>
-                    <span className="text-lg font-medium">per month</span>
+                  )}
+                  
+                  <div className={tier.setupFee !== null ? 'border-t-2 border-white/50 pt-4 mt-4' : ''}>
+                    {tier.monthlyPrice !== null ? (
+                      <>
+                        <div className="text-4xl md:text-5xl font-bold mb-2">
+                          KES {calculatePrice(tier.monthlyPrice)}
+                        </div>
+                        <div className="text-sm md:text-base font-medium">
+                          per month{isAnnual ? ' (billed annually)' : ''}
+                        </div>
+                        {isAnnual && (
+                          <div className="text-xs mt-3 opacity-90 bg-white/10 rounded-full px-3 py-1 inline-block">
+                            Save KES {(tier.monthlyPrice * 0.2).toLocaleString()}/month
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="text-2xl md:text-3xl font-bold">
+                        Contact for Pricing
+                      </div>
+                    )}
                   </div>
                 </div>
-                {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-4">Perfect for small businesses</p>
+                
+                {/* Content */}
+                <CardContent className="flex-1 p-6 bg-card">
+                  <p className="text-sm text-muted-foreground mb-6">{tier.description}</p>
                   
-                  {/* Preview Features */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>1 Google Business Profile</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>AI-drafted & auto-posted responses</span>
-                    </div>
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {tier.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
                   </div>
-
-                  {/* Collapsible All Features */}
-                  <Collapsible>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" size="sm" className="w-full mb-4">
-                        <span className="text-sm">See all features</span>
-                        <ChevronDown className="ml-2 h-4 w-4" />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-2 mb-4">
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>WhatsApp/Email alerts to owner</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Limited human oversight (setup & alerts)</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Reviews Summary Reports</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Email Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
-                        <span className="text-primary">✓</span>
-                        <span>Saves time, consistent replies, faster response</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
                   
-                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
-                    <a href="/contact?tier=basic&service=reputation">Get Started</a>
+                  {/* CTA Button */}
+                  <Button 
+                    asChild 
+                    className="w-full mt-auto text-base py-6"
+                    variant={tier.popular ? "default" : "outline"}
+                    size="lg"
+                  >
+                    <a href="/contact">{tier.cta}</a>
                   </Button>
                 </CardContent>
               </Card>
-
-              {/* Standard Tier */}
-              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow border-2 border-primary/20 md:-mt-4 md:mb-4">
-                <Badge className="absolute top-2 right-2 bg-primary z-10">Most Popular</Badge>
-                {/* Tier Label */}
-                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Growth (Standard)</h3>
-                </div>
-                {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 text-center">
-                  <div className="mb-2">
-                    <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-2xl font-bold">KES 7,500</div>
-                  </div>
-                  <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-6xl font-bold mb-1">
-                      KES 20,500
-                    </div>
-                    <span className="text-lg font-medium">per month</span>
-                  </div>
-                </div>
-                {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-4">For growing businesses</p>
-                  
-                  {/* Preview Features */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Up to 3 Platforms (GBP, FB, Yelp/TripAdvisor)</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Yes (AI-powered) Sentiment Analysis</span>
-                    </div>
-                  </div>
-
-                  {/* Collapsible All Features */}
-                  <Collapsible>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" size="sm" className="w-full mb-4">
-                        <span className="text-sm">See all features</span>
-                        <ChevronDown className="ml-2 h-4 w-4" />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-2 mb-4">
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>AI-drafted & auto-posted (custom brand voice)</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Recorded to database + WhatsApp/Email alerts</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Conditional Logic for feedback solicitation</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Periodic check-ins & critical issue review</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Detailed Monthly Review Reports</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Email & WhatsApp Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
-                        <span className="text-primary">✓</span>
-                        <span>Protects online reputation, improves customer satisfaction</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                  
-                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full mt-auto">
-                    <a href="/contact?tier=standard&service=reputation">Get Started</a>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Pro Tier */}
-              <Card className="h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow">
-                {/* Tier Label */}
-                <div className="bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 px-4 py-2 text-center">
-                  <h3 className="text-lg font-bold text-foreground">Premium (Full-Service)</h3>
-                </div>
-                {/* Blue gradient header */}
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-6 text-center">
-                  <div className="mb-2">
-                    <div className="text-sm opacity-90">Setup Fee</div>
-                    <div className="text-lg font-bold">Custom Quote</div>
-                  </div>
-                  <div className="border-t-2 border-white/50 pt-3 mt-3">
-                    <div className="text-3xl font-bold mb-1">
-                      Custom Pricing
-                    </div>
-                    <span className="text-sm font-medium">Contact for quote</span>
-                  </div>
-                </div>
-                {/* White content area */}
-                <CardContent className="flex-1 p-6 bg-white dark:bg-card flex flex-col">
-                  <p className="text-sm text-muted-foreground mb-4">Enterprise solutions</p>
-                  
-                  {/* Preview Features */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Unlimited relevant platforms</span>
-                    </div>
-                    <div className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Yes (AI-powered, highly refined)</span>
-                    </div>
-                  </div>
-
-                  {/* Collapsible All Features */}
-                  <Collapsible>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="ghost" size="sm" className="w-full mb-4">
-                        <span className="text-sm">See all features</span>
-                        <ChevronDown className="ml-2 h-4 w-4" />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="space-y-2 mb-4">
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>AI-drafted, human-reviewed & customized before posting</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Priority alerts + dedicated human escalation</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Conditional Logic + CRM integration option</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Dedicated Account Manager, proactive monitoring</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Advanced Analytics Dashboard, Custom Reports, Quarterly Strategy Calls</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs">
-                        <span className="text-muted-foreground">•</span>
-                        <span>Priority Email, WhatsApp & Phone Support</span>
-                      </div>
-                      <div className="flex items-start gap-2 text-xs font-medium mt-3">
-                        <span className="text-primary">✓</span>
-                        <span>Elite brand protection, data-driven insights, maximum growth</span>
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
-                  
-                  <Button asChild className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-full mt-auto">
-                    <a href="/contact?tier=pro&service=reputation">Get Quote</a>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-primary/5">
+      {/* Call to Action */}
+      <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Reputation?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Online Reputation?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join successful businesses that trust AI to protect and grow their online reputation. 
-            Start your transformation today.
+            Get a free reputation audit and see how AI can protect and grow your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Get Your Free Reputation Audit</a>
+            <Button asChild size="lg" className="min-w-[200px]">
+              <a href="/contact">Get Free Audit</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">Schedule a Consultation</a>
+            <Button asChild size="lg" variant="outline" className="min-w-[200px]">
+              <a href="/consultation-booking">Schedule Consultation</a>
             </Button>
           </div>
         </div>
       </section>
-
       </main>
       
       <Footer />
