@@ -21,35 +21,23 @@ declare global {
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [showSecondAnimation, setShowSecondAnimation] = useState(false);
-
-  useEffect(() => {
-    // Switch to second animation after first one plays (approximately 5 seconds)
-    const timer = setTimeout(() => {
-      setShowSecondAnimation(true);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
   
   return (
     <section className="relative h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Content Container - Flex layout for animation and text */}
       <div className="relative h-full flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 lg:px-16 pt-24 md:pt-0 z-20 max-w-7xl mx-auto gap-8">
         
-        {/* Lottie Animation - Left Side */}
-        <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in relative">
+        {/* Lottie Animations - Left Side */}
+        <div className="flex-shrink-0 w-full lg:w-1/2 flex flex-col gap-4 justify-center lg:justify-start items-center animate-fade-in">
           <dotlottie-wc 
             src="https://lottie.host/5515c80d-3441-471c-9be0-c5ee83d7546a/BN7kpzrvc3.lottie" 
             autoplay 
+            loop
             style={{
               width: '100%',
               maxWidth: '500px',
               height: 'auto',
-              aspectRatio: '1 / 1',
-              opacity: showSecondAnimation ? '0' : '1',
-              transition: 'opacity 1s ease-in-out',
-              position: showSecondAnimation ? 'absolute' : 'relative'
+              aspectRatio: '1 / 1'
             }}
           />
           <dotlottie-wc 
@@ -60,10 +48,7 @@ export default function HeroSection() {
               width: '100%',
               maxWidth: '500px',
               height: 'auto',
-              aspectRatio: '1 / 1',
-              opacity: showSecondAnimation ? '1' : '0',
-              transition: 'opacity 1s ease-in-out',
-              position: showSecondAnimation ? 'relative' : 'absolute'
+              aspectRatio: '1 / 1'
             }}
           />
         </div>
