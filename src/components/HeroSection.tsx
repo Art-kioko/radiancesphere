@@ -24,10 +24,10 @@ export default function HeroSection() {
   const [currentAnimation, setCurrentAnimation] = useState(0);
   
   useEffect(() => {
-    // Switch between animations every 5 seconds
+    // Switch between animations every 7 seconds
     const interval = setInterval(() => {
       setCurrentAnimation((prev) => (prev === 0 ? 1 : 0));
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
