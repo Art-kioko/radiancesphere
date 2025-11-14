@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Heart, Dumbbell, Droplets, Activity, Utensils, Wine, Coffee, Clock, Car, Plane, Car as CarIcon, MapPin, Waves, Users, Music, BookOpen } from "lucide-react";
 
@@ -33,6 +34,7 @@ export default function Amenities() {
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
           <div className="container relative z-10 pt-20">
+            <BackButton to="/" />
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
                 MareSereno

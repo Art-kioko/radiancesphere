@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Shield, TrendingUp, Users, MessageSquare, BarChart3, CheckCircle, Clock, Search } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -446,7 +447,11 @@ const ReputationManagement = () => {
                     variant={tier.popular ? "default" : "outline"}
                     size="lg"
                   >
-                    <a href="/contact">{tier.cta}</a>
+                    <Link 
+                      to={`/contact?subject=${encodeURIComponent(`${tier.name} Plan Inquiry`)}&message=${encodeURIComponent(`I am interested in subscribing to the ${tier.name} plan. Please provide more details.`)}`}
+                    >
+                      {tier.cta}
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
