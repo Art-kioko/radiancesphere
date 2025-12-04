@@ -33,9 +33,9 @@ export default function HeroSection() {
   }, []);
   
   return (
-    <section className="relative h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Content Container - Flex layout for animation and text */}
-      <div className="relative h-full flex flex-col lg:flex-row items-center justify-between px-4 md:px-8 lg:px-16 pt-24 md:pt-0 z-20 max-w-7xl mx-auto gap-8">
+      <div className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 md:px-8 lg:px-16 pt-20 pb-32 md:pb-24 lg:pt-0 z-20 max-w-7xl mx-auto gap-4 md:gap-8">
         
         {/* Lottie Animations - Left Side (Slideshow) */}
         <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in relative">
@@ -45,7 +45,7 @@ export default function HeroSection() {
             loop
             style={{
               width: '100%',
-              maxWidth: '500px',
+              maxWidth: '400px',
               height: 'auto',
               aspectRatio: '1 / 1',
               opacity: currentAnimation === 0 ? '1' : '0',
@@ -59,7 +59,7 @@ export default function HeroSection() {
             loop
             style={{
               width: '100%',
-              maxWidth: '500px',
+              maxWidth: '400px',
               height: 'auto',
               aspectRatio: '1 / 1',
               opacity: currentAnimation === 1 ? '1' : '0',
@@ -68,25 +68,25 @@ export default function HeroSection() {
             }}
           />
           {/* Spacer to maintain layout */}
-          <div style={{ width: '100%', maxWidth: '500px', aspectRatio: '1 / 1' }} />
+          <div className="w-full max-w-[280px] md:max-w-[400px] aspect-square" />
         </div>
 
         {/* Hero Content - Right Side */}
         <div className="flex-1 w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
-          <span className="inline-block text-foreground/80 text-sm md:text-lg mb-4 tracking-wide border-b border-border pb-2">
+          <span className="inline-block text-foreground/80 text-xs md:text-lg mb-2 md:mb-4 tracking-wide border-b border-border pb-2">
             {t.hero.subtitle}
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 md:mb-4">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 md:mb-4">
             {t.hero.title}
           </h1>
-          <p className="text-base md:text-lg text-foreground/80 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0">
+          <p className="text-sm md:text-lg text-foreground/80 mb-4 md:mb-8 max-w-2xl mx-auto lg:mx-0">
             {t.hero.description}
           </p>
-          <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
-            <Button asChild size="lg" variant="heroSolid" className="w-full sm:w-auto min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[48px]">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 md:gap-4">
+            <Button asChild size="lg" variant="heroSolid" className="w-full sm:w-auto min-w-[180px] md:min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[44px] md:min-h-[48px] text-sm md:text-base">
               <Link to="/contact">{t.hero.getStarted}</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className="w-full sm:w-auto min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[48px]">
+            <Button asChild variant="hero" size="lg" className="w-full sm:w-auto min-w-[180px] md:min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px] min-h-[44px] md:min-h-[48px] text-sm md:text-base">
               <Link to="/services">{t.hero.exploreServices}</Link>
             </Button>
           </div>
@@ -94,14 +94,14 @@ export default function HeroSection() {
       </div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-foreground animate-bounce z-30">
+      <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 text-foreground animate-bounce z-30">
         <a 
           href="#welcome" 
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity min-h-[48px] p-2"
+          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity min-h-[44px] md:min-h-[48px] p-2"
           aria-label="Scroll down to content"
         >
-          <span className="text-sm mb-2">{t.hero.scrollDown}</span>
-          <ChevronDown className="h-6 w-6" />
+          <span className="text-xs md:text-sm mb-1 md:mb-2">{t.hero.scrollDown}</span>
+          <ChevronDown className="h-5 w-5 md:h-6 md:w-6" />
         </a>
       </div>
       
