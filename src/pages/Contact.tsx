@@ -33,8 +33,19 @@ export default function Contact() {
     // Pre-fill form based on URL parameters
     const tier = searchParams.get('tier');
     const service = searchParams.get('service');
+    const directSubject = searchParams.get('subject');
+    const directMessage = searchParams.get('message');
     
-    if (tier && service) {
+    // Handle direct subject and message params (from pricing CTAs)
+    if (directSubject || directMessage) {
+      setFormData(prev => ({
+        ...prev,
+        subject: directSubject || prev.subject,
+        message: directMessage || prev.message
+      }));
+    }
+    // Handle tier and service params (legacy support)
+    else if (tier && service) {
       const tierLabels: Record<string, string> = {
         'basic': 'Basic (Starter)',
         'growth': 'Growth (Standard)',
