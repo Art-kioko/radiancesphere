@@ -31,7 +31,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
   
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-black/30 backdrop-blur-md py-5")}>
+  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-background/95 dark:bg-card/95 backdrop-blur-lg py-3 shadow-md" : "bg-background/90 dark:bg-card/90 backdrop-blur-md py-5")}>
       <nav className="container flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Radiance Sphere" className="h-16 md:h-32 w-auto" />
@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">
           {navLinks.map(link => <li key={link.name} className="relative">
-              <Link to={link.path} className={cn("font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full", scrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80")}>
+              <Link to={link.path} className="font-medium text-foreground transition-colors after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full hover:text-primary">
                 {link.name}
               </Link>
             </li>)}
@@ -56,25 +56,32 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center space-x-2">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={cn("rounded-full", !scrolled && "text-white hover:text-white/80 hover:bg-white/20")}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="flex items-center gap-2 bg-background text-foreground border-border hover:bg-accent"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <span className="text-sm font-medium">Menu</span>
           </Button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={cn("fixed inset-0 z-50 bg-background md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
-        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
+        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background dark:bg-card border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
           <div className="flex flex-col h-full justify-between">
             <div>
-              <div className="flex justify-end mb-8">
-                <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} className="rounded-full">
-                  <X className="h-6 w-6" />
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-lg font-semibold text-foreground">Navigation</span>
+                <Button variant="outline" size="icon" onClick={() => setMobileMenuOpen(false)} className="rounded-full bg-background text-foreground border-border hover:bg-accent">
+                  <X className="h-5 w-5" />
                 </Button>
               </div>
-              <ul className="space-y-8">
+              <ul className="space-y-6">
                 {navLinks.map(link => <li key={link.name}>
-                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary block py-2" onClick={() => setMobileMenuOpen(false)}>
+                    <Link to={link.path} className="text-lg font-medium text-foreground transition-colors hover:text-primary block py-2" onClick={() => setMobileMenuOpen(false)}>
                       {link.name}
                     </Link>
                   </li>)}
