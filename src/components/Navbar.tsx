@@ -69,8 +69,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
-        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background dark:bg-card border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn("fixed inset-0 z-50 bg-black/50 md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
+        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-card border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="flex justify-between items-center mb-8">
