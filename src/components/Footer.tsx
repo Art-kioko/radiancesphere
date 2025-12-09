@@ -75,18 +75,33 @@ export default function Footer() {
               {t.footer.description}
             </p>
             <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61562047542540" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook size={20} />
-              <span className="sr-only">Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/_radiancesphere/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram size={20} />
-              <span className="sr-only">Instagram</span>
-            </a>
-            <a href="https://x.com/RadianceSphere" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter size={20} />
-              <span className="sr-only">Twitter</span>
-            </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61562047542540" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                aria-label="Visit our Facebook page"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://www.instagram.com/_radiancesphere/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                aria-label="Visit our Instagram page"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://x.com/RadianceSphere" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                aria-label="Visit our Twitter page"
+              >
+                <Twitter size={20} />
+              </a>
             </div>
           </div>
           
