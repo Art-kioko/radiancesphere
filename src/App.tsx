@@ -14,6 +14,7 @@ import Services from "./pages/Services";
 import ReputationManagement from "./pages/ReputationManagement";
 import AIWorkflows from "./pages/AIWorkflows";
 import LocalSEO from "./pages/LocalSEO";
+import WebDevelopment from "./pages/WebDevelopment";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/reputation-management" element={<ReputationManagement />} />
             <Route path="/ai-workflows" element={<AIWorkflows />} />
             <Route path="/local-seo" element={<LocalSEO />} />
+            <Route path="/web-development" element={<WebDevelopment />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
