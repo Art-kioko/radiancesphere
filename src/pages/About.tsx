@@ -58,12 +58,11 @@ const About = () => {
               About Radiance Sphere
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Kenya's AI-Powered Digital Marketing Agency
+              Transforming businesses through AI innovation
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               <strong>Radiance Sphere is a Kenya-based digital marketing agency</strong> helping SMEs build trust, 
-              automate operations, and dominate local search through four core services: Online Reputation Management, 
-              Local SEO, AI Workflow Automation, and SEO-Optimized Web Development.
+              automate operations, and dominate local search.
             </p>
           </div>
         </section>
