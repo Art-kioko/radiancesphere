@@ -37,7 +37,7 @@ export const en = {
   },
   testimonials: {
     title: "What Our Clients Say",
-    description: "Discover why businesses across Kenya trust Radiance Sphere for their digital marketing needs."
+    description: "Discover why businesses  trust Radiance Sphere for their digital marketing needs."
   },
   notFound: {
     title: "Page Not Found",
