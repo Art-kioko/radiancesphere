@@ -384,6 +384,47 @@ const LocalSEO = () => {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Complete Your Digital Strategy</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Local SEO works best when combined with our other services for maximum visibility and conversions.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Reputation Management</h3>
+              <p className="text-muted-foreground mb-4">
+                Reviews directly impact local rankings. Our AI-powered reputation management generates positive reviews that boost your Google Maps position.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/reputation-management">Explore Reputation Management</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Web Development</h3>
+              <p className="text-muted-foreground mb-4">
+                Your website needs to convert local traffic into customers. Our SEO-optimized sites are built to rank and convert.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/web-development">See Web Development</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">AI Workflow Automation</h3>
+              <p className="text-muted-foreground mb-4">
+                Automate lead follow-up from local search traffic. Turn website visitors into customers with intelligent workflows.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/ai-workflows">Discover AI Workflows</a>
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">

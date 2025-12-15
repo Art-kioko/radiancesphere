@@ -350,6 +350,47 @@ const AIWorkflows = () => {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Amplify Your Automation</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              AI workflows become even more powerful when integrated with our other digital marketing services.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Reputation Management</h3>
+              <p className="text-muted-foreground mb-4">
+                Automate review requests, response workflows, and reputation monitoring. AI handles your online presence 24/7.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/reputation-management">Explore Reputation Management</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Local SEO</h3>
+              <p className="text-muted-foreground mb-4">
+                Automated workflows can update your Google Business Profile, respond to inquiries, and manage local citations.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/local-seo">Learn About Local SEO</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Web Development</h3>
+              <p className="text-muted-foreground mb-4">
+                Connect your website to automated lead nurturing, order processing, and customer onboarding workflows.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/web-development">See Web Development</a>
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">

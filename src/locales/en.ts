@@ -14,7 +14,7 @@ export const en = {
     scrollDown: "Scroll Down"
   },
   footer: {
-    description: "Radiance Sphere is an AI-powered digital marketing agency helping local businesses grow online by boosting credibility, engaging customers and automating key business tasks.",
+    description: "Radiance Sphere is a Kenya-based digital marketing agency specializing in Online Reputation Management, Local SEO, AI Workflow Automation, and SEO-Optimized Web Development for SMEs.",
     quickLinks: "Quick Links",
     contact: "Contact",
     newsletter: "Newsletter",
@@ -36,8 +36,8 @@ export const en = {
     bookingConfirmed: "Booking Confirmed!"
   },
   testimonials: {
-    title: "What Our Guests Say",
-    description: "Discover why our guests keep coming back to MareSereno for their seaside getaways."
+    title: "What Our Clients Say",
+    description: "Discover why businesses across Kenya trust Radiance Sphere for their digital marketing needs."
   },
   notFound: {
     title: "Page Not Found",
@@ -48,7 +48,7 @@ export const en = {
     welcome: {
       subtitle: "About Radiance Sphere",
       title: "Your Reputation is Your Revenue Engine",
-      description1: "At Radiance Sphere, we specialize in three core areas: AI-powered reputation management that monitors and enhances your online presence, intelligent workflows that automate your business processes, and strategic local SEO that gets you found on Google.",
+      description1: "At Radiance Sphere, we specialize in four core services: AI-powered reputation management, strategic local SEO, intelligent workflow automation, and SEO-optimized web development that together transform your digital presence.",
       description2: "Every service we offer is designed to strengthen your business reputation and convert that trust into consistent revenue growth.",
       learnMore: "Learn More About Us"
     },
@@ -318,9 +318,9 @@ export const en = {
     }
   },
   amenitiesPage: {
-    title: "Our Amenities",
-    subtitle: "Discover the luxury amenities and services that make your stay unforgettable.",
-    description: "At MareSereno, we are dedicated to providing a comprehensive and luxurious stay experience. From our beachfront services to wellness facilities, every detail has been curated to ensure maximum comfort and pleasure.",
+    title: "Our Services",
+    subtitle: "Discover the AI-powered services that transform your business.",
+    description: "At Radiance Sphere, we are dedicated to providing comprehensive digital marketing solutions. From reputation management to workflow automation, every service is curated to ensure maximum business growth.",
     categories: {
       wellness: {
         title: "Wellness & Relaxation",

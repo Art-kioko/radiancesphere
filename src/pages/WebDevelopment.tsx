@@ -375,6 +375,47 @@ const WebDevelopment = () => {
         </div>
       </section>
 
+      {/* Related Services - explicit cross-links */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Maximize Your Website's Impact</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Your website performs best when combined with our full suite of digital marketing services.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Reputation Management</h3>
+              <p className="text-muted-foreground mb-4">
+                Display Google reviews on your website, build social proof, and automatically request reviews from website visitors.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/reputation-management">Explore Reputation Management</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Local SEO</h3>
+              <p className="text-muted-foreground mb-4">
+                Get your website ranking on Google Maps and local search results. Drive foot traffic with location-specific optimization.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/local-seo">Learn About Local SEO</a>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">AI Workflow Automation</h3>
+              <p className="text-muted-foreground mb-4">
+                Automate lead capture, follow-up emails, and customer onboarding directly from your website forms.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <a href="/ai-workflows">Discover AI Workflows</a>
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
