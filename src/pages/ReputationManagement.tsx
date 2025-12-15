@@ -460,6 +460,47 @@ const ReputationManagement = () => {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Maximize Your Impact</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Reputation management works best when combined with our other services for complete digital dominance.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Local SEO</h3>
+              <p className="text-muted-foreground mb-4">
+                Strong reviews boost your local search rankings. Combine reputation management with Local SEO to dominate Google Maps.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/local-seo">Learn About Local SEO</Link>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">AI Workflow Automation</h3>
+              <p className="text-muted-foreground mb-4">
+                Automate review requests and follow-ups. Our AI workflows ensure every satisfied customer becomes a reviewer.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/ai-workflows">Explore AI Workflows</Link>
+              </Button>
+            </Card>
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Web Development</h3>
+              <p className="text-muted-foreground mb-4">
+                Display reviews on your website and build trust instantly. SEO-optimized sites convert reputation into revenue.
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/web-development">See Web Development</Link>
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">

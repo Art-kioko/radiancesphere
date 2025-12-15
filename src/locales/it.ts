@@ -17,7 +17,7 @@ export const it = {
     scrollDown: "Scorri Giù"
   },
   footer: {
-    description: "Radiance Sphere è un'agenzia di marketing digitale basata sull'AI che aiuta le aziende locali a crescere online aumentando la credibilità, coinvolgendo i clienti e automatizzando i compiti aziendali chiave.",
+    description: "Radiance Sphere è un'agenzia di marketing digitale con sede in Kenya, specializzata in Gestione della Reputazione Online, SEO Locale, Automazione AI e Sviluppo Web ottimizzato SEO per le PMI.",
     quickLinks: "Link Rapidi",
     contact: "Contatti",
     newsletter: "Newsletter",
