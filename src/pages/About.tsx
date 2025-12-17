@@ -135,8 +135,8 @@ const About = () => {
                   <h2 className="text-3xl font-bold">Our Vision</h2>
                 </div>
                 <p className="text-muted-foreground text-lg mb-6">
-                  To become the world's leading AI-powered business transformation platform, where every business can achieve 
-                  optimal reputation management, operational excellence, and market dominance through intelligent automation.
+                  To create a world where every business can achieve optimal reputation management, operational excellence, 
+                  and market dominance through intelligent automation.
                 </p>
                 <p className="text-muted-foreground text-lg">
                   We envision a future where businesses spend less time on repetitive tasks and more time on innovation, 
