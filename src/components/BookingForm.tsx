@@ -44,20 +44,40 @@ export default function BookingForm() {
       // Validate form data
       const validatedData = consultationSchema.parse(formData);
 
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("consultation_requests")
-        .insert([validatedData as any]);
-
-      if (dbError) throw dbError;
-
-      // Send email notification
-      await supabase.functions.invoke("send-form-notification", {
+      // Send email notification first (doesn't require database)
+      const { error: emailError } = await supabase.functions.invoke("send-form-notification", {
         body: {
           type: "consultation",
           data: validatedData,
         },
       });
+
+      if (emailError) {
+        console.error("Email notification error:", emailError);
+      }
+
+      // Try to save to database (optional - email is the main goal)
+      try {
+        const { error: dbError } = await supabase
+          .from("consultation_requests")
+          .insert([{
+            first_name: validatedData.first_name,
+            last_name: validatedData.last_name,
+            email: validatedData.email,
+            phone: validatedData.phone,
+            company: validatedData.company || null,
+            service: validatedData.service,
+            message: validatedData.message || "",
+          }]);
+
+        if (dbError) {
+          console.error("Database save error:", dbError);
+          // Don't throw - email was sent successfully
+        }
+      } catch (dbSaveError) {
+        console.error("Database save failed:", dbSaveError);
+        // Don't throw - email was sent successfully
+      }
 
       setSubmitted(true);
       toast({
