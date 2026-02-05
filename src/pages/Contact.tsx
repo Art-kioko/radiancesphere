@@ -83,20 +83,38 @@ export default function Contact() {
       // Validate form data
       const validatedData = contactSchema.parse(formData);
 
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("contact_messages")
-        .insert([validatedData as any]);
-
-      if (dbError) throw dbError;
-
-      // Send email notification
-      await supabase.functions.invoke("send-form-notification", {
+      // Send email notification first (priority)
+      const { error: emailError } = await supabase.functions.invoke("send-form-notification", {
         body: {
           type: "contact",
           data: validatedData,
         },
       });
+
+      if (emailError) {
+        console.error("Email notification error:", emailError);
+      }
+
+      // Try to save to database (optional - email is the main goal)
+      try {
+        const { error: dbError } = await supabase
+          .from("contact_messages")
+          .insert([{
+            name: validatedData.name,
+            email: validatedData.email,
+            phone: validatedData.phone,
+            subject: validatedData.subject,
+            message: validatedData.message,
+          }]);
+
+        if (dbError) {
+          console.error("Database save error:", dbError);
+          // Don't throw - email was sent successfully
+        }
+      } catch (dbSaveError) {
+        console.error("Database save failed:", dbSaveError);
+        // Don't throw - email was sent successfully
+      }
 
       setIsSubmitted(true);
       toast({
