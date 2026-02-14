@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Smartphone, Zap, Search, Shield, Rocket, CheckCircle, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -98,10 +99,10 @@ const WebDevelopment = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Get Your Website Quote</a>
+              <Link to="/contact">Get Your Website Quote</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">See Our Portfolio</a>
+              <Link to="/contact">See Our Portfolio</Link>
             </Button>
           </div>
         </div>
@@ -391,7 +392,7 @@ const WebDevelopment = () => {
                 Display Google reviews on your website, build social proof, and automatically request reviews from website visitors.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/reputation-management">Explore Reputation Management</a>
+                <Link to="/reputation-management">Explore Reputation Management</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -400,7 +401,7 @@ const WebDevelopment = () => {
                 Get your website ranking on Google Maps and local search results. Drive foot traffic with location-specific optimization.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/local-seo">Learn About Local SEO</a>
+                <Link to="/local-seo">Learn About Local SEO</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -409,7 +410,7 @@ const WebDevelopment = () => {
                 Automate lead capture, follow-up emails, and customer onboarding directly from your website forms.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/ai-workflows">Discover AI Workflows</a>
+                <Link to="/ai-workflows">Discover AI Workflows</Link>
               </Button>
             </Card>
           </div>
@@ -426,10 +427,10 @@ const WebDevelopment = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Get Your Free Website Consultation</a>
+              <Link to="/contact">Get Your Free Website Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">Request a Quote</a>
+              <Link to="/contact">Request a Quote</Link>
             </Button>
           </div>
         </div>

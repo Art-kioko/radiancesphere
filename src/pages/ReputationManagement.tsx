@@ -178,8 +178,8 @@ const ReputationManagement = () => {
               building unshakeable trust and credibility for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="heroSolid" className="text-lg px-8 min-w-[250px] rounded-full">
-                <a href="/contact">Start Building Your Reputation</a>
+            <Button asChild size="lg" variant="heroSolid" className="text-lg px-8 min-w-[250px] rounded-full">
+                <Link to="/contact">Start Building Your Reputation</Link>
               </Button>
               <Button asChild size="lg" variant="hero" className="text-lg px-8 min-w-[200px] rounded-full">
                 <a href="#pricing">Pricing</a>
@@ -510,10 +510,10 @@ const ReputationManagement = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="min-w-[200px]">
-              <a href="/contact">Get Free Audit</a>
+              <Link to="/contact">Get Free Audit</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="min-w-[200px]">
-              <a href="/consultation-booking">Schedule Consultation</a>
+              <Link to="/consultation">Schedule Consultation</Link>
             </Button>
           </div>
         </div>

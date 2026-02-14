@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Search, TrendingUp, Users, Star, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -96,10 +97,10 @@ const LocalSEO = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Dominate Local Search</a>
+              <Link to="/contact">Dominate Local Search</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">Analyze My Local Presence</a>
+              <Link to="/contact">Analyze My Local Presence</Link>
             </Button>
           </div>
         </div>
@@ -400,7 +401,7 @@ const LocalSEO = () => {
                 Reviews directly impact local rankings. Our AI-powered reputation management generates positive reviews that boost your Google Maps position.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/reputation-management">Explore Reputation Management</a>
+                <Link to="/reputation-management">Explore Reputation Management</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -409,7 +410,7 @@ const LocalSEO = () => {
                 Your website needs to convert local traffic into customers. Our SEO-optimized sites are built to rank and convert.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/web-development">See Web Development</a>
+                <Link to="/web-development">See Web Development</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
@@ -418,7 +419,7 @@ const LocalSEO = () => {
                 Automate lead follow-up from local search traffic. Turn website visitors into customers with intelligent workflows.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/ai-workflows">Discover AI Workflows</a>
+                <Link to="/ai-workflows">Discover AI Workflows</Link>
               </Button>
             </Card>
           </div>
@@ -435,10 +436,10 @@ const LocalSEO = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Get Your Free Local SEO Audit</a>
+              <Link to="/contact">Get Your Free Local SEO Audit</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">Schedule Local SEO Strategy Call</a>
+              <Link to="/contact">Schedule Local SEO Strategy Call</Link>
             </Button>
           </div>
         </div>
