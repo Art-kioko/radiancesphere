@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Zap, Cog, Clock, Workflow, BarChart, Rocket } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -96,10 +97,10 @@ const AIWorkflows = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Automate Your Business</a>
+              <Link to="/contact">Automate Your Business</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/services">See Automation Examples</a>
+              <Link to="/services">See Automation Examples</Link>
             </Button>
           </div>
         </div>
@@ -366,25 +367,25 @@ const AIWorkflows = () => {
                 Automate review requests, response workflows, and reputation monitoring. AI handles your online presence 24/7.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/reputation-management">Explore Reputation Management</a>
+                <Link to="/reputation-management">Explore Reputation Management</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-3">Local SEO</h3>
               <p className="text-muted-foreground mb-4">
-                Automated workflows can update your Google Business Profile, respond to inquiries, and manage local citations.
+                AI-powered local SEO optimization that automatically updates listings and tracks rankings across platforms.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/local-seo">Learn About Local SEO</a>
+                <Link to="/local-seo">Learn About Local SEO</Link>
               </Button>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold mb-3">Web Development</h3>
               <p className="text-muted-foreground mb-4">
-                Connect your website to automated lead nurturing, order processing, and customer onboarding workflows.
+                SEO-optimized websites with built-in automation hooks for lead capture and customer engagement.
               </p>
               <Button asChild variant="outline" size="sm">
-                <a href="/web-development">See Web Development</a>
+                <Link to="/web-development">See Web Development</Link>
               </Button>
             </Card>
           </div>
@@ -401,10 +402,10 @@ const AIWorkflows = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="/contact">Get Your Free Automation Assessment</a>
+              <Link to="/contact">Get Your Free Automation Assessment</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/contact">Book a Strategy Call</a>
+              <Link to="/contact">Book a Strategy Call</Link>
             </Button>
           </div>
         </div>
