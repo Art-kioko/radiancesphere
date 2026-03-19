@@ -148,7 +148,7 @@ export default function Footer() {
             </ul>
           </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:400ms]">
+          <AnimateOnScroll animation="fade-up" delay={300}>
             <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
             <p className="text-muted-foreground mb-4">
               {t.footer.newsletterDesc}
