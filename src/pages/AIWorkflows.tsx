@@ -112,13 +112,15 @@ const AIWorkflows = () => {
       {/* Problem Statement */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Break Free from Manual Chaos</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Business owners spend 40% of their time on repetitive tasks that could be automated. 
-              Meanwhile, opportunities slip through the cracks.
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Break Free from Manual Chaos</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Business owners spend 40% of their time on repetitive tasks that could be automated. 
+                Meanwhile, opportunities slip through the cracks.
+              </p>
+            </div>
+          </AnimateOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center p-6">
