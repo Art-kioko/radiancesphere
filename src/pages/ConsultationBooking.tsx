@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import { CalendarIcon, Users, Check, ChevronRight, MessageSquare, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
