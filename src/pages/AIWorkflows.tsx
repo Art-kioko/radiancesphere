@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const AIWorkflows = () => {
   const { t } = useLanguage();
