@@ -431,21 +431,23 @@ const LocalSEO = () => {
 
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Dominate Local Search?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Stop losing customers to competitors. Start your local SEO transformation and become 
-            the obvious choice in your market.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Get Your Free Local SEO Audit</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/contact">Schedule Local SEO Strategy Call</Link>
-            </Button>
+        <AnimateOnScroll animation="scale">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Dominate Local Search?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Stop losing customers to competitors. Start your local SEO transformation and become 
+              the obvious choice in your market.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Get Your Free Local SEO Audit</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/contact">Schedule Local SEO Strategy Call</Link>
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </section>
 
       </main>

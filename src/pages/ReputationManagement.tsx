@@ -506,20 +506,22 @@ const ReputationManagement = () => {
 
       {/* Call to Action */}
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Online Reputation?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Get a free reputation audit and see how AI can protect and grow your business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="min-w-[200px]">
-              <Link to="/contact">Get Free Audit</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="min-w-[200px]">
-              <Link to="/consultation">Schedule Consultation</Link>
-            </Button>
+        <AnimateOnScroll animation="scale">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Online Reputation?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Get a free reputation audit and see how AI can protect and grow your business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="min-w-[200px]">
+                <Link to="/contact">Get Free Audit</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="min-w-[200px]">
+                <Link to="/consultation">Schedule Consultation</Link>
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </section>
       </main>
       
