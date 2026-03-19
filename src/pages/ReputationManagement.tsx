@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Helmet } from "react-helmet";
 import reputationImage from "@/assets/reputation-reviews.png";
 import heroImage from "@/assets/online-reviews-hero.webp";
