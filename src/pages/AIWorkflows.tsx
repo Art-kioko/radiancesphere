@@ -165,13 +165,15 @@ const AIWorkflows = () => {
       {/* Solution Overview */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">AI That Works While You Sleep</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Custom-built AI workflows that understand your business processes and execute them 
-              with precision, consistency, and intelligence.
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">AI That Works While You Sleep</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Custom-built AI workflows that understand your business processes and execute them 
+                with precision, consistency, and intelligence.
+              </p>
+            </div>
+          </AnimateOnScroll>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
