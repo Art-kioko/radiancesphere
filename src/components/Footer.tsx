@@ -104,7 +104,7 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
             </div>
-          </div>
+          </AnimateOnScroll>
           
           <div className="animate-fade-in [animation-delay:200ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.quickLinks}</h4>
