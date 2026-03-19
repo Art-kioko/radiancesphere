@@ -173,6 +173,7 @@ export default function Footer() {
               </button>
             </form>
           </AnimateOnScroll>
+        </div>
         
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
           <p>&copy; {currentYear} Radiance Sphere. {t.footer.allRights}</p>
