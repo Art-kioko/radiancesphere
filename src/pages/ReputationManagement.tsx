@@ -193,13 +193,15 @@ const ReputationManagement = () => {
       {/* Problem Statement */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Your Reputation is Everything</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              In today's digital world, 93% of customers read reviews before making a purchase. 
-              A single negative review can cost you thousands in lost revenue.
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Your Reputation is Everything</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                In today's digital world, 93% of customers read reviews before making a purchase. 
+                A single negative review can cost you thousands in lost revenue.
+              </p>
+            </div>
+          </AnimateOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center p-6">
