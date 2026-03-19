@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { newsletterSchema } from "@/lib/validations";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function Footer() {
   const { t } = useLanguage();
