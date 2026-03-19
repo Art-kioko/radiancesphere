@@ -126,7 +126,7 @@ export default function Footer() {
             </ul>
           </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:300ms]">
+          <AnimateOnScroll animation="fade-up" delay={200}>
             <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
