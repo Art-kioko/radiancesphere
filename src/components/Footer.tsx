@@ -172,7 +172,6 @@ export default function Footer() {
                 {isSubscribing ? "Subscribing..." : t.footer.subscribe}
               </button>
             </form>
-          </div>
           </AnimateOnScroll>
         
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
