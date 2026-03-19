@@ -146,7 +146,7 @@ export default function Footer() {
                 <span className="text-muted-foreground">radiancesphere3@gmail.com</span>
               </li>
             </ul>
-          </div>
+          </AnimateOnScroll>
           
           <div className="animate-fade-in [animation-delay:400ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
