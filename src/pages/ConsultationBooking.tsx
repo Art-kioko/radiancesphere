@@ -281,8 +281,9 @@ export default function ConsultationBooking() {
                   </Button>
                 </form>
               </div>
+              </AnimateOnScroll>
               
-              {/* What to Expect */}
+              <AnimateOnScroll animation="fade-left" delay={200}>
               <div className="space-y-6">
                 <div className="glass-card p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
