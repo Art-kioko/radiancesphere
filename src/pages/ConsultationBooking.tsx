@@ -108,12 +108,14 @@ export default function ConsultationBooking() {
         {/* Header Section */}
         <section className="pt-24 pb-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Book Your Free Consultation
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Schedule a personalized consultation to discuss how our AI solutions can transform your business.
-            </p>
+            <AnimateOnScroll animation="fade-up">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Book Your Free Consultation
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Schedule a personalized consultation to discuss how our AI solutions can transform your business.
+              </p>
+            </AnimateOnScroll>
           </div>
         </section>
         
