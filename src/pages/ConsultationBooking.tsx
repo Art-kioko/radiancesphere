@@ -123,7 +123,7 @@ export default function ConsultationBooking() {
         <section className="pb-16 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Form */}
+              <AnimateOnScroll animation="fade-right">
               <div className="glass-card p-8">
                 <h2 className="text-2xl font-bold mb-6">Schedule Your Session</h2>
                 
