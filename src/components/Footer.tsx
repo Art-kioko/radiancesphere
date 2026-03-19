@@ -106,7 +106,7 @@ export default function Footer() {
             </div>
           </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:200ms]">
+          <AnimateOnScroll animation="fade-up" delay={100}>
             <h4 className="text-xl font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {[
