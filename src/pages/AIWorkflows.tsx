@@ -85,25 +85,27 @@ const AIWorkflows = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6" variant="secondary">
-            <Zap className="w-4 h-4 mr-2" />
-            Custom AI Automation
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Custom AI Workflow Automation
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Revolutionize your business operations with intelligent automation that learns, adapts, 
-            and executes complex tasks while you focus on growth and strategy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Automate Your Business</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/services">See Automation Examples</Link>
-            </Button>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <Badge className="mb-6" variant="secondary">
+              <Zap className="w-4 h-4 mr-2" />
+              Custom AI Automation
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Custom AI Workflow Automation
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Revolutionize your business operations with intelligent automation that learns, adapts, 
+              and executes complex tasks while you focus on growth and strategy.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Automate Your Business</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/services">See Automation Examples</Link>
+              </Button>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
