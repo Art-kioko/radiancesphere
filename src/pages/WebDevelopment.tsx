@@ -87,25 +87,27 @@ const WebDevelopment = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6" variant="secondary">
-            <Code className="w-4 h-4 mr-2" />
-            SEO-First Development
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            SEO-Optimized Web Development
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Professional websites for Kenyan businesses that rank on Google, load fast on mobile, 
-            and convert visitors into paying customers—with SEO built-in from day one.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Get Your Website Quote</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/contact">See Our Portfolio</Link>
-            </Button>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <Badge className="mb-6" variant="secondary">
+              <Code className="w-4 h-4 mr-2" />
+              SEO-First Development
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              SEO-Optimized Web Development
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Professional websites for Kenyan businesses that rank on Google, load fast on mobile, 
+              and convert visitors into paying customers—with SEO built-in from day one.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Get Your Website Quote</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/contact">See Our Portfolio</Link>
+              </Button>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
