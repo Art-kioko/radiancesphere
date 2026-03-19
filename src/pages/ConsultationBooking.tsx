@@ -346,7 +346,8 @@ export default function ConsultationBooking() {
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+              </AnimateOnScroll>
           </div>
         </section>
       </main>
