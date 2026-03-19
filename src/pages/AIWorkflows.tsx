@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const AIWorkflows = () => {
   const { t } = useLanguage();
@@ -84,69 +85,79 @@ const AIWorkflows = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6" variant="secondary">
-            <Zap className="w-4 h-4 mr-2" />
-            Custom AI Automation
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Custom AI Workflow Automation
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Revolutionize your business operations with intelligent automation that learns, adapts, 
-            and executes complex tasks while you focus on growth and strategy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Automate Your Business</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/services">See Automation Examples</Link>
-            </Button>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <Badge className="mb-6" variant="secondary">
+              <Zap className="w-4 h-4 mr-2" />
+              Custom AI Automation
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Custom AI Workflow Automation
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Revolutionize your business operations with intelligent automation that learns, adapts, 
+              and executes complex tasks while you focus on growth and strategy.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Automate Your Business</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/services">See Automation Examples</Link>
+              </Button>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
       {/* Problem Statement */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Break Free from Manual Chaos</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Business owners spend 40% of their time on repetitive tasks that could be automated. 
-              Meanwhile, opportunities slip through the cracks.
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Break Free from Manual Chaos</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Business owners spend 40% of their time on repetitive tasks that could be automated. 
+                Meanwhile, opportunities slip through the cracks.
+              </p>
+            </div>
+          </AnimateOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Time Drain</h3>
-              <p className="text-muted-foreground">
-                Hours wasted on data entry, follow-ups, and manual processes that never end.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={0}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Time Drain</h3>
+                <p className="text-muted-foreground">
+                  Hours wasted on data entry, follow-ups, and manual processes that never end.
+                </p>
+              </Card>
+            </AnimateOnScroll>
             
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Human Error</h3>
-              <p className="text-muted-foreground">
-                Mistakes in manual processes cost businesses an average of $62 per error.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={150}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Human Error</h3>
+                <p className="text-muted-foreground">
+                  Mistakes in manual processes cost businesses an average of $62 per error.
+                </p>
+              </Card>
+            </AnimateOnScroll>
             
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Rocket className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Missed Growth</h3>
-              <p className="text-muted-foreground">
-                Time spent on tasks instead of strategy limits business scaling potential.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={300}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Rocket className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Missed Growth</h3>
+                <p className="text-muted-foreground">
+                  Time spent on tasks instead of strategy limits business scaling potential.
+                </p>
+              </Card>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -154,13 +165,15 @@ const AIWorkflows = () => {
       {/* Solution Overview */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">AI That Works While You Sleep</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Custom-built AI workflows that understand your business processes and execute them 
-              with precision, consistency, and intelligence.
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">AI That Works While You Sleep</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Custom-built AI workflows that understand your business processes and execute them 
+                with precision, consistency, and intelligence.
+              </p>
+            </div>
+          </AnimateOnScroll>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -394,21 +407,23 @@ const AIWorkflows = () => {
 
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Automate Your Success?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Join forward-thinking businesses that leverage AI automation to work smarter, not harder. 
-            Start your automation journey today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Get Your Free Automation Assessment</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/contact">Book a Strategy Call</Link>
-            </Button>
+        <AnimateOnScroll animation="scale">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Automate Your Success?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Join forward-thinking businesses that leverage AI automation to work smarter, not harder. 
+              Start your automation journey today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Get Your Free Automation Assessment</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/contact">Book a Strategy Call</Link>
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </section>
 
       </main>

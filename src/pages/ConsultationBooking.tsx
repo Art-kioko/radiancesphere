@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
 import { CalendarIcon, Users, Check, ChevronRight, MessageSquare, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -107,12 +108,14 @@ export default function ConsultationBooking() {
         {/* Header Section */}
         <section className="pt-24 pb-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Book Your Free Consultation
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Schedule a personalized consultation to discuss how our AI solutions can transform your business.
-            </p>
+            <AnimateOnScroll animation="fade-up">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Book Your Free Consultation
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Schedule a personalized consultation to discuss how our AI solutions can transform your business.
+              </p>
+            </AnimateOnScroll>
           </div>
         </section>
         
@@ -120,7 +123,7 @@ export default function ConsultationBooking() {
         <section className="pb-16 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Form */}
+              <AnimateOnScroll animation="fade-right">
               <div className="glass-card p-8">
                 <h2 className="text-2xl font-bold mb-6">Schedule Your Session</h2>
                 
@@ -278,8 +281,9 @@ export default function ConsultationBooking() {
                   </Button>
                 </form>
               </div>
+              </AnimateOnScroll>
               
-              {/* What to Expect */}
+              <AnimateOnScroll animation="fade-left" delay={200}>
               <div className="space-y-6">
                 <div className="glass-card p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
@@ -342,6 +346,7 @@ export default function ConsultationBooking() {
                   </div>
                 </div>
               </div>
+              </AnimateOnScroll>
             </div>
           </div>
         </section>

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import customerService5 from "@/assets/customer-service-5.png";
 import customerService6 from "@/assets/customer-service-6.png";
 import customerService7 from "@/assets/customer-service-7.png";
@@ -54,11 +55,9 @@ export default function Index() {
   const { t } = useLanguage();
   
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
   
-  // Feature items
   const features = [
     {
       icon: <Waves className="h-8 w-8 text-primary" />,
@@ -97,14 +96,13 @@ export default function Index() {
       <Navbar />
       
       <main className="flex-1">
-        {/* Hero Section */}
         <HeroSection />
         
         {/* Welcome Section */}
         <section id="welcome" className="section">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in [animation-delay:100ms]">
+              <AnimateOnScroll animation="fade-right">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
                   {t.home.welcome.subtitle}
                 </span>
@@ -122,31 +120,33 @@ export default function Index() {
                     {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              </div>
+              </AnimateOnScroll>
               
-              <div className="relative animate-fade-in [animation-delay:300ms]">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img 
-                    src={customerService7}
-                    alt="AI Chat Technology" 
-                    className="w-full h-full object-cover"
-                  />
+              <AnimateOnScroll animation="fade-left" delay={200}>
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                    <img 
+                      src={customerService7}
+                      alt="AI Chat Technology" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
+                    <img 
+                      src={customerService5}
+                      alt="AI Customer Service" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
+                    <img 
+                      src={customerService6}
+                      alt="Review Management" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src={customerService5}
-                    alt="AI Customer Service" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src={customerService6}
-                    alt="Review Management" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              </AnimateOnScroll>
             </div>
           </div>
         </section>
@@ -155,7 +155,7 @@ export default function Index() {
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
+              <AnimateOnScroll animation="fade-right">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
                   {t.home.consultation.subtitle}
                 </span>
@@ -175,13 +175,14 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </AnimateOnScroll>
               
-              <BookingForm />
+              <AnimateOnScroll animation="fade-up" delay={200}>
+                <BookingForm />
+              </AnimateOnScroll>
             </div>
           </div>
           
-          {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
             <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
@@ -191,95 +192,101 @@ export default function Index() {
         {/* Featured Services */}
         <section className="section">
           <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-              <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                {t.home.featuredServices.subtitle}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                {t.home.featuredServices.title}
-              </h2>
-              <p className="text-muted-foreground">
-                {t.home.featuredServices.description}
-              </p>
-            </div>
+            <AnimateOnScroll animation="fade-up">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <span className="text-sm text-primary font-medium uppercase tracking-wider">
+                  {t.home.featuredServices.subtitle}
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+                  {t.home.featuredServices.title}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t.home.featuredServices.description}
+                </p>
+              </div>
+            </AnimateOnScroll>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* AI Reputation Management */}
-              <div className="glass-card p-8 rounded-xl animate-fade-in text-center">
-                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
-                  <Waves className="h-8 w-8 text-primary" />
+              <AnimateOnScroll animation="fade-up" delay={0}>
+                <div className="glass-card p-8 rounded-xl text-center h-full">
+                  <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                    <Waves className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiReputation.title}</h3>
+                  <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiReputation.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/services">{t.home.featuredServices.aiReputation.buttonText}</Link>
+                  </Button>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiReputation.title}</h3>
-                <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiReputation.description}</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/services">{t.home.featuredServices.aiReputation.buttonText}</Link>
-                </Button>
-              </div>
+              </AnimateOnScroll>
 
-              {/* AI Workflow Automation */}
-              <div className="glass-card p-8 rounded-xl animate-fade-in text-center" style={{ animationDelay: '100ms' }}>
-                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
-                  <LifeBuoy className="h-8 w-8 text-primary" />
+              <AnimateOnScroll animation="fade-up" delay={150}>
+                <div className="glass-card p-8 rounded-xl text-center h-full">
+                  <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                    <LifeBuoy className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiWorkflows.title}</h3>
+                  <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiWorkflows.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/services">{t.home.featuredServices.aiWorkflows.buttonText}</Link>
+                  </Button>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.aiWorkflows.title}</h3>
-                <p className="text-muted-foreground mb-6">{t.home.featuredServices.aiWorkflows.description}</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/services">{t.home.featuredServices.aiWorkflows.buttonText}</Link>
-                </Button>
-              </div>
+              </AnimateOnScroll>
 
-              {/* Local SEO */}
-              <div className="glass-card p-8 rounded-xl animate-fade-in text-center" style={{ animationDelay: '200ms' }}>
-                <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
-                  <MapPin className="h-8 w-8 text-primary" />
+              <AnimateOnScroll animation="fade-up" delay={300}>
+                <div className="glass-card p-8 rounded-xl text-center h-full">
+                  <div className="mb-6 p-4 rounded-full bg-primary/10 w-16 h-16 mx-auto flex items-center justify-center">
+                    <MapPin className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.localSeo.title}</h3>
+                  <p className="text-muted-foreground mb-6">{t.home.featuredServices.localSeo.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link to="/services">{t.home.featuredServices.localSeo.buttonText}</Link>
+                  </Button>
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{t.home.featuredServices.localSeo.title}</h3>
-                <p className="text-muted-foreground mb-6">{t.home.featuredServices.localSeo.description}</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/services">{t.home.featuredServices.localSeo.buttonText}</Link>
-                </Button>
-              </div>
+              </AnimateOnScroll>
             </div>
             
-            <div className="text-center mt-12">
-              <Button asChild className="btn-primary">
-                <Link to="/services">
-                  {t.home.featuredServices.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+            <AnimateOnScroll animation="fade-up" delay={100}>
+              <div className="text-center mt-12">
+                <Button asChild className="btn-primary">
+                  <Link to="/services">
+                    {t.home.featuredServices.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
-        
         
         {/* Benefits Section */}
         <section className="section bg-card">
           <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-              <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                {t.home.benefits.subtitle}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-                {t.home.benefits.title}
-              </h2>
-              <p className="text-muted-foreground">
-                {t.home.benefits.description}
-              </p>
-            </div>
+            <AnimateOnScroll animation="fade-up">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <span className="text-sm text-primary font-medium uppercase tracking-wider">
+                  {t.home.benefits.subtitle}
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+                  {t.home.benefits.title}
+                </h2>
+                <p className="text-muted-foreground">
+                  {t.home.benefits.description}
+                </p>
+              </div>
+            </AnimateOnScroll>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="glass-card p-6 rounded-xl animate-fade-in flex flex-col items-center text-center"
-                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <div className="mb-4 p-3 rounded-full bg-primary/10">
-                    {feature.icon}
+                <AnimateOnScroll key={index} animation="fade-up" delay={index * 100}>
+                  <div className="glass-card p-6 rounded-xl flex flex-col items-center text-center h-full">
+                    <div className="mb-4 p-3 rounded-full bg-primary/10">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
+                </AnimateOnScroll>
               ))}
             </div>
           </div>
@@ -288,20 +295,21 @@ export default function Index() {
         {/* CTA Section */}
         <section className="relative py-24 bg-primary/5">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t.home.cta.title}
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                {t.home.cta.description}
-              </p>
-              <Button asChild size="lg" className="btn-primary">
-                <Link to="/contact">{t.home.cta.getStarted}</Link>
-              </Button>
-            </div>
+            <AnimateOnScroll animation="scale">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  {t.home.cta.title}
+                </h2>
+                <p className="text-muted-foreground mb-8">
+                  {t.home.cta.description}
+                </p>
+                <Button asChild size="lg" className="btn-primary">
+                  <Link to="/contact">{t.home.cta.getStarted}</Link>
+                </Button>
+              </div>
+            </AnimateOnScroll>
           </div>
           
-          {/* Decorative waves */}
           <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
             <svg 
               className="absolute bottom-0 w-full h-24 fill-background"

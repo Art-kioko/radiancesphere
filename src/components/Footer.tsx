@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { newsletterSchema } from "@/lib/validations";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -67,7 +68,7 @@ export default function Footer() {
     <footer className="bg-card text-card-foreground pt-16 pb-8 border-t">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div className="animate-fade-in [animation-delay:100ms]">
+          <AnimateOnScroll animation="fade-up">
             <Link to="/" className="inline-block mb-4">
               <img src={logo} alt="Radiance Sphere" className="h-24 w-auto" />
             </Link>
@@ -103,9 +104,9 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
             </div>
-          </div>
+          </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:200ms]">
+          <AnimateOnScroll animation="fade-up" delay={100}>
             <h4 className="text-xl font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {[
@@ -123,9 +124,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:300ms]">
+          <AnimateOnScroll animation="fade-up" delay={200}>
             <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -145,9 +146,9 @@ export default function Footer() {
                 <span className="text-muted-foreground">radiancesphere3@gmail.com</span>
               </li>
             </ul>
-          </div>
+          </AnimateOnScroll>
           
-          <div className="animate-fade-in [animation-delay:400ms]">
+          <AnimateOnScroll animation="fade-up" delay={300}>
             <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
             <p className="text-muted-foreground mb-4">
               {t.footer.newsletterDesc}
@@ -171,7 +172,7 @@ export default function Footer() {
                 {isSubscribing ? "Subscribing..." : t.footer.subscribe}
               </button>
             </form>
-          </div>
+          </AnimateOnScroll>
         </div>
         
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
