@@ -85,25 +85,27 @@ const LocalSEO = () => {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-primary/5 to-background">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6" variant="secondary">
-            <MapPin className="w-4 h-4 mr-2" />
-            Local Domination
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Local SEO & Google Business Management
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Dominate your local market with strategic SEO optimization and expert Google Business Profile management 
-            that puts your business at the top of local search results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8">
-              <Link to="/contact">Dominate Local Search</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <Link to="/contact">Analyze My Local Presence</Link>
-            </Button>
-          </div>
+          <AnimateOnScroll animation="fade-up">
+            <Badge className="mb-6" variant="secondary">
+              <MapPin className="w-4 h-4 mr-2" />
+              Local Domination
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Local SEO & Google Business Management
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Dominate your local market with strategic SEO optimization and expert Google Business Profile management 
+              that puts your business at the top of local search results.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link to="/contact">Dominate Local Search</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <Link to="/contact">Analyze My Local Presence</Link>
+              </Button>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
