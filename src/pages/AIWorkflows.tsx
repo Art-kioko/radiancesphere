@@ -123,35 +123,41 @@ const AIWorkflows = () => {
           </AnimateOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Time Drain</h3>
-              <p className="text-muted-foreground">
-                Hours wasted on data entry, follow-ups, and manual processes that never end.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={0}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Time Drain</h3>
+                <p className="text-muted-foreground">
+                  Hours wasted on data entry, follow-ups, and manual processes that never end.
+                </p>
+              </Card>
+            </AnimateOnScroll>
             
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Human Error</h3>
-              <p className="text-muted-foreground">
-                Mistakes in manual processes cost businesses an average of $62 per error.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={150}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Human Error</h3>
+                <p className="text-muted-foreground">
+                  Mistakes in manual processes cost businesses an average of $62 per error.
+                </p>
+              </Card>
+            </AnimateOnScroll>
             
-            <Card className="text-center p-6">
-              <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Rocket className="w-8 h-8 text-destructive" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Missed Growth</h3>
-              <p className="text-muted-foreground">
-                Time spent on tasks instead of strategy limits business scaling potential.
-              </p>
-            </Card>
+            <AnimateOnScroll animation="fade-up" delay={300}>
+              <Card className="text-center p-6 h-full">
+                <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Rocket className="w-8 h-8 text-destructive" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Missed Growth</h3>
+                <p className="text-muted-foreground">
+                  Time spent on tasks instead of strategy limits business scaling potential.
+                </p>
+              </Card>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
