@@ -44,7 +44,7 @@ const AnimateOnScroll = ({
   children,
   animation = "fade-up",
   delay = 0,
-  duration = 600,
+  duration = 800,
   className,
   threshold = 0.1,
   once = true,
