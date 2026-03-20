@@ -15,23 +15,23 @@ interface AnimateOnScrollProps {
 
 const animationClasses: Record<AnimationType, { initial: string; animate: string }> = {
   "fade-up": {
-    initial: "opacity-0 translate-y-8",
+    initial: "opacity-0 translate-y-6",
     animate: "opacity-100 translate-y-0",
   },
   "fade-down": {
-    initial: "opacity-0 -translate-y-8",
+    initial: "opacity-0 -translate-y-6",
     animate: "opacity-100 translate-y-0",
   },
   "fade-left": {
-    initial: "opacity-0 translate-x-8",
+    initial: "opacity-0 translate-x-6",
     animate: "opacity-100 translate-x-0",
   },
   "fade-right": {
-    initial: "opacity-0 -translate-x-8",
+    initial: "opacity-0 -translate-x-6",
     animate: "opacity-100 translate-x-0",
   },
   scale: {
-    initial: "opacity-0 scale-95",
+    initial: "opacity-0 scale-[0.97]",
     animate: "opacity-100 scale-100",
   },
   fade: {
