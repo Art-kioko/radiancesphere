@@ -123,26 +123,29 @@ export default function Index() {
               </AnimateOnScroll>
               
               <AnimateOnScroll animation="fade-left" delay={200}>
-                <div className="relative">
+                <div className="relative mx-4 md:mx-0">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                     <img 
                       src={customerService7}
                       alt="AI Chat Technology" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
+                  <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-1/2 md:w-2/3 rounded-2xl overflow-hidden shadow-xl">
                     <img 
                       src={customerService5}
                       alt="AI Customer Service" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
+                  <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-2/5 md:w-1/2 rounded-2xl overflow-hidden shadow-xl">
                     <img 
                       src={customerService6}
                       alt="Review Management" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
