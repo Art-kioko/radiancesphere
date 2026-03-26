@@ -37,10 +37,11 @@ export default function ApartmentCard({ apartment }: { apartment: ApartmentProps
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-64">
+      <div className="relative overflow-hidden h-48 sm:h-56 md:h-64">
         <img 
           src={apartment.image} 
           alt={translatedName}
+          loading="lazy"
           className={cn(
             "w-full h-full object-cover transition-transform duration-700",
             isHovered ? "scale-110" : "scale-100"

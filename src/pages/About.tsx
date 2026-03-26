@@ -87,19 +87,21 @@ const About = () => {
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll animation="fade-left" delay={200}>
-                <div className="relative">
+                <div className="relative mx-4 md:mx-0">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                       alt="Team collaboration" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
+                  <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-1/2 md:w-2/3 rounded-2xl overflow-hidden shadow-xl">
                     <img 
                       src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop"
                       alt="AI technology workspace" 
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>

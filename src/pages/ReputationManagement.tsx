@@ -11,7 +11,7 @@ import BackButton from "@/components/BackButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { Helmet } from "react-helmet";
-import reputationImage from "@/assets/reputation-reviews.png";
+import reputationImage from "@/assets/online-reviews-matter.png";
 import heroImage from "@/assets/online-reviews-hero.webp";
 
 const ReputationManagement = () => {
@@ -155,7 +155,7 @@ const ReputationManagement = () => {
         </div>
       
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-[60vh] md:h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -247,12 +247,13 @@ const ReputationManagement = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="max-w-md mx-auto md:max-w-none">
               <img 
                 src={reputationImage} 
-                alt="AI-powered reputation management dashboard showing review monitoring and sentiment analysis"
-                className="rounded-lg shadow-2xl"
+                alt="AI-powered reputation management showing online reviews and star ratings on mobile device"
+                className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                loading="lazy"
               />
             </div>
             
