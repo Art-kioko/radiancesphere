@@ -73,9 +73,6 @@ export default function HeroSection() {
 
         {/* Hero Content - Right Side */}
         <div className="flex-1 w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
-          <span className="inline-block text-foreground/80 text-xs md:text-lg mb-2 md:mb-4 tracking-wide border-b border-border pb-2">
-            {t.hero.subtitle}
-          </span>
           <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 md:mb-4">
             {t.hero.title}
           </h1>
