@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -73,9 +73,6 @@ export default function HeroSection() {
 
         {/* Hero Content - Right Side */}
         <div className="flex-1 w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
-          <span className="inline-block text-foreground/80 text-xs md:text-lg mb-2 md:mb-4 tracking-wide border-b border-border pb-2">
-            {t.hero.subtitle}
-          </span>
           <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 md:mb-4">
             {t.hero.title}
           </h1>
@@ -93,17 +90,6 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll down indicator */}
-      <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 text-foreground animate-bounce z-30">
-        <a 
-          href="#welcome" 
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity min-h-[44px] md:min-h-[48px] p-2"
-          aria-label="Scroll down to content"
-        >
-          <span className="text-xs md:text-sm mb-1 md:mb-2">{t.hero.scrollDown}</span>
-          <ChevronDown className="h-5 w-5 md:h-6 md:w-6" />
-        </a>
-      </div>
       
       {/* Animated wave */}
       <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden z-20">
