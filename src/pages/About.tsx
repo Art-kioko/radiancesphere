@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Users, Lightbulb, Target, Award, Clock, Shield, Rocket } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
