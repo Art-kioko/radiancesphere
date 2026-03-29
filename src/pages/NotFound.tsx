@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -18,6 +19,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background">
+      <Helmet>
+        <title>Page Not Found | Radiance Sphere</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="glass-card p-10 max-w-md text-center animate-fade-in">
         <h1 className="text-9xl font-bold text-primary mb-4">404</h1>
         <h2 className="text-2xl font-semibold mb-4">{t.notFound.title}</h2>

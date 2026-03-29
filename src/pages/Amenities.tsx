@@ -1,5 +1,6 @@
 
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -28,6 +29,11 @@ export default function Amenities() {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Amenities | Radiance Sphere</title>
+        <meta name="description" content="Explore the amenities and features offered by Radiance Sphere for your digital marketing success." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/amenities" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-1">

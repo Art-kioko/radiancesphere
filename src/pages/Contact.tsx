@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -135,6 +136,13 @@ export default function Contact() {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Contact Radiance Sphere | Digital Marketing Agency Nairobi Kenya</title>
+        <meta name="description" content="Get in touch with Radiance Sphere. Contact our Nairobi-based digital marketing team for reputation management, local SEO, AI workflows, and web development services." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/contact" />
+        <meta property="og:title" content="Contact Radiance Sphere | Digital Marketing Agency Nairobi Kenya" />
+        <meta property="og:url" content="https://radiancesphere.co.ke/contact" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -98,6 +99,13 @@ export default function ConsultationBooking() {
   
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Book Free Consultation | Radiance Sphere Digital Marketing Kenya</title>
+        <meta name="description" content="Book a free consultation with Radiance Sphere. Discuss your digital marketing needs — reputation management, local SEO, AI workflows, or web development for your Kenyan business." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/consultation" />
+        <meta property="og:title" content="Book Free Consultation | Radiance Sphere Kenya" />
+        <meta property="og:url" content="https://radiancesphere.co.ke/consultation" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">
