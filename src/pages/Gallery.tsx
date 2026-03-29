@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackButton from "@/components/BackButton";
@@ -141,6 +142,11 @@ export default function Gallery() {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Gallery | Radiance Sphere Digital Marketing Kenya</title>
+        <meta name="description" content="View our portfolio and gallery showcasing Radiance Sphere's digital marketing work for Kenyan businesses." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/gallery" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-1 pt-20">
