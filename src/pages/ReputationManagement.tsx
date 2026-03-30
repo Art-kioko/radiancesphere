@@ -33,7 +33,8 @@ const ReputationManagement = () => {
         "Reviews Summary Reports",
         "Basic Analytics Dashboard"
       ],
-      cta: "Get Started"
+      cta: "Get Started",
+      idealFor: ["Restaurants", "Salons", "Clinics"]
     },
     {
       name: "Standard (Growth)",
@@ -52,7 +53,8 @@ const ReputationManagement = () => {
         "Advanced Analytics Dashboard",
         "Monthly Performance Reports"
       ],
-      cta: "Get Started"
+      cta: "Get Started",
+      idealFor: ["Multi-location businesses", "Schools", "Hotels"]
     },
     {
       name: "Pro (Premium)",
@@ -72,7 +74,8 @@ const ReputationManagement = () => {
         "Weekly Performance Reports",
         "Priority Support"
       ],
-      cta: "Request Quote"
+      cta: "Request Quote",
+      idealFor: ["Hospitals", "Real estate firms", "Large brands"]
     }
   ];
 
@@ -443,6 +446,21 @@ const ReputationManagement = () => {
                       </div>
                     ))}
                   </div>
+                  
+                  {/* Ideal For */}
+                  {tier.idealFor && (
+                    <div className="border-t border-border pt-4 mb-6">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Ideal For</p>
+                      <div className="space-y-2">
+                        {tier.idealFor.map((item, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-sm">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   
                   {/* CTA Button */}
                   <Button 
