@@ -34,7 +34,7 @@ export default function Navbar() {
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-background/95 dark:bg-[hsl(210_30%_22%/0.95)] backdrop-blur-lg py-3 shadow-md" : "bg-background/90 dark:bg-[hsl(210_30%_20%/0.90)] backdrop-blur-md py-5")}>
       <nav className="container flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Radiance Sphere" className="h-16 md:h-32 w-auto" />
+          <img src={logo} alt="Radiance Sphere" className="h-12 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

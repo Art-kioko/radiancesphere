@@ -35,7 +35,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[85vh] lg:min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Content Container - Flex layout for animation and text */}
-      <div className="relative min-h-[85vh] lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 md:px-8 lg:px-16 pt-20 pb-16 md:pb-20 lg:pt-0 z-20 max-w-7xl mx-auto gap-4 md:gap-8">
+      <div className="relative min-h-[85vh] lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 md:px-8 lg:px-16 pt-28 md:pt-32 pb-16 md:pb-20 z-20 max-w-7xl mx-auto gap-4 md:gap-8">
         
         {/* Lottie Animations - Left Side (Slideshow) */}
         <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in relative">
