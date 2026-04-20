@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
         renderer: '@prerenderer/renderer-puppeteer',
         rendererOptions: {
           renderAfterDocumentEvent: 'render-event',
-          headless: 'new',
+          headless: true,
         },
         postProcess(renderedRoute: any) {
           // Ensure relative asset paths still work
