@@ -102,9 +102,9 @@ export default function ConsultationBooking() {
       <Helmet>
         <title>Book Free Consultation | Radiance Sphere Digital Marketing Kenya</title>
         <meta name="description" content="Book a free consultation with Radiance Sphere. Discuss your digital marketing needs — reputation management, local SEO, AI workflows, or web development for your Kenyan business." />
-        <link rel="canonical" href="https://radiancesphere.co.ke/consultation" />
+        <link rel="canonical" href="https://radiancesphere.netlify.app/consultation" />
         <meta property="og:title" content="Book Free Consultation | Radiance Sphere Kenya" />
-        <meta property="og:url" content="https://radiancesphere.co.ke/consultation" />
+        <meta property="og:url" content="https://radiancesphere.netlify.app/consultation" />
       </Helmet>
       <Navbar />
       

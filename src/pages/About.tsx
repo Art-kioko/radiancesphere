@@ -48,10 +48,10 @@ const About = () => {
       <Helmet>
         <title>About Radiance Sphere | AI-Powered Digital Marketing Agency Kenya</title>
         <meta name="description" content="Learn about Radiance Sphere — Kenya's AI-powered digital marketing agency helping 500+ businesses grow through reputation management, local SEO, and workflow automation." />
-        <link rel="canonical" href="https://radiancesphere.co.ke/about" />
+        <link rel="canonical" href="https://radiancesphere.netlify.app/about" />
         <meta property="og:title" content="About Radiance Sphere | AI-Powered Digital Marketing Agency Kenya" />
         <meta property="og:description" content="Learn about Radiance Sphere — Kenya's AI-powered digital marketing agency helping 500+ businesses grow." />
-        <meta property="og:url" content="https://radiancesphere.co.ke/about" />
+        <meta property="og:url" content="https://radiancesphere.netlify.app/about" />
       </Helmet>
       <Navbar />
       
