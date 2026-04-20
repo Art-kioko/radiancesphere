@@ -8,22 +8,18 @@ root.render(<App />);
 // Signal to the prerenderer (vite build) that the app has rendered.
 // Wait for next paint so react-helmet has injected meta tags into <head>.
 if (typeof window !== 'undefined') {
-  // Give react-helmet time to mutate <head> after React mounts and routes resolve.
-  // Poll for helmet to update document.title away from the static index.html title.
-  const STATIC_TITLE = 'Radiance Sphere | AI-Powered Digital Marketing Agency in Kenya';
-  let attempts = 0;
-  const check = () => {
-    attempts++;
-    if (document.title !== STATIC_TITLE || attempts > 40) {
-      // Sync the <title> element text in case helmet only updated document.title
-      const titleEl = document.querySelector('title');
-      if (titleEl && titleEl.textContent !== document.title) {
-        titleEl.textContent = document.title;
-      }
-      document.dispatchEvent(new Event('render-event'));
-    } else {
-      setTimeout(check, 100);
+  // Wait for the page to settle before signaling the prerenderer.
+  // Some pages (Index, About, ReputationManagement) have helmet titles equal to
+  // the static fallback, so we can't poll for a title change. Instead, give a
+  // generous fixed delay so react-helmet, react-router, and react-query all
+  // flush their effects to the DOM.
+  setTimeout(() => {
+    // Make sure the <title> text node mirrors document.title (helmet writes to
+    // both, but in headless tabs the textContent mutation can lag).
+    const titleEl = document.querySelector('title');
+    if (titleEl && document.title && titleEl.textContent !== document.title) {
+      titleEl.textContent = document.title;
     }
-  };
-  setTimeout(check, 300);
+    document.dispatchEvent(new Event('render-event'));
+  }, 2500);
 }
