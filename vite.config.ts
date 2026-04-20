@@ -35,6 +35,15 @@ export default defineConfig(({ mode }) => {
         rendererOptions: {
           renderAfterDocumentEvent: 'render-event',
           headless: true,
+          maxConcurrentRoutes: 1,
+          launchOptions: {
+            args: [
+              '--disable-background-timer-throttling',
+              '--disable-renderer-backgrounding',
+              '--disable-backgrounding-occluded-windows',
+              '--no-sandbox',
+            ],
+          },
         },
         postProcess(renderedRoute: any) {
           // Ensure relative asset paths still work
