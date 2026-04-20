@@ -145,7 +145,7 @@ export default function Gallery() {
       <Helmet>
         <title>Gallery | Radiance Sphere Digital Marketing Kenya</title>
         <meta name="description" content="View our portfolio and gallery showcasing Radiance Sphere's digital marketing work for Kenyan businesses." />
-        <link rel="canonical" href="https://radiancesphere.co.ke/gallery" />
+        <link rel="canonical" href="https://radiancesphere.netlify.app/gallery" />
       </Helmet>
       <Navbar />
       
