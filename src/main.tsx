@@ -9,9 +9,7 @@ root.render(<App />);
 // Wait for next paint so react-helmet has injected meta tags into <head>.
 if (typeof window !== 'undefined') {
   // Give react-helmet time to mutate <head> after React mounts and routes resolve.
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.dispatchEvent(new Event('render-event'));
-    }, 300);
-  });
+  setTimeout(() => {
+    document.dispatchEvent(new Event('render-event'));
+  }, 1500);
 }
