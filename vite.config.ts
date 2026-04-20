@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import prerender from "@prerenderer/rollup-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -16,6 +17,43 @@ export default defineConfig(({ mode }) => {
       react(),
       mode === 'development' &&
       componentTagger(),
+      mode === 'production' && prerender({
+        routes: [
+          '/',
+          '/about',
+          '/services',
+          '/reputation-management',
+          '/local-seo',
+          '/ai-workflows',
+          '/web-development',
+          '/amenities',
+          '/gallery',
+          '/contact',
+          '/consultation',
+        ],
+        renderer: '@prerenderer/renderer-puppeteer',
+        rendererOptions: {
+          renderAfterDocumentEvent: 'render-event',
+          headless: true,
+          maxConcurrentRoutes: 1,
+          launchOptions: {
+            args: [
+              '--disable-background-timer-throttling',
+              '--disable-renderer-backgrounding',
+              '--disable-backgrounding-occluded-windows',
+              '--no-sandbox',
+            ],
+          },
+        },
+        postProcess(renderedRoute: any) {
+          // Ensure relative asset paths still work
+          renderedRoute.html = renderedRoute.html.replace(
+            /http:\/\/localhost:\d+/g,
+            ''
+          );
+          return renderedRoute;
+        },
+      }),
     ].filter(Boolean),
     resolve: {
       alias: {
