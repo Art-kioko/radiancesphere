@@ -97,10 +97,10 @@ export default function Index() {
       <Helmet>
         <title>Radiance Sphere | AI-Powered Digital Marketing Agency in Kenya</title>
         <meta name="description" content="Radiance Sphere is a Kenya-based digital marketing agency specializing in AI-powered online reputation management, local SEO, AI workflow automation, and SEO-optimized web development for SMEs in Nairobi and across Kenya." />
-        <link rel="canonical" href="https://radiancesphere.netlify.app/" />
+        <link rel="canonical" href="https://radiancesphere.co.ke/" />
         <meta property="og:title" content="Radiance Sphere | AI-Powered Digital Marketing Agency in Kenya" />
         <meta property="og:description" content="Kenya's leading AI-powered digital marketing agency helping SMEs grow through reputation management, local SEO, AI workflows, and web development." />
-        <meta property="og:url" content="https://radiancesphere.netlify.app/" />
+        <meta property="og:url" content="https://radiancesphere.co.ke/" />
         <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />

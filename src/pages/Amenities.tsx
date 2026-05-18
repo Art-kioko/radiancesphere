@@ -32,7 +32,7 @@ export default function Amenities() {
       <Helmet>
         <title>Amenities | Radiance Sphere</title>
         <meta name="description" content="Explore the amenities and features offered by Radiance Sphere for your digital marketing success." />
-        <link rel="canonical" href="https://radiancesphere.netlify.app/amenities" />
+        <link rel="canonical" href="https://radiancesphere.co.ke/amenities" />
       </Helmet>
       <Navbar />
       
