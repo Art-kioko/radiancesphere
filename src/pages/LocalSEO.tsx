@@ -71,6 +71,9 @@ const LocalSEO = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
+        <title>Local SEO Services Kenya | Radiance Sphere</title>
+        <meta name="description" content="Local SEO and Google Business Profile optimization for Kenyan businesses. Dominate local search results and attract more nearby customers." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/local-seo" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

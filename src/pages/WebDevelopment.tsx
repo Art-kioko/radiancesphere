@@ -73,6 +73,7 @@ const WebDevelopment = () => {
       <Helmet>
         <title>SEO-Optimized Web Development Kenya | Radiance Sphere</title>
         <meta name="description" content="Professional web development for Kenyan businesses. Mobile-responsive, fast-loading websites with built-in SEO optimization. Get a website that ranks and converts." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/web-development" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
