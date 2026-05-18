@@ -146,6 +146,9 @@ const ReputationManagement = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
+        <title>Online Reputation Management Kenya | Radiance Sphere</title>
+        <meta name="description" content="AI-powered online reputation management for Kenyan businesses. Monitor reviews, automate responses, and build customer trust across 45+ platforms." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/reputation-management" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

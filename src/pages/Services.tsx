@@ -18,6 +18,7 @@ const Services = () => {
       <Helmet>
         <title>Digital Marketing Services Kenya | Radiance Sphere</title>
         <meta name="description" content="Radiance Sphere offers 4 core digital marketing services for Kenyan SMEs: Online Reputation Management, Local SEO, AI Workflow Automation, and SEO-Optimized Web Development." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/services" />
       </Helmet>
       <Navbar />
       

@@ -71,6 +71,9 @@ const AIWorkflows = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
+        <title>AI Workflow Automation Kenya | Radiance Sphere</title>
+        <meta name="description" content="Custom AI workflow automation for Kenyan SMEs. Automate lead management, customer service, invoicing, and more. Reduce manual work by up to 85%." />
+        <link rel="canonical" href="https://radiancesphere.co.ke/ai-workflows" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
