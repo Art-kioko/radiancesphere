@@ -161,7 +161,7 @@ const ReputationManagement = () => {
         </div>
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-screen overflow-hidden">
+      <section className="relative min-h-[60vh] md:h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
