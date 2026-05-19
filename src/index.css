@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-padding-top: 80px;
+}
+
 @layer base {
   :root {
     --background: 210 30% 95%;
