@@ -73,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Radiance Sphere <onboarding@resend.dev>",
-      to: ["radiancesphere3@gmail.com"],
+      to: ["info@radiancesphere.co.ke", "radiancesphere3@gmail.com"],
       subject: subject,
       html: emailHtml,
     });
