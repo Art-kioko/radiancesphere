@@ -212,7 +212,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                        <p className="text-muted-foreground">radiancesphere3@gmail.com</p>
+                        <p className="text-muted-foreground">info@radiancesphere.co.ke</p>
                         <p className="text-muted-foreground">Contact for free consultation</p>
                       </div>
                     </div>
