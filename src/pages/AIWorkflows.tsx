@@ -74,6 +74,7 @@ const AIWorkflows = () => {
         <title>AI Workflow Automation Kenya | Radiance Sphere</title>
         <meta name="description" content="Custom AI workflow automation for Kenyan SMEs. Automate lead management, customer service, invoicing, and more. Reduce manual work by up to 85%." />
         <link rel="canonical" href="https://radiancesphere.co.ke/ai-workflows" />
+        <meta name="keywords" content="AI workflow automation Kenya, business process automation, AI automation Nairobi, lead management automation, customer service automation, operational efficiency, SME automation Kenya" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
