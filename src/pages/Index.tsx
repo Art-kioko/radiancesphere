@@ -98,6 +98,7 @@ export default function Index() {
         <title>Radiance Sphere | AI-Powered Digital Marketing Agency in Kenya</title>
         <meta name="description" content="Radiance Sphere is a Kenya-based digital marketing agency specializing in AI-powered online reputation management, local SEO, AI workflow automation, and SEO-optimized web development for SMEs in Nairobi and across Kenya." />
         <link rel="canonical" href="https://radiancesphere.co.ke/" />
+        <meta name="keywords" content="digital marketing agency Kenya, AI marketing Nairobi, SME marketing Kenya, online reputation management, local SEO services, AI workflow automation, web development Kenya, Google Business Profile optimization" />
         <meta property="og:title" content="Radiance Sphere | AI-Powered Digital Marketing Agency in Kenya" />
         <meta property="og:description" content="Kenya's leading AI-powered digital marketing agency helping SMEs grow through reputation management, local SEO, AI workflows, and web development." />
         <meta property="og:url" content="https://radiancesphere.co.ke/" />
