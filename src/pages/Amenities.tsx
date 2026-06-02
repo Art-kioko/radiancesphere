@@ -33,6 +33,7 @@ export default function Amenities() {
         <title>Amenities | Radiance Sphere</title>
         <meta name="description" content="Explore the amenities and features offered by Radiance Sphere for your digital marketing success." />
         <link rel="canonical" href="https://radiancesphere.co.ke/amenities" />
+        <meta name="keywords" content="Radiance Sphere amenities, digital marketing resources Kenya, SME business tools Nairobi, agency services overview" />
       </Helmet>
       <Navbar />
       

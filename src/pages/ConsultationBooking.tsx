@@ -103,6 +103,7 @@ export default function ConsultationBooking() {
         <title>Book Free Consultation | Radiance Sphere Digital Marketing Kenya</title>
         <meta name="description" content="Book a free consultation with Radiance Sphere. Discuss your digital marketing needs — reputation management, local SEO, AI workflows, or web development for your Kenyan business." />
         <link rel="canonical" href="https://radiancesphere.co.ke/consultation" />
+        <meta name="keywords" content="free digital marketing consultation Kenya, business strategy session Nairobi, AI marketing consultation, SME growth consultation, book marketing consultation Kenya" />
         <meta property="og:title" content="Book Free Consultation | Radiance Sphere Kenya" />
         <meta property="og:url" content="https://radiancesphere.co.ke/consultation" />
       </Helmet>

@@ -74,6 +74,7 @@ const LocalSEO = () => {
         <title>Local SEO Services Kenya | Radiance Sphere</title>
         <meta name="description" content="Local SEO and Google Business Profile optimization for Kenyan businesses. Dominate local search results and attract more nearby customers." />
         <link rel="canonical" href="https://radiancesphere.co.ke/local-seo" />
+        <meta name="keywords" content="local SEO Kenya, Google Business Profile optimization, local search ranking Nairobi, citation building Kenya, Google Maps optimization, local keyword targeting, nearby customers Kenya" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
