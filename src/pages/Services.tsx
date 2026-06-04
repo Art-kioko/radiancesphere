@@ -19,7 +19,11 @@ const Services = () => {
         <title>Digital Marketing Services Kenya | Radiance Sphere</title>
         <meta name="description" content="Radiance Sphere offers 4 core digital marketing services for Kenyan SMEs: Online Reputation Management, Local SEO, AI Workflow Automation, and SEO-Optimized Web Development." />
         <link rel="canonical" href="https://radiancesphere.co.ke/services" />
-        <meta name="keywords" content="digital marketing services Kenya, online reputation management, local SEO services, AI workflow automation, web development Kenya, SME marketing solutions, Google Business Profile optimization" />
+        <meta name="keywords" content="digital marketing services Kenya, online marketing services Nairobi, reputation management services Kenya, local SEO services Nairobi, AI automation services Kenya, web development services Kenya, digital marketing packages Kenya, SME marketing services Nairobi, affordable digital marketing Kenya" />
+        <meta property="og:title" content="Digital Marketing Services Kenya | Radiance Sphere" />
+        <meta property="og:description" content="Radiance Sphere offers 4 core digital marketing services for Kenyan SMEs: Online Reputation Management, Local SEO, AI Workflow Automation, and SEO-Optimized Web Development." />
+        <meta property="og:url" content="https://radiancesphere.co.ke/services" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
       

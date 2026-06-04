@@ -74,7 +74,11 @@ const AIWorkflows = () => {
         <title>AI Workflow Automation Kenya | Radiance Sphere</title>
         <meta name="description" content="Custom AI workflow automation for Kenyan SMEs. Automate lead management, customer service, invoicing, and more. Reduce manual work by up to 85%." />
         <link rel="canonical" href="https://radiancesphere.co.ke/ai-workflows" />
-        <meta name="keywords" content="AI workflow automation Kenya, business process automation, AI automation Nairobi, lead management automation, customer service automation, operational efficiency, SME automation Kenya" />
+        <meta name="keywords" content="AI workflow automation Kenya, business automation Nairobi, AI tools for small business Kenya, automate business processes Kenya, lead management automation Kenya, customer service automation Kenya, business process automation Nairobi, AI chatbot Kenya, invoice automation Kenya, productivity tools for SMEs Kenya" />
+        <meta property="og:title" content="AI Workflow Automation Kenya | Radiance Sphere" />
+        <meta property="og:description" content="Custom AI workflow automation for Kenyan SMEs. Automate lead management, customer service, invoicing, and more. Reduce manual work by up to 85%." />
+        <meta property="og:url" content="https://radiancesphere.co.ke/ai-workflows" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

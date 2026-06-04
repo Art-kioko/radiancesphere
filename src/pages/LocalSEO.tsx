@@ -74,7 +74,11 @@ const LocalSEO = () => {
         <title>Local SEO Services Kenya | Radiance Sphere</title>
         <meta name="description" content="Local SEO and Google Business Profile optimization for Kenyan businesses. Dominate local search results and attract more nearby customers." />
         <link rel="canonical" href="https://radiancesphere.co.ke/local-seo" />
-        <meta name="keywords" content="local SEO Kenya, Google Business Profile optimization, local search ranking Nairobi, citation building Kenya, Google Maps optimization, local keyword targeting, nearby customers Kenya" />
+        <meta name="keywords" content="local SEO Kenya, local SEO Nairobi, Google Business Profile optimization Kenya, Google Maps ranking Kenya, local search optimization Nairobi, near me SEO Kenya, citation building Kenya, local keyword research Kenya, Google Maps SEO Nairobi, local SEO for restaurants Kenya, local SEO for clinics Kenya, local SEO agency Kenya" />
+        <meta property="og:title" content="Local SEO Services Kenya | Radiance Sphere" />
+        <meta property="og:description" content="Local SEO and Google Business Profile optimization for Kenyan businesses. Dominate local search results and attract more nearby customers." />
+        <meta property="og:url" content="https://radiancesphere.co.ke/local-seo" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
