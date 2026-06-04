@@ -140,7 +140,7 @@ export default function Contact() {
         <title>Contact Radiance Sphere | Digital Marketing Agency Nairobi Kenya</title>
         <meta name="description" content="Get in touch with Radiance Sphere. Contact our Nairobi-based digital marketing team for reputation management, local SEO, AI workflows, and web development services." />
         <link rel="canonical" href="https://radiancesphere.co.ke/contact" />
-        <meta name="keywords" content="contact digital marketing agency Kenya, Radiance Sphere contact, Nairobi marketing agency, get in touch Kenya, digital marketing consultation, SME marketing contact" />
+        <meta name="keywords" content="contact Radiance Sphere, digital marketing agency contact Nairobi, hire digital marketing agency Kenya, book digital marketing consultation Kenya, free marketing consultation Nairobi, digital marketing quote Kenya, Radiance Sphere contact, marketing agency phone Nairobi" />
         <meta property="og:title" content="Contact Radiance Sphere | Digital Marketing Agency Nairobi Kenya" />
         <meta property="og:url" content="https://radiancesphere.co.ke/contact" />
       </Helmet>

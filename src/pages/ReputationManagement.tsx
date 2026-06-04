@@ -149,7 +149,11 @@ const ReputationManagement = () => {
         <title>Online Reputation Management Kenya | Radiance Sphere</title>
         <meta name="description" content="AI-powered online reputation management for Kenyan businesses. Monitor reviews, automate responses, and build customer trust across 45+ platforms." />
         <link rel="canonical" href="https://radiancesphere.co.ke/reputation-management" />
-        <meta name="keywords" content="online reputation management Kenya, Google review management, review monitoring Nairobi, customer trust building, AI review responses, reputation repair Kenya, business credibility, review automation" />
+        <meta name="keywords" content="online reputation management Kenya, reputation management Nairobi, Google review management Kenya, AI review responses Kenya, negative review removal Kenya, review monitoring service Kenya, business reputation management Nairobi, restaurant reputation management Kenya, hotel reputation management Kenya, online reviews Kenya" />
+        <meta property="og:title" content="Online Reputation Management Kenya | Radiance Sphere" />
+        <meta property="og:description" content="AI-powered online reputation management for Kenyan businesses. Monitor reviews, automate responses, and build customer trust across 45+ platforms." />
+        <meta property="og:url" content="https://radiancesphere.co.ke/reputation-management" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

@@ -74,7 +74,11 @@ const WebDevelopment = () => {
         <title>SEO-Optimized Web Development Kenya | Radiance Sphere</title>
         <meta name="description" content="Professional web development for Kenyan businesses. Mobile-responsive, fast-loading websites with built-in SEO optimization. Get a website that ranks and converts." />
         <link rel="canonical" href="https://radiancesphere.co.ke/web-development" />
-        <meta name="keywords" content="web development Kenya, SEO website design Nairobi, mobile responsive websites Kenya, business website development, e-commerce Kenya, fast loading websites, M-Pesa integration" />
+        <meta name="keywords" content="web development Kenya, website design Nairobi, SEO website Kenya, mobile website design Kenya, affordable website Kenya, M-Pesa website integration Kenya, e-commerce website Kenya, business website Nairobi, fast website Kenya, web developer Nairobi, booking website Kenya, landing page Kenya" />
+        <meta property="og:title" content="SEO-Optimized Web Development Kenya | Radiance Sphere" />
+        <meta property="og:description" content="Professional web development for Kenyan businesses. Mobile-responsive, fast-loading websites with built-in SEO optimization. Get a website that ranks and converts." />
+        <meta property="og:url" content="https://radiancesphere.co.ke/web-development" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

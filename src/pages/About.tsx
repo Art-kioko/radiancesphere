@@ -49,7 +49,7 @@ const About = () => {
         <title>About Radiance Sphere | AI-Powered Digital Marketing Agency Kenya</title>
         <meta name="description" content="Learn about Radiance Sphere — Kenya's AI-powered digital marketing agency helping 500+ businesses grow through reputation management, local SEO, and workflow automation." />
         <link rel="canonical" href="https://radiancesphere.co.ke/about" />
-        <meta name="keywords" content="about Radiance Sphere, digital marketing agency Nairobi, AI marketing company Kenya, business transformation Kenya, SME growth partner, digital agency story, Kenya marketing team" />
+        <meta name="keywords" content="digital marketing agency Nairobi Kenya, AI marketing agency Kenya, best digital marketing agency Kenya, Nairobi marketing agency SMEs, about Radiance Sphere, digital agency mission Kenya, AI solutions for small business Kenya, trusted marketing agency Nairobi, Radiance Sphere agency" />
         <meta property="og:title" content="About Radiance Sphere | AI-Powered Digital Marketing Agency Kenya" />
         <meta property="og:description" content="Learn about Radiance Sphere — Kenya's AI-powered digital marketing agency helping 500+ businesses grow." />
         <meta property="og:url" content="https://radiancesphere.co.ke/about" />
