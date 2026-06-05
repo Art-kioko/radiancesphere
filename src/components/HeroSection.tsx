@@ -38,37 +38,37 @@ export default function HeroSection() {
       <div className="relative min-h-[85vh] lg:min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 md:px-8 lg:px-16 pt-28 md:pt-32 pb-16 md:pb-20 z-20 max-w-7xl mx-auto gap-4 md:gap-8">
         
         {/* Lottie Animations - Left Side (Slideshow) */}
-        <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in relative">
-          <dotlottie-wc 
-            src="https://lottie.host/5515c80d-3441-471c-9be0-c5ee83d7546a/BN7kpzrvc3.lottie" 
-            autoplay 
-            loop
-            style={{
-              width: '100%',
-              maxWidth: '400px',
-              height: 'auto',
-              aspectRatio: '1 / 1',
-              opacity: currentAnimation === 0 ? '1' : '0',
-              transition: 'opacity 1s ease-in-out',
-              position: 'absolute'
-            }}
-          />
-          <dotlottie-wc 
-            src="https://lottie.host/03dc3de4-212c-4b2a-a1df-3bfe2bb7efd8/RvNnGHQHK8.lottie" 
-            autoplay 
-            loop
-            style={{
-              width: '100%',
-              maxWidth: '400px',
-              height: 'auto',
-              aspectRatio: '1 / 1',
-              opacity: currentAnimation === 1 ? '1' : '0',
-              transition: 'opacity 1s ease-in-out',
-              position: 'absolute'
-            }}
-          />
-          {/* Spacer to maintain layout */}
-          <div className="w-full max-w-[280px] md:max-w-[400px] aspect-square" />
+        <div className="flex-shrink-0 w-full lg:w-1/2 flex justify-center lg:justify-start items-center animate-fade-in">
+          <div className="relative w-full max-w-[280px] md:max-w-[400px] aspect-square">
+            <dotlottie-wc
+              src="https://lottie.host/5515c80d-3441-471c-9be0-c5ee83d7546a/BN7kpzrvc3.lottie"
+              autoplay
+              loop
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                opacity: currentAnimation === 0 ? 1 : 0,
+                transition: 'opacity 1.2s ease-in-out',
+                pointerEvents: currentAnimation === 0 ? 'auto' : 'none',
+              }}
+            />
+            <dotlottie-wc
+              src="https://lottie.host/03dc3de4-212c-4b2a-a1df-3bfe2bb7efd8/RvNnGHQHK8.lottie"
+              autoplay
+              loop
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                opacity: currentAnimation === 1 ? 1 : 0,
+                transition: 'opacity 1.2s ease-in-out',
+                pointerEvents: currentAnimation === 1 ? 'auto' : 'none',
+              }}
+            />
+          </div>
         </div>
 
         {/* Hero Content - Right Side */}
