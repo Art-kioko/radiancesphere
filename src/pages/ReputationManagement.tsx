@@ -21,8 +21,8 @@ const ReputationManagement = () => {
   const pricingTiers = [
     {
       name: "Basic (Starter)",
-      setupFee: 3500,
-      monthlyPrice: 9500,
+      setupFee: 1500,
+      monthlyPrice: 4650,
       description: "Perfect for small businesses",
       gradient: "from-blue-400 to-blue-600",
       features: [
@@ -38,8 +38,8 @@ const ReputationManagement = () => {
     },
     {
       name: "Standard (Growth)",
-      setupFee: 7500,
-      monthlyPrice: 20500,
+      setupFee: 2000,
+      monthlyPrice: 6500,
       description: "For growing businesses",
       gradient: "from-purple-400 to-purple-600",
       popular: true,
