@@ -39,7 +39,7 @@ const ReputationManagement = () => {
     {
       name: "Standard (Growth)",
       setupFee: 2000,
-      monthlyPrice: 6500,
+      monthlyPrice: 6950,
       description: "For growing businesses",
       gradient: "from-purple-400 to-purple-600",
       popular: true,
@@ -82,7 +82,7 @@ const ReputationManagement = () => {
   const calculatePrice = (price: number | null) => {
     if (price === null) return null;
     if (isAnnual) {
-      const discountedPrice = Math.round(price * 0.8); // 20% discount
+      const discountedPrice = Math.round(price * 0.9); // 10% discount
       return discountedPrice.toLocaleString();
     }
     return price.toLocaleString();
@@ -388,7 +388,7 @@ const ReputationManagement = () => {
                 />
               </button>
               <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                Annual <Badge variant="secondary" className="ml-1 text-xs">Save 20%</Badge>
+                Annual <Badge variant="secondary" className="ml-1 text-xs">Save 10%</Badge>
               </span>
             </div>
           </div>
@@ -429,7 +429,7 @@ const ReputationManagement = () => {
                         </div>
                         {isAnnual && (
                           <div className="text-xs mt-3 opacity-90 bg-white/10 rounded-full px-3 py-1 inline-block">
-                            Save KES {(tier.monthlyPrice * 0.2).toLocaleString()}/month
+                            Save KES {(tier.monthlyPrice * 0.1).toLocaleString()}/month
                           </div>
                         )}
                       </>
