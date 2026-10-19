@@ -40,6 +40,10 @@ html {
     --ring: 210 100% 40%;
 
     --radius: 0.5rem;
+    --navy: 220 46% 20%;
+    --gold: 37 79% 57%;
+    --gold-foreground: 220 46% 14%;
+    --cream: 40 45% 96%;
   }
 
   .dark {
@@ -70,6 +74,10 @@ html {
     --border: 210 30% 25%;
     --input: 210 30% 25%;
     --ring: 210 100% 60%;
+    --navy: 220 40% 85%;
+    --gold: 37 79% 60%;
+    --gold-foreground: 220 46% 12%;
+    --cream: 220 40% 13%;
   }
 }
 
