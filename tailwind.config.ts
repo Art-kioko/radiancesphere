@@ -20,9 +20,6 @@ export default {
 		},
 		extend: {
 			colors: {
-				navy: 'hsl(var(--navy))',
-				cream: 'hsl(var(--cream))',
-				gold: { DEFAULT: 'hsl(var(--gold))', foreground: 'hsl(var(--gold-foreground))' },
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

@@ -123,8 +123,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li><a href="/#pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="https://radinacev1.netlify.app" className="text-muted-foreground hover:text-primary transition-colors">Sign in</a></li>
             </ul>
           </AnimateOnScroll>
           

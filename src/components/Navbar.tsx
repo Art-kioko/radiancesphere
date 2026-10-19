@@ -1,97 +1,100 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/radiance-logo.png";
 
-export const APP_URL = "https://radinacev1.netlify.app";
-
-const navLinks = [
-  { name: "Product", path: "/#how-it-works" },
-  { name: "Pricing", path: "/#pricing" },
-  { name: "Services", path: "/services" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
-];
-
-function NavItem({ path, name, className, onClick }: { path: string; name: string; className: string; onClick?: () => void }) {
-  if (path.startsWith("/#")) {
-    return <a href={path} className={className} onClick={onClick}>{name}</a>;
-  }
-  return <Link to={path} className={className} onClick={onClick}>{name}</Link>;
-}
-
 export default function Navbar() {
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
+  const navLinks = [
+    { name: t.nav.home, path: "/" },
+    { name: "About", path: "/about" },
+    { name: t.nav.services, path: "/services" },
+    { name: t.nav.contact, path: "/contact" }
+  ];
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const close = () => setMobileMenuOpen(false);
-
-  return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border/60", scrolled ? "bg-background/95 dark:bg-[hsl(210_30%_22%/0.95)] backdrop-blur-lg py-2 shadow-sm" : "bg-background/90 dark:bg-[hsl(210_30%_20%/0.90)] backdrop-blur-md py-3")}>
-      <nav className="container flex justify-between items-center gap-4">
-        <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="Radiance Sphere" className="h-11 md:h-14 w-auto" />
+  }, [scrolled]);
+  
+  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-background/95 dark:bg-[hsl(210_30%_22%/0.95)] backdrop-blur-lg py-3 shadow-md" : "bg-background/90 dark:bg-[hsl(210_30%_20%/0.90)] backdrop-blur-md py-5")}>
+      <nav className="container flex justify-between items-center">
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Radiance Sphere" className="h-12 md:h-16 w-auto" />
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-7">
-          {navLinks.map(link => (
-            <li key={link.name}>
-              <NavItem {...link} className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors" />
-            </li>
-          ))}
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex space-x-8">
+          {navLinks.map(link => <li key={link.name} className="relative">
+              <Link to={link.path} className="font-medium text-foreground transition-colors after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full hover:text-primary">
+                {link.name}
+              </Link>
+            </li>)}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
-          <a href={APP_URL} className="text-sm font-medium text-foreground/80 hover:text-foreground">Sign in</a>
-          <Button asChild className="bg-gold text-gold-foreground hover:bg-gold/90 font-semibold rounded-full px-5">
-            <a href={APP_URL}>Start free trial</a>
+          <Button asChild className="btn-primary">
+            <Link to="/contact">{t.nav.getStarted}</Link>
           </Button>
         </div>
 
-        <div className="lg:hidden flex items-center gap-2">
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex items-center space-x-2">
           <ThemeToggle />
-          <Button variant="outline" size="sm" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Open menu" className="gap-2">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="flex items-center gap-2 bg-background text-foreground border-border hover:bg-accent"
+          >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             <span className="text-sm font-medium">Menu</span>
           </Button>
         </div>
       </nav>
 
-      <div className={cn("fixed inset-0 z-50 bg-foreground/40 lg:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")} onClick={close}>
-        <div onClick={e => e.stopPropagation()} className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-background border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
+      {/* Mobile Menu */}
+      <div className={cn("fixed inset-0 z-50 bg-black/50 md:hidden transition-opacity duration-300", mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}>
+        <div className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-white dark:bg-zinc-900 border-l border-border shadow-2xl p-6 transition-transform duration-300 ease-in-out", mobileMenuOpen ? "translate-x-0" : "translate-x-full")}>
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="flex justify-between items-center mb-8">
-                <span className="text-lg font-semibold text-foreground">Menu</span>
-                <Button variant="outline" size="icon" onClick={close} className="rounded-full" aria-label="Close menu">
+                <span className="text-lg font-semibold text-foreground">Navigation</span>
+                <Button variant="outline" size="icon" onClick={() => setMobileMenuOpen(false)} className="rounded-full bg-background text-foreground border-border hover:bg-accent">
                   <X className="h-5 w-5" />
                 </Button>
               </div>
-              <ul className="space-y-4">
-                {navLinks.map(link => (
-                  <li key={link.name}>
-                    <NavItem {...link} onClick={close} className="text-lg font-medium text-foreground hover:text-gold block py-2" />
-                  </li>
-                ))}
-                <li><a href={APP_URL} className="text-lg font-medium text-foreground hover:text-gold block py-2">Sign in</a></li>
+              <ul className="space-y-6">
+                {navLinks.map(link => <li key={link.name}>
+                    <Link to={link.path} className="text-lg font-medium text-foreground transition-colors hover:text-primary block py-2" onClick={() => setMobileMenuOpen(false)}>
+                      {link.name}
+                    </Link>
+                  </li>)}
               </ul>
             </div>
-            <Button asChild className="w-full bg-gold text-gold-foreground hover:bg-gold/90 font-semibold min-h-[48px] rounded-full">
-              <a href={APP_URL}>Start free trial</a>
+            
+            <Button asChild className="w-full btn-primary mt-6 min-h-[48px]">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                {t.nav.getStarted}
+              </Link>
             </Button>
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 }
