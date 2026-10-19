@@ -20,10 +20,6 @@ export default {
 		},
 		extend: {
 			colors: {
-				brand: {
-					gold: 'hsl(var(--brand-gold))',
-					ink: 'hsl(var(--brand-ink))',
-				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
