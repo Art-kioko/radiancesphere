@@ -27,7 +27,6 @@ export default defineConfig(({ mode }) => {
           '/ai-workflows',
           '/web-development',
           '/amenities',
-          '/gallery',
           '/contact',
           '/consultation',
         ],
